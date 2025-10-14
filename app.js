@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 item2: {
                     title: "Участие в международной выставке",
-                    text: "На выставке TextileExpo в Москве компания Само представила свою продукцию..."
+                    text: "На выставке TextileExpo в Москве компания Жамо представила свою продукцию..."
                 },
                 item3: {
                     title: "Представлена новая коллекция",
@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 item2: {
                     title: "International Exhibition Participation",
-                    text: "At the TextileExpo exhibition in Moscow, Samo company showcased its products..."
+                    text: "At the TextileExpo exhibition in Moscow, Jamo company showcased its products..."
                 },
                 item3: {
                     title: "New Collection Introduced",
