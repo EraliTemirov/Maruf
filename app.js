@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 skipToContent: "Asosiy kontentga o'tish"
             },
             nav: {
-                home: "Bosh sahifa...",
+                home: "Bosh sahifa",
                 about: "Biz haqimizda",
                 products: "Mahsulotlar",
                 gallery: "Galareya",
