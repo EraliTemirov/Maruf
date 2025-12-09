@@ -186,7 +186,30 @@
       
       body:not(.page-loaded) .header {
         visibility: hidden;
-      }
+      }    .logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content; /* kenglik faqat JAMO kengligiga teng bo'ladi */
+    text-decoration: none;
+}
+
+.logo-main {
+    font-size: 32px;
+    font-weight: 700;
+   /* font-family: "Montserrat", sans-serif;*/
+    line-height: 1;
+}
+
+.logo-sub {
+    font-size: 24px;
+    font-weight: 100; transform: scaleY(0.9);
+   /* font-family: "Montserrat", sans-serif;*/
+    margin-top: 0px;
+    width: 100%;            /* JAMO kengligi bilan teng bo'ladi */
+    text-align: center;
+    line-height: 1;
+}
     </style>
     
     <!-- Load Google Fonts -->
@@ -243,7 +266,11 @@
     <!-- Header -->
     <header class="header" role="banner">
       <nav class="nav-container" role="navigation" aria-label="Asosiy navigatsiya">
-        <a href="#" class="logo" aria-label="JAMO Textile bosh sahifasi">JAMO</a>
+    <a href="#" class="logo">
+    <span class="logo-main">JAMO</span>
+    <span class="logo-sub">TEXTILE</span>
+</a>
+
         <ul class="nav-menu" role="menubar">
           <li role="none"><a href="#home" role="menuitem" data-i18n="nav.home">Bosh sahifa</a></li>
           <li role="none"><a href="#about" role="menuitem" data-i18n="nav.about">Biz haqimizda</a></li>
