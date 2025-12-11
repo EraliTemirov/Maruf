@@ -4,9 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-img {
+/*img {
     transition: width 0.5s ease-in-out;
-  }
+  }*/
   
   
 :root {
@@ -1069,4 +1069,5 @@ textarea:focus-visible {
 }
 a, a * {
     cursor: pointer;
+    text-decoration: none !important;
 }
