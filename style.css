@@ -1067,3 +1067,6 @@ textarea:focus-visible {
         background: linear-gradient(90deg, #334155 25%, #475569 50%, #334155 75%);
     }
 }
+a, a * {
+    cursor: pointer;
+}
