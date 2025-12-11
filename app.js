@@ -723,7 +723,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             img.style.opacity = '0';
-            img.style.transition = 'opacity 0.5s ease';
+           /* img.style.transition = 'opacity 0.5s ease';*/
         });
     }
 
