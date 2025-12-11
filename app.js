@@ -693,7 +693,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             img.addEventListener('load', function() {
                 this.classList.add('loaded');
-                /*this.style.opacity = '1';*/
+                this.style.opacity = '1';
             });
             
             img.addEventListener('error', function() {
