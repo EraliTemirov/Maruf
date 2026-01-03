@@ -409,426 +409,59 @@
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
-      <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeriya - JAMO Textile</title>
-    <style>
-        :root {
-            --primary-color: #0F172A;
-            --primary-light: #1E293B;
-            --secondary-color: #3B82F6;
-            --accent-color: #F59E0B;
-            --accent-light: #FCD34D;
-            --text-white: #FFFFFF;
-            --bg-secondary: #F8FAFC;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-secondary);
-            padding: 20px;
-        }
-
-        .gallery-section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 60px;
-            color: var(--primary-color);
-            position: relative;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
-            border-radius: 2px;
-        }
-
-        .main-gallery {
-            position: relative;
-            width: 80%;
-            margin: 0 auto 40px;
-            aspect-ratio: 16/9;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-            background: var(--primary-color);
-        }
-
-        .main-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: none;
-            animation: fadeIn 0.6s ease-in-out;
-        }
-
-        .main-image.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(1.03);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.95);
-            border: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-            z-index: 10;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .nav-button:hover {
-            background: var(--accent-color);
-            color: white;
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
-        }
-
-        .nav-button.prev {
-            left: 25px;
-        }
-
-        .nav-button.next {
-            right: 25px;
-        }
-
-        .progress-container {
-            width: 80%;
-            margin: 0 auto 30px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 5px;
-            background: rgba(15, 23, 42, 0.1);
-            border-radius: 3px;
-            overflow: hidden;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-            width: 0%;
-            transition: width 0.1s linear;
-            border-radius: 3px;
-        }
-
-        .image-counter {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 18px;
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .image-counter .current {
-            color: var(--accent-color);
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        .thumbnail-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 30px 20px;
-            max-width: 90%;
-            margin: 0 auto;
-        }
-
-        .thumbnail {
-            width: 140px;
-            height: 95px;
-            object-fit: cover;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-            opacity: 0.7;
-        }
-
-        .thumbnail:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-            opacity: 1;
-        }
-
-        .thumbnail.active {
-            border-color: var(--accent-color);
-            transform: scale(1.08);
-            opacity: 1;
-            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
-        }
-
-        .image-info {
-            text-align: center;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            margin: 20px auto;
-            width: 80%;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .image-info h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .image-info p {
-            color: var(--primary-light);
-            font-size: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .main-gallery {
-                width: 95%;
-            }
-
-            .nav-button {
-                width: 45px;
-                height: 45px;
-                font-size: 20px;
-            }
-
-            .nav-button.prev {
-                left: 15px;
-            }
-
-            .nav-button.next {
-                right: 15px;
-            }
-
-            .thumbnail {
-                width: 100px;
-                height: 70px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .progress-container {
-                width: 95%;
-            }
-
-            .image-info {
-                width: 95%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .thumbnail {
-                width: 80px;
-                height: 55px;
-            }
-
-            .thumbnail-container {
-                gap: 12px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="gallery-section">
-        <h2 class="section-title">📸 Mahsulotlar Galeriyasi</h2>
-        
-        <div class="main-gallery">
-            <img src="./image/galereye.png" alt="Mahsulot 1" class="main-image active">
-            <img src="./image/tavarlar_horizontal_1.jpg" alt="Mahsulot 2" class="main-image">
-            <img src="./image/tavarlar_horizontal_2.jpg" alt="Mahsulot 3" class="main-image">
-            <img src="./image/tavarlar_horizontal_3.jpg" alt="Mahsulot 4" class="main-image">
-            <img src="./image/pechat2.jpg" alt="Ishlab chiqarish 1" class="main-image">
-            <img src="./image/boyoqxonaqozonlar2.jpg" alt="Ishlab chiqarish 2" class="main-image">
-            <img src="./image/pechat3.jpg" alt="Ishlab chiqarish 3" class="main-image">
-            <img src="./image/boyoqxona6.jpg" alt="Ishlab chiqarish 4" class="main-image">
-            
-            <button class="nav-button prev" onclick="changeImage(-1)" aria-label="Oldingi rasm">‹</button>
-            <button class="nav-button next" onclick="changeImage(1)" aria-label="Keyingi rasm">›</button>
-        </div>
-
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
+      <div class="container">
+        <h2 class="section-title" data-i18n="gallery.title">Galareya</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="./image/galereye.png" alt="Fabrika 1" loading="lazy" />
+            <div class="gallery-overlay">
+              <span data-i18n="gallery.factory1">Mahsulot</span>
             </div>
-            <div class="image-counter">
-                <span class="current" id="currentImage">1</span> / <span id="totalImages">8</span>
+          </div>
+          <div class="gallery-item">
+            <img src="./image/tavarlar_horizontal_1.jpg" alt="Fabrika 2" loading="lazy" />
+            <div class="gallery-overlay">
+              <span data-i18n="gallery.factory2">Mahsulot</span>
             </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./image/tavarlar_horizontal_2.jpg" alt="Mahsulot 1" loading="lazy" />
+            <div class="gallery-overlay">
+              <span data-i18n="gallery.product1">Mahsulot</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./image/tavarlar_horizontal_3.jpg" alt="Mahsulot 2" loading="lazy" />
+            <div class="gallery-overlay">
+              <span data-i18n="gallery.product2">Mahsulot</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./image/pechat2.jpg" alt="Ishlab chiqarish" loading="lazy" />
+            <div class="gallery-overlay">
+              <span data-i18n="gallery.manufacturing">Ishlab chiqarish</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./image/boyoqxonaqozonlar2.jpg" alt="Sifat nazorati" loading="lazy" />
+            <div class="gallery-overlay">
+              <span data-i18n="gallery.quality">Sifat nazorati</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./image/pechat3.jpg" alt="Omborxona" loading="lazy" />
+            <div class="gallery-overlay">
+              <span data-i18n="gallery.warehouse">Omborxona</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./image/boyoqxona6.jpg" alt="Jamoa" loading="lazy" />
+            <div class="gallery-overlay">
+              <span data-i18n="gallery.team">Jamoa</span>
+            </div>
+          </div>
         </div>
-
-        <div class="image-info" id="imageInfo">
-            <h3 id="imageTitle">Mahsulot</h3>
-            <p id="imageDescription">JAMO Textile sifatli mahsulotlari</p>
-        </div>
-
-        <div class="thumbnail-container">
-            <img src="./image/galereye.png" alt="Thumbnail 1" class="thumbnail active" onclick="goToImage(0)">
-            <img src="./image/tavarlar_horizontal_1.jpg" alt="Thumbnail 2" class="thumbnail" onclick="goToImage(1)">
-            <img src="./image/tavarlar_horizontal_2.jpg" alt="Thumbnail 3" class="thumbnail" onclick="goToImage(2)">
-            <img src="./image/tavarlar_horizontal_3.jpg" alt="Thumbnail 4" class="thumbnail" onclick="goToImage(3)">
-            <img src="./image/pechat2.jpg" alt="Thumbnail 5" class="thumbnail" onclick="goToImage(4)">
-            <img src="./image/boyoqxonaqozonlar2.jpg" alt="Thumbnail 6" class="thumbnail" onclick="goToImage(5)">
-            <img src="./image/pechat3.jpg" alt="Thumbnail 7" class="thumbnail" onclick="goToImage(6)">
-            <img src="./image/boyoqxona6.jpg" alt="Thumbnail 8" class="thumbnail" onclick="goToImage(7)">
-        </div>
-    </div>
-
-    <script>
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.main-image');
-        const thumbnails = document.querySelectorAll('.thumbnail');
-        const totalImages = images.length;
-        const autoPlayInterval = 5000; // 5 soniya
-        let autoPlayTimer;
-        let progressTimer;
-
-        // Rasm ma'lumotlari
-        const imageData = [
-            { title: 'Mahsulot', description: 'JAMO Textile yuqori sifatli mahsulotlari' },
-            { title: 'Mahsulot', description: 'Zamonaviy dizayn va professional ishlov' },
-            { title: 'Mahsulot', description: 'Turli xil ranglar va modellar' },
-            { title: 'Mahsulot', description: 'Eksport sifatidagi trikotaj mahsulotlari' },
-            { title: 'Ishlab chiqarish', description: 'Zamonaviy pechat texnologiyasi' },
-            { title: 'Ishlab chiqarish', description: 'Professional bo\'yoq xonasi jarayoni' },
-            { title: 'Ishlab chiqarish', description: 'Yuqori sifatli pechat liniyasi' },
-            { title: 'Ishlab chiqarish', description: 'Sifat nazorati jarayoni' }
-        ];
-
-        document.getElementById('totalImages').textContent = totalImages;
-
-        function updateImageInfo() {
-            const info = imageData[currentIndex];
-            document.getElementById('imageTitle').textContent = info.title;
-            document.getElementById('imageDescription').textContent = info.description;
-        }
-
-        function updateGallery() {
-            images.forEach((img, index) => {
-                img.classList.toggle('active', index === currentIndex);
-            });
-
-            thumbnails.forEach((thumb, index) => {
-                thumb.classList.toggle('active', index === currentIndex);
-            });
-
-            document.getElementById('currentImage').textContent = currentIndex + 1;
-            updateImageInfo();
-            resetProgress();
-        }
-
-        function changeImage(direction) {
-            currentIndex = (currentIndex + direction + totalImages) % totalImages;
-            updateGallery();
-            resetAutoPlay();
-        }
-
-        function goToImage(index) {
-            currentIndex = index;
-            updateGallery();
-            resetAutoPlay();
-        }
-
-        function autoPlay() {
-            currentIndex = (currentIndex + 1) % totalImages;
-            updateGallery();
-        }
-
-        function resetAutoPlay() {
-            clearInterval(autoPlayTimer);
-            autoPlayTimer = setInterval(autoPlay, autoPlayInterval);
-        }
-
-        function resetProgress() {
-            clearInterval(progressTimer);
-            const progressBar = document.getElementById('progressBar');
-            progressBar.style.width = '0%';
-            
-            let progress = 0;
-            progressTimer = setInterval(() => {
-                progress += 100 / (autoPlayInterval / 100);
-                progressBar.style.width = progress + '%';
-                if (progress >= 100) {
-                    clearInterval(progressTimer);
-                }
-            }, 100);
-        }
-
-        // Avtomatik ishga tushirish
-        autoPlayTimer = setInterval(autoPlay, autoPlayInterval);
-        resetProgress();
-        updateImageInfo();
-
-        // Klaviatura boshqaruvi
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') changeImage(-1);
-            if (e.key === 'ArrowRight') changeImage(1);
-        });
-
-        // Touch support for mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        document.querySelector('.main-gallery').addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        document.querySelector('.main-gallery').addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            if (touchEndX < touchStartX - 50) changeImage(1);
-            if (touchEndX > touchStartX + 50) changeImage(-1);
-        }
-    </script>
+      </div>
     </section>
 
     <!-- News Section -->
