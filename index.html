@@ -406,9 +406,384 @@
         </div>
       </div>
     </section>
+<!-- Gallery Section -->
+<section id="gallery" class="gallery">
+  <div class="container">
+    <h2 class="section-title" data-i18n="gallery.title">Galareya</h2>
+    
+    <!-- Yangi Slider Galeriya -->
+    <div class="slider-gallery-container">
+      <div class="main-gallery-slider">
+        <img src="./image/galereye.png" alt="Mahsulot 1" class="main-slider-image active">
+        <img src="./image/tavarlar_horizontal_1.jpg" alt="Mahsulot 2" class="main-slider-image">
+        <img src="./image/tavarlar_horizontal_2.jpg" alt="Mahsulot 3" class="main-slider-image">
+        <img src="./image/tavarlar_horizontal_3.jpg" alt="Mahsulot 4" class="main-slider-image">
+        <img src="./image/pechat2.jpg" alt="Ishlab chiqarish 1" class="main-slider-image">
+        <img src="./image/boyoqxonaqozonlar2.jpg" alt="Ishlab chiqarish 2" class="main-slider-image">
+        <img src="./image/pechat3.jpg" alt="Ishlab chiqarish 3" class="main-slider-image">
+        <img src="./image/boyoqxona6.jpg" alt="Ishlab chiqarish 4" class="main-slider-image">
+        
+        <button class="slider-nav-button prev" onclick="changeSliderImage(-1)" aria-label="Oldingi rasm">‹</button>
+        <button class="slider-nav-button next" onclick="changeSliderImage(1)" aria-label="Keyingi rasm">›</button>
+      </div>
 
+      <div class="slider-progress-container">
+        <div class="slider-progress-bar">
+          <div class="slider-progress-fill" id="sliderProgressBar"></div>
+        </div>
+        <div class="slider-image-counter">
+          <span class="slider-current" id="sliderCurrentImage">1</span> / <span id="sliderTotalImages">8</span>
+        </div>
+      </div>
+
+      <div class="slider-image-info" id="sliderImageInfo">
+        <h3 id="sliderImageTitle">Mahsulot</h3>
+        <p id="sliderImageDescription">JAMO Textile sifatli mahsulotlari</p>
+      </div>
+
+      <div class="slider-thumbnail-container">
+        <img src="./image/galereye.png" alt="Thumbnail 1" class="slider-thumbnail active" onclick="goToSliderImage(0)">
+        <img src="./image/tavarlar_horizontal_1.jpg" alt="Thumbnail 2" class="slider-thumbnail" onclick="goToSliderImage(1)">
+        <img src="./image/tavarlar_horizontal_2.jpg" alt="Thumbnail 3" class="slider-thumbnail" onclick="goToSliderImage(2)">
+        <img src="./image/tavarlar_horizontal_3.jpg" alt="Thumbnail 4" class="slider-thumbnail" onclick="goToSliderImage(3)">
+        <img src="./image/pechat2.jpg" alt="Thumbnail 5" class="slider-thumbnail" onclick="goToSliderImage(4)">
+        <img src="./image/boyoqxonaqozonlar2.jpg" alt="Thumbnail 6" class="slider-thumbnail" onclick="goToSliderImage(5)">
+        <img src="./image/pechat3.jpg" alt="Thumbnail 7" class="slider-thumbnail" onclick="goToSliderImage(6)">
+        <img src="./image/boyoqxona6.jpg" alt="Thumbnail 8" class="slider-thumbnail" onclick="goToSliderImage(7)">
+      </div>
+    </div>
+    <!-- Slider Galeriya Tugadi -->
+    
+  </div>
+</section>
+
+<style>
+/* Slider Galeriya Stillari */
+.slider-gallery-container {
+  margin-top: 60px;
+}
+
+.main-gallery-slider {
+  position: relative;
+  width: 80%;
+  margin: 0 auto 40px;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  background: var(--primary-color);
+}
+
+.main-slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  animation: sliderFadeIn 0.6s ease-in-out;
+}
+
+.main-slider-image.active {
+  display: block;
+}
+
+@keyframes sliderFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.slider-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.slider-nav-button:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+}
+
+.slider-nav-button.prev {
+  left: 25px;
+}
+
+.slider-nav-button.next {
+  right: 25px;
+}
+
+.slider-progress-container {
+  width: 80%;
+  margin: 0 auto 30px;
+}
+
+.slider-progress-bar {
+  width: 100%;
+  height: 5px;
+  background: rgba(15, 23, 42, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  width: 0%;
+  transition: width 0.1s linear;
+  border-radius: 3px;
+}
+
+.slider-image-counter {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 18px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.slider-image-counter .slider-current {
+  color: var(--accent-color);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.slider-image-info {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.slider-image-info h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.slider-image-info p {
+  color: var(--primary-light);
+  font-size: 1rem;
+}
+
+.slider-thumbnail-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.slider-thumbnail {
+  width: 140px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  opacity: 0.7;
+}
+
+.slider-thumbnail:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  opacity: 1;
+}
+
+.slider-thumbnail.active {
+  border-color: var(--accent-color);
+  transform: scale(1.08);
+  opacity: 1;
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+}
+
+@media (max-width: 768px) {
+  .main-gallery-slider {
+    width: 95%;
+  }
+
+  .slider-nav-button {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .slider-nav-button.prev {
+    left: 15px;
+  }
+
+  .slider-nav-button.next {
+    right: 15px;
+  }
+
+  .slider-thumbnail {
+    width: 100px;
+    height: 70px;
+  }
+
+  .slider-progress-container {
+    width: 95%;
+  }
+
+  .slider-image-info {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-thumbnail {
+    width: 80px;
+    height: 55px;
+  }
+
+  .slider-thumbnail-container {
+    gap: 12px;
+  }
+}
+</style>
+
+<script>
+// Slider Galeriya JavaScript
+(function() {
+  let sliderCurrentIndex = 0;
+  const sliderImages = document.querySelectorAll('.main-slider-image');
+  const sliderThumbnails = document.querySelectorAll('.slider-thumbnail');
+  const sliderTotalImages = sliderImages.length;
+  const sliderAutoPlayInterval = 5000;
+  let sliderAutoPlayTimer;
+  let sliderProgressTimer;
+
+  const sliderImageData = [
+    { title: 'Mahsulot', description: 'JAMO Textile yuqori sifatli mahsulotlari' },
+    { title: 'Mahsulot', description: 'Zamonaviy dizayn va professional ishlov' },
+    { title: 'Mahsulot', description: 'Turli xil ranglar va modellar' },
+    { title: 'Mahsulot', description: 'Eksport sifatidagi trikotaj mahsulotlari' },
+    { title: 'Ishlab chiqarish', description: 'Zamonaviy pechat texnologiyasi' },
+    { title: 'Ishlab chiqarish', description: 'Professional bo\'yoq xonasi jarayoni' },
+    { title: 'Ishlab chiqarish', description: 'Yuqori sifatli pechat liniyasi' },
+    { title: 'Ishlab chiqarish', description: 'Sifat nazorati jarayoni' }
+  ];
+
+  document.getElementById('sliderTotalImages').textContent = sliderTotalImages;
+
+  function updateSliderImageInfo() {
+    const info = sliderImageData[sliderCurrentIndex];
+    document.getElementById('sliderImageTitle').textContent = info.title;
+    document.getElementById('sliderImageDescription').textContent = info.description;
+  }
+
+  function updateSliderGallery() {
+    sliderImages.forEach((img, index) => {
+      img.classList.toggle('active', index === sliderCurrentIndex);
+    });
+
+    sliderThumbnails.forEach((thumb, index) => {
+      thumb.classList.toggle('active', index === sliderCurrentIndex);
+    });
+
+    document.getElementById('sliderCurrentImage').textContent = sliderCurrentIndex + 1;
+    updateSliderImageInfo();
+    resetSliderProgress();
+  }
+
+  window.changeSliderImage = function(direction) {
+    sliderCurrentIndex = (sliderCurrentIndex + direction + sliderTotalImages) % sliderTotalImages;
+    updateSliderGallery();
+    resetSliderAutoPlay();
+  }
+
+  window.goToSliderImage = function(index) {
+    sliderCurrentIndex = index;
+    updateSliderGallery();
+    resetSliderAutoPlay();
+  }
+
+  function sliderAutoPlay() {
+    sliderCurrentIndex = (sliderCurrentIndex + 1) % sliderTotalImages;
+    updateSliderGallery();
+  }
+
+  function resetSliderAutoPlay() {
+    clearInterval(sliderAutoPlayTimer);
+    sliderAutoPlayTimer = setInterval(sliderAutoPlay, sliderAutoPlayInterval);
+  }
+
+  function resetSliderProgress() {
+    clearInterval(sliderProgressTimer);
+    const progressBar = document.getElementById('sliderProgressBar');
+    progressBar.style.width = '0%';
+    
+    let progress = 0;
+    sliderProgressTimer = setInterval(() => {
+      progress += 100 / (sliderAutoPlayInterval / 100);
+      progressBar.style.width = progress + '%';
+      if (progress >= 100) {
+        clearInterval(sliderProgressTimer);
+      }
+    }, 100);
+  }
+
+  sliderAutoPlayTimer = setInterval(sliderAutoPlay, sliderAutoPlayInterval);
+  resetSliderProgress();
+  updateSliderImageInfo();
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') changeSliderImage(-1);
+    if (e.key === 'ArrowRight') changeSliderImage(1);
+  });
+
+  let sliderTouchStartX = 0;
+  let sliderTouchEndX = 0;
+
+  const mainSlider = document.querySelector('.main-gallery-slider');
+  if (mainSlider) {
+    mainSlider.addEventListener('touchstart', e => {
+      sliderTouchStartX = e.changedTouches[0].screenX;
+    });
+
+    mainSlider.addEventListener('touchend', e => {
+      sliderTouchEndX = e.changedTouches[0].screenX;
+      handleSliderSwipe();
+    });
+  }
+
+  function handleSliderSwipe() {
+    if (sliderTouchEndX < sliderTouchStartX - 50) changeSliderImage(1);
+    if (sliderTouchEndX > sliderTouchStartX + 50) changeSliderImage(-1);
+  }
+})();
+</script>
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+   <!-- <section id="gallery" class="gallery">
       <div class="container">
         <h2 class="section-title" data-i18n="gallery.title">Galareya</h2>
         <div class="gallery-grid">
@@ -462,7 +837,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- News Section -->
     <section id="news" class="news">
