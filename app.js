@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     feature4: "Qulay narxlar"
                 },
                 children: {
-                    title: "Bolalar kiyimi",
-                    description: "Bolalar uchun xavfsiz va qulay kiyimlar",
+                    title: "Korparativ kiyimlar"
+                    description: "Xafsiz va qulay kiyimlar",
                     feature1: "Ekologik toza",
                     feature2: "Yumshoq materiallar",
                     feature3: "Rang-barang dizayn",
@@ -172,8 +172,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     feature4: "Доступные цены"
                 },
                 children: {
-                    title: "Детская одежда",
-                    description: "Безопасная и удобная одежда для детей",
+                    title: "Корпаративная одежда"
+                    description: "Безопасная и удобная одежда",
                     feature1: "Экологически чистая",
                     feature2: "Мягкие материалы",
                     feature3: "Яркий дизайн",
@@ -292,8 +292,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     feature4: "Affordable prices"
                 },
                 children: {
-                    title: "Children's Clothing",
-                    description: "Safe and comfortable clothing for children",
+                    title: "Corporate Clothing",
+                    description: "Safe and comfortable clothing",
                     feature1: "Eco-friendly",
                     feature2: "Soft materials",
                     feature3: "Colorful design",
