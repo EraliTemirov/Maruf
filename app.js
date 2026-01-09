@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     feature4: "Qulay narxlar"
                 },
                 children: {
-                    title: "Korparativ kiyimlar"
+                    title: "Korparativ kiyimlar",
                     description: "Xafsiz va qulay kiyimlar",
                     feature1: "Ekologik toza",
                     feature2: "Yumshoq materiallar",
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     feature4: "Доступные цены"
                 },
                 children: {
-                    title: "Корпаративная одежда"
+                    title: "Корпаративная одежда",
                     description: "Безопасная и удобная одежда",
                     feature1: "Экологически чистая",
                     feature2: "Мягкие материалы",
