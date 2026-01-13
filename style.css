@@ -1074,7 +1074,7 @@ a, a * {
 img {
     opacity: 1 !important;
 }
-.button {
+button {
     display: inline-block;
     padding: 14px 32px;
     font-family: Arial, sans-serif;
@@ -1087,7 +1087,7 @@ img {
     border: 1px solid #1f2a44;
     transition: all 0.3s ease;
 }
-.button:hover {
+button:hover {
     background-color: transparent;
     color: #1f2a44;
 }
