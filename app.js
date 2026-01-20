@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     title: "Korparativ kiyimlar",
                     description: "Xafsiz va qulay kiyimlar",
                     feature1: "Ekologik toza",
-                    feature2: "Yumshoq materiallar",
+                    feature2: "Chidamli materiallar",
                     feature3: "Rang-barang dizayn",
                     feature4: "Turli yoshlar uchun"
                 }
