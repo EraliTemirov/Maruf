@@ -389,7 +389,7 @@ body {
     border: none;
     border-radius: var(--radius-xl);
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
     transition: var(--transition-normal);
     text-decoration: none;
