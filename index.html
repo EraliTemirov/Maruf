@@ -753,14 +753,12 @@
 </style>
 
 <script>
-// Slider Galeriya JavaScript
-// ===== CAROUSEL GALLERY JAVASCRIPT =====
-
-// ===== CAROUSEL GALLERY - SILLIQ ANIMATSIYA (FIX) =====
+// ===== CAROUSEL GALLERY - AUTOPLAY + DINAMIK RASMLAR =====
 
 (function () {
   'use strict';
 
+  // ── DOM elementlar ───────────────────────────────────────
   const mainImage        = document.getElementById('mainImage');
   const mainImageTitle   = document.getElementById('mainImageTitle');
   const mainImageDesc    = document.getElementById('mainImageDescription');
@@ -771,57 +769,107 @@
   const totalImagesNum   = document.getElementById('totalImagesNum');
   const carouselProgress = document.getElementById('carouselProgress');
 
+  // ── Rasmlar soni — HTML ga qarab avtomatik aniqlanadi ────
+  // Yangi rasm qo'shsangiz faqat HTML ga thumbnail-item qo'shing,
+  // JS hech qanday o'zgartirishsiz o'zi topadi.
   const thumbnails  = document.querySelectorAll('.thumbnail-item');
   const totalImages = thumbnails.length;
-  let currentIndex  = 0;
-  let isAnimating   = false; // ikki marta click oldini olish
 
-  // ─── Init ───────────────────────────────────────────────
+  let currentIndex = 0;
+  let isAnimating  = false;
+
+  // ── AUTOPLAY sozlamalari ─────────────────────────────────
+  const AUTOPLAY_DELAY    = 4000; // har necha ms da o'zgaradi (4 sekund)
+  const PAUSE_AFTER_CLICK = 8000; // foydalanuvchi click qilsa necha ms pauza
+  let   autoplayTimer     = null;
+  let   pauseTimer        = null;
+
+  // ── Init ─────────────────────────────────────────────────
   function init() {
-    if (!mainImage || !thumbnailTrack) return;
-    totalImagesNum.textContent = totalImages;
+    if (!mainImage || !thumbnailTrack || totalImages === 0) return;
+
+    if (totalImagesNum) totalImagesNum.textContent = totalImages;
     updateCounter(0);
     updateProgress(0);
     addEventListeners();
     updateNavButtons();
+
+    // Autoplay boshlash
+    startAutoplay();
   }
 
-  // ─── Asosiy: rasmni silliq almashtirish ────────────────
-  function setActiveImage(index) {
+  // ════════════════════════════════════════════════════════
+  //  AUTOPLAY
+  // ════════════════════════════════════════════════════════
+
+  function startAutoplay() {
+    stopAutoplay(); // avvalgisini o'chir
+    autoplayTimer = setInterval(() => {
+      const next = (currentIndex + 1) % totalImages; // oxiridan keyin boshiga qaytadi
+      setActiveImage(next, false);
+    }, AUTOPLAY_DELAY);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  // Foydalanuvchi click qilganda: biroz pauza, keyin yana davom et
+  function pauseThenResume() {
+    stopAutoplay();
+    clearTimeout(pauseTimer);
+    pauseTimer = setTimeout(() => {
+      startAutoplay();
+    }, PAUSE_AFTER_CLICK);
+  }
+
+  // ════════════════════════════════════════════════════════
+  //  RASMNI O'ZGARTIRISH — silliq fade
+  // ════════════════════════════════════════════════════════
+
+  function setActiveImage(index, byUser) {
     if (index < 0 || index >= totalImages) return;
-    if (isAnimating) return;   // animatsiya tugamay yangi click kelsa — ignore
+    if (isAnimating) return;
     isAnimating = true;
+
+    // Foydalanuvchi qo'lda bosgan bo'lsa — avtopleyni pauza qil
+    if (byUser) pauseThenResume();
 
     const newThumb = thumbnails[index];
     const newSrc   = newThumb.querySelector('img').src;
 
-    // 1) Joriy rasmni FadeOut (opacity: 0)
+    // 1) FadeOut
     mainImage.style.opacity = '0';
 
     setTimeout(() => {
-      // 2) Rasm manbayini almashtir (ko'rinmas holda)
+      // 2) Rasm src ni almashtir (ko'rinmas holda)
       mainImage.src = newSrc;
-      mainImage.alt = newThumb.querySelector('img').alt;
+      mainImage.alt = newThumb.querySelector('img').alt || '';
 
-      // Rasm yuklanganda FadeIn boshlanadi
-      mainImage.onload = () => {
+      // 3) Rasm yuklanganda FadeIn
+      const fadeIn = () => {
         mainImage.style.opacity = '1';
         isAnimating = false;
       };
 
-      // Rasm allaqachon cache da bo'lsa onload ishlamasligi mumkin
       if (mainImage.complete) {
-        mainImage.style.opacity = '1';
-        isAnimating = false;
+        // Cache da — darhol ko'rsat
+        fadeIn();
+      } else {
+        mainImage.onload  = fadeIn;
+        mainImage.onerror = fadeIn; // xato bo'lsa ham bloklanib qolmasin
       }
 
-      // Ma'lumotni yangilaш
-      if (mainImageTitle) mainImageTitle.textContent = newThumb.dataset.title  || '';
-      if (mainImageDesc)  mainImageDesc.textContent  = newThumb.dataset.desc   || '';
+      // Ma'lumotlarni yangilash
+      if (mainImageTitle) mainImageTitle.textContent = newThumb.dataset.title || '';
+      if (mainImageDesc)  mainImageDesc.textContent  = newThumb.dataset.desc  || '';
 
-    }, 350); // fadeOut davomiyligi bilan mos
+    }, 350); // fadeOut bilan sinxron
 
-    // Thumbnail active
+    // Thumbnail active holati
     thumbnails.forEach(t => t.classList.remove('active'));
     newThumb.classList.add('active');
 
@@ -832,26 +880,26 @@
     updateNavButtons();
   }
 
-  // ─── Counter ────────────────────────────────────────────
+  // ── Counter ──────────────────────────────────────────────
   function updateCounter(index) {
     if (currentImageNum) currentImageNum.textContent = index + 1;
   }
 
-  // ─── Progress bar ───────────────────────────────────────
+  // ── Progress bar ─────────────────────────────────────────
   function updateProgress(index) {
     if (!carouselProgress) return;
     carouselProgress.style.width = ((index + 1) / totalImages * 100) + '%';
   }
 
-  // ─── Thumbnail ni ko'rinadigan joyga scroll ─────────────
+  // ── Thumbnail ko'rinsin deb scroll ───────────────────────
   function scrollToThumbnail(index) {
     const thumb = thumbnails[index];
     if (!thumb) return;
 
-    const trackLeft    = thumbnailTrack.scrollLeft;
-    const trackWidth   = thumbnailTrack.clientWidth;
-    const thumbLeft    = thumb.offsetLeft;
-    const thumbWidth   = thumb.offsetWidth;
+    const trackLeft  = thumbnailTrack.scrollLeft;
+    const trackWidth = thumbnailTrack.clientWidth;
+    const thumbLeft  = thumb.offsetLeft;
+    const thumbWidth = thumb.offsetWidth;
 
     if (thumbLeft < trackLeft) {
       thumbnailTrack.scrollTo({ left: thumbLeft - 10, behavior: 'smooth' });
@@ -863,14 +911,14 @@
     }
   }
 
-  // ─── Carousel prev/next ─────────────────────────────────
+  // ── Carousel lenta scroll (tugmalar) ─────────────────────
   function carouselScrollBy(direction) {
-    const step = thumbnailTrack.clientWidth * 0.7;
+    const step = thumbnailTrack.clientWidth * 0.75;
     thumbnailTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
     setTimeout(updateNavButtons, 400);
   }
 
-  // ─── Nav tugmalar disable/enable ────────────────────────
+  // ── Nav tugmalar holati ───────────────────────────────────
   function updateNavButtons() {
     if (!carouselPrev || !carouselNext) return;
     const max = thumbnailTrack.scrollWidth - thumbnailTrack.clientWidth;
@@ -878,34 +926,63 @@
     carouselNext.disabled = thumbnailTrack.scrollLeft >= max - 5 || max <= 0;
   }
 
-  // ─── Event listeners ────────────────────────────────────
+  // ════════════════════════════════════════════════════════
+  //  EVENT LISTENERS
+  // ════════════════════════════════════════════════════════
+
   function addEventListeners() {
 
-    // Thumbnail click
+    // Thumbnail bosish
     thumbnails.forEach((thumb, i) => {
-      thumb.addEventListener('click', () => setActiveImage(i));
+      thumb.addEventListener('click', () => setActiveImage(i, true));
     });
 
-    // Carousel tugmalari
-    if (carouselPrev) carouselPrev.addEventListener('click', () => carouselScrollBy(-1));
-    if (carouselNext) carouselNext.addEventListener('click', () => carouselScrollBy(1));
+    // Carousel lenta tugmalari
+    if (carouselPrev) carouselPrev.addEventListener('click', () => {
+      carouselScrollBy(-1);
+      pauseThenResume();
+    });
+    if (carouselNext) carouselNext.addEventListener('click', () => {
+      carouselScrollBy(1);
+      pauseThenResume();
+    });
 
-    // Track scroll — nav tugmalarni yangilash
+    // Scroll hodisasi — nav tugmalarni yangilash
     thumbnailTrack.addEventListener('scroll', updateNavButtons);
+
+    // Sichqon katta rasmga kirsa — autoplay to'xtatish
+    mainImage.addEventListener('mouseenter', stopAutoplay);
+    mainImage.addEventListener('mouseleave', startAutoplay);
 
     // Klaviatura
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft'  && currentIndex > 0)              setActiveImage(currentIndex - 1);
-      if (e.key === 'ArrowRight' && currentIndex < totalImages - 1) setActiveImage(currentIndex + 1);
+      if (e.key === 'ArrowLeft') {
+        setActiveImage((currentIndex - 1 + totalImages) % totalImages, true);
+      }
+      if (e.key === 'ArrowRight') {
+        setActiveImage((currentIndex + 1) % totalImages, true);
+      }
     });
 
-    // Touch swipe (katta rasm ustida)
+    // Touch swipe — katta rasm ustida (mobile)
     let tx = 0;
-    mainImage.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
-    mainImage.addEventListener('touchend',   e => {
+    mainImage.addEventListener('touchstart', e => {
+      tx = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    mainImage.addEventListener('touchend', e => {
       const dx = e.changedTouches[0].screenX - tx;
-      if (dx < -50 && currentIndex < totalImages - 1) setActiveImage(currentIndex + 1);
-      if (dx >  50 && currentIndex > 0)               setActiveImage(currentIndex - 1);
+      if (dx < -50) setActiveImage((currentIndex + 1) % totalImages, true);
+      if (dx >  50) setActiveImage((currentIndex - 1 + totalImages) % totalImages, true);
+    });
+
+    // Sahifa ko'rinmay qolsa (tab o'zgarsa) — autoplay to'xtat
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
     });
 
     // Resize
@@ -916,7 +993,7 @@
     });
   }
 
-  // ─── Start ──────────────────────────────────────────────
+  // ── Ishga tushirish ───────────────────────────────────────
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
