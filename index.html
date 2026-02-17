@@ -164,10 +164,10 @@
         animation: spin 1s linear infinite;
       }
       
-      @keyframes spin {
+    /* @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
-      }
+      }*/
       
       .loading-text {
         color: #64748B;
@@ -491,6 +491,8 @@
 <style>
 /* ===== YANGI CAROUSEL GALLERY STILLARI ===== */
 
+/* ===== CAROUSEL GALLERY - SILLIQ ANIMATSIYA (FIX) ===== */
+
 .carousel-gallery-container {
   margin-top: 60px;
   max-width: 1200px;
@@ -498,25 +500,37 @@
   margin-right: auto;
 }
 
-/* Katta rasm - yuqorida */
+/* ── Katta rasm ─────────────────────────────────────── */
 .main-display-image {
   position: relative;
   width: 100%;
   max-width: 900px;
-  margin: 0 auto 40px;
+  margin: 0 auto 20px;
   aspect-ratio: 16/9;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-  background: var(--primary-color);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  background: #0F172A;
 }
 
+/*
+  FIX: Avvalgi kodda "changing" class bilan ikki xil animatsiya
+  bir vaqtda ishlab "ikki marta sakrash" effekti berardi.
+  Endi faqat bitta silliq opacity transition.
+  Hech qanday @keyframes, hech qanday scale yoki transform yo'q.
+*/
 .main-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity 0.5s ease;
+
+  /* FAQAT opacity transition — sakrash yo'q */
+  opacity: 1;
+  transition: opacity 0.35s ease;
+
+  /* app.js dagi image loader opacity:0 ni bekor qilish */
+  opacity: 1 !important;
 }
 
 /* Rasm ma'lumoti */
@@ -525,74 +539,75 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
   color: white;
-  padding: 30px;
-  transform: translateY(0);
-  transition: transform 0.3s ease;
+  padding: 28px;
 }
 
 .main-image-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
   font-weight: 700;
 }
 
 .main-image-info p {
-  font-size: 1rem;
-  opacity: 0.9;
+  font-size: 0.95rem;
+  opacity: 0.88;
 }
 
-/* Progress bar */
+/* ── Progress bar ───────────────────────────────────── */
 .carousel-progress-bar {
   width: 100%;
   max-width: 900px;
   height: 4px;
-  background: rgba(15, 23, 42, 0.1);
+  background: rgba(15,23,42,0.1);
   border-radius: 3px;
   overflow: hidden;
-  margin: 0 auto 30px;
+  margin: 0 auto 28px;
 }
 
 .carousel-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-  width: 12.5%; /* 100% / 8 rasmlar = 12.5% */
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, #3B82F6, #F59E0B);
+  width: 12.5%;
+  transition: width 0.35s ease;
   border-radius: 3px;
 }
 
-/* Thumbnail Carousel Wrapper */
+/* ── Thumbnail wrapper ──────────────────────────────── */
 .thumbnail-carousel-wrapper {
   position: relative;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 60px; /* Tugmalar uchun joy */
+  padding: 0 58px;
 }
 
-/* Rasmlar lentasi */
+/* ── Thumbnail lenta ────────────────────────────────── */
 .thumbnail-carousel-track {
   display: flex;
-  gap: 15px;
-  overflow-x: hidden;
+  gap: 14px;
+  overflow-x: hidden;   /* scroll faqat JS orqali */
   scroll-behavior: smooth;
-  padding: 10px 0;
-  position: relative;
+  padding: 8px 0 12px;
 }
 
-/* Thumbnail item */
+/* ── Har bir thumbnail ──────────────────────────────── */
 .thumbnail-item {
   flex: 0 0 auto;
-  width: 150px;
+  width: 148px;
   height: 100px;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s ease;
   border: 3px solid transparent;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  opacity: 0.6;
-  position: relative;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+  opacity: 0.58;
+
+  /* Sakrash yo'q — faqat opacity + border */
+  transition: opacity 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.25s ease;
 }
 
 .thumbnail-item img {
@@ -600,237 +615,140 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s ease;
 }
 
 .thumbnail-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  opacity: 1;
+  opacity: 0.85;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.22);
 }
 
-.thumbnail-item:hover img {
-  transform: scale(1.05);
-}
-
-/* Active thumbnail */
 .thumbnail-item.active {
-  border-color: var(--accent-color);
-  transform: scale(1.1);
+  border-color: #F59E0B;
   opacity: 1;
-  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+  transform: scale(1.07);
+  box-shadow: 0 6px 18px rgba(245,158,11,0.38);
 }
 
-/* Navigatsiya tugmalari - faqat pastda */
+/* ── Navigatsiya tugmalari ──────────────────────────── */
 .carousel-nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: white;
-  border: none;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  border: none;
+  background: white;
+  color: #0F172A;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  z-index: 10;
-  color: var(--primary-color);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  z-index: 5;
 }
 
 .carousel-nav-btn:hover {
-  background: var(--accent-color);
+  background: #F59E0B;
   color: white;
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 6px 22px rgba(245,158,11,0.38);
+  transform: translateY(-50%) scale(1.08);
 }
 
 .carousel-nav-btn:active {
-  transform: translateY(-50%) scale(0.95);
+  transform: translateY(-50%) scale(0.96);
 }
 
-.carousel-nav-btn.prev {
-  left: 0;
-}
-
-.carousel-nav-btn.next {
-  right: 0;
-}
-
-/* Tugmalar disabled holatda */
 .carousel-nav-btn:disabled {
-  opacity: 0.3;
+  opacity: 0.28;
   cursor: not-allowed;
-  background: #f1f5f9;
+  pointer-events: none;
 }
 
-.carousel-nav-btn:disabled:hover {
-  background: #f1f5f9;
-  transform: translateY(-50%) scale(1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
+.carousel-nav-btn.prev { left: 0; }
+.carousel-nav-btn.next { right: 0; }
 
-/* Rasm hisoblash */
+/* ── Counter ────────────────────────────────────────── */
 .carousel-counter {
   text-align: center;
-  margin-top: 20px;
-  font-size: 18px;
-  color: var(--primary-color);
+  margin-top: 18px;
+  font-size: 17px;
+  color: #0F172A;
   font-weight: 600;
 }
 
 .carousel-counter #currentImageNum {
-  color: var(--accent-color);
-  font-size: 24px;
+  color: #F59E0B;
+  font-size: 22px;
   font-weight: 700;
 }
 
-/* ===== RESPONSIVE DIZAYN ===== */
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════ */
 
-/* Tablet (768px - 1023px) */
+/* Tablet */
 @media (max-width: 1023px) {
-  .main-display-image {
-    max-width: 95%;
-  }
-
+  .main-display-image,
   .carousel-progress-bar {
-    max-width: 95%;
+    max-width: 97%;
   }
-
   .thumbnail-carousel-wrapper {
-    max-width: 95%;
-    padding: 0 50px;
+    max-width: 97%;
+    padding: 0 52px;
   }
-
   .thumbnail-item {
-    width: 130px;
-    height: 90px;
-  }
-
-  .carousel-nav-btn {
-    width: 45px;
-    height: 45px;
+    width: 125px;
+    height: 86px;
   }
 }
 
-/* Mobile (< 768px) */
+/* Mobile */
 @media (max-width: 767px) {
-  .carousel-gallery-container {
-    margin-top: 40px;
-  }
+  .carousel-gallery-container { margin-top: 36px; }
 
   .main-display-image {
     max-width: 100%;
     border-radius: 12px;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
   }
 
-  .main-image-info {
-    padding: 20px;
-  }
+  .main-image-info { padding: 18px; }
+  .main-image-info h3 { font-size: 1.1rem; }
+  .main-image-info p  { font-size: 0.85rem; }
 
-  .main-image-info h3 {
-    font-size: 1.2rem;
-  }
-
-  .main-image-info p {
-    font-size: 0.9rem;
-  }
-
-  .carousel-progress-bar {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
+  .carousel-progress-bar { max-width: 100%; margin-bottom: 16px; }
 
   .thumbnail-carousel-wrapper {
     max-width: 100%;
-    padding: 0 45px;
+    padding: 0 46px;
   }
 
   .thumbnail-item {
-    width: 100px;
-    height: 70px;
-    gap: 10px;
+    width: 96px;
+    height: 66px;
   }
 
-  .carousel-nav-btn {
-    width: 40px;
-    height: 40px;
-  }
+  .thumbnail-carousel-track { gap: 10px; }
 
-  .carousel-nav-btn svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .carousel-counter {
-    font-size: 16px;
-    margin-top: 15px;
-  }
-
-  .carousel-counter #currentImageNum {
-    font-size: 20px;
-  }
+  .carousel-nav-btn { width: 40px; height: 40px; }
+  .carousel-nav-btn svg { width: 18px; height: 18px; }
 }
 
-/* Kichik mobile (< 480px) */
+/* Kichik mobile */
 @media (max-width: 479px) {
-  .thumbnail-carousel-wrapper {
-    padding: 0 40px;
-  }
-
-  .thumbnail-item {
-    width: 80px;
-    height: 60px;
-    border-radius: 8px;
-  }
-
-  .thumbnail-carousel-track {
-    gap: 10px;
-  }
-
-  .carousel-nav-btn {
-    width: 35px;
-    height: 35px;
-  }
-
-  .main-image-info h3 {
-    font-size: 1rem;
-  }
-
-  .main-image-info p {
-    font-size: 0.85rem;
-  }
+  .thumbnail-carousel-wrapper { padding: 0 40px; }
+  .thumbnail-item { width: 78px; height: 56px; border-radius: 8px; }
+  .thumbnail-carousel-track { gap: 8px; }
+  .carousel-nav-btn { width: 36px; height: 36px; }
 }
 
-/* Animatsiyalar */
-@keyframes fadeInImage {
-  from {
-    opacity: 0;
-    transform: scale(1.02);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.main-image.changing {
-  animation: fadeInImage 0.5s ease;
-}
-
-/* Touch feedback mobile uchun */
+/* Touch qurilmalar */
 @media (hover: none) {
-  .thumbnail-item:active {
-    transform: scale(0.95);
-  }
-
-  .carousel-nav-btn:active {
-    transform: translateY(-50%) scale(0.9);
-  }
+  .thumbnail-item:active { transform: scale(0.94); }
+  .carousel-nav-btn:active { transform: translateY(-50%) scale(0.9) !important; }
 }
 </style>
 
@@ -838,287 +756,167 @@
 // Slider Galeriya JavaScript
 // ===== CAROUSEL GALLERY JAVASCRIPT =====
 
-(function() {
+// ===== CAROUSEL GALLERY - SILLIQ ANIMATSIYA (FIX) =====
+
+(function () {
   'use strict';
 
-  // Elementlarni olish
-  const mainImage = document.getElementById('mainImage');
-  const mainImageTitle = document.getElementById('mainImageTitle');
-  const mainImageDescription = document.getElementById('mainImageDescription');
-  const thumbnailTrack = document.getElementById('thumbnailTrack');
-  const carouselPrev = document.getElementById('carouselPrev');
-  const carouselNext = document.getElementById('carouselNext');
-  const currentImageNum = document.getElementById('currentImageNum');
-  const totalImagesNum = document.getElementById('totalImagesNum');
+  const mainImage        = document.getElementById('mainImage');
+  const mainImageTitle   = document.getElementById('mainImageTitle');
+  const mainImageDesc    = document.getElementById('mainImageDescription');
+  const thumbnailTrack   = document.getElementById('thumbnailTrack');
+  const carouselPrev     = document.getElementById('carouselPrev');
+  const carouselNext     = document.getElementById('carouselNext');
+  const currentImageNum  = document.getElementById('currentImageNum');
+  const totalImagesNum   = document.getElementById('totalImagesNum');
   const carouselProgress = document.getElementById('carouselProgress');
 
-  // Barcha thumbnail itemlar
-  const thumbnails = document.querySelectorAll('.thumbnail-item');
+  const thumbnails  = document.querySelectorAll('.thumbnail-item');
   const totalImages = thumbnails.length;
+  let currentIndex  = 0;
+  let isAnimating   = false; // ikki marta click oldini olish
 
-  // Current states
-  let currentImageIndex = 0;
-  let currentScrollPosition = 0;
-
-  // Thumbnail item width + gap
-  const getThumbnailWidth = () => {
-    const thumbnail = thumbnails[0];
-    const computedStyle = window.getComputedStyle(thumbnail);
-    const width = thumbnail.offsetWidth;
-    const marginRight = parseFloat(computedStyle.marginRight) || 0;
-    const gap = 15; // CSS dan gap
-    return width + gap;
-  };
-
-  // Visible thumbnails count
-  const getVisibleThumbnailsCount = () => {
-    const containerWidth = thumbnailTrack.parentElement.offsetWidth - 120; // minus button widths
-    const thumbnailWidth = getThumbnailWidth();
-    return Math.floor(containerWidth / thumbnailWidth);
-  };
-
-  // Initialize
+  // ─── Init ───────────────────────────────────────────────
   function init() {
+    if (!mainImage || !thumbnailTrack) return;
     totalImagesNum.textContent = totalImages;
-    updateCarousel();
+    updateCounter(0);
+    updateProgress(0);
     addEventListeners();
-    updateNavigationButtons();
+    updateNavButtons();
   }
 
-  // Event listeners
-  function addEventListeners() {
-    // Thumbnail click
-    thumbnails.forEach((thumbnail, index) => {
-      thumbnail.addEventListener('click', () => {
-        setActiveImage(index);
-      });
-    });
-
-    // Navigation buttons
-    carouselPrev.addEventListener('click', scrollPrev);
-    carouselNext.addEventListener('click', scrollNext);
-
-    // Keyboard navigation
-    document.addEventListener('keydown', handleKeyboard);
-
-    // Window resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        updateNavigationButtons();
-      }, 250);
-    });
-
-    // Touch swipe on main image (mobile)
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    mainImage.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-
-    mainImage.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    });
-
-    function handleSwipe() {
-      if (touchEndX < touchStartX - 50) {
-        // Swipe left - next image
-        if (currentImageIndex < totalImages - 1) {
-          setActiveImage(currentImageIndex + 1);
-        }
-      }
-      if (touchEndX > touchStartX + 50) {
-        // Swipe right - prev image
-        if (currentImageIndex > 0) {
-          setActiveImage(currentImageIndex - 1);
-        }
-      }
-    }
-  }
-
-  // Set active image
+  // ─── Asosiy: rasmni silliq almashtirish ────────────────
   function setActiveImage(index) {
     if (index < 0 || index >= totalImages) return;
+    if (isAnimating) return;   // animatsiya tugamay yangi click kelsa — ignore
+    isAnimating = true;
 
-    currentImageIndex = index;
+    const newThumb = thumbnails[index];
+    const newSrc   = newThumb.querySelector('img').src;
 
-    // Remove active class from all
-    thumbnails.forEach(thumb => thumb.classList.remove('active'));
+    // 1) Joriy rasmni FadeOut (opacity: 0)
+    mainImage.style.opacity = '0';
 
-    // Add active class to current
-    const activeThumbnail = thumbnails[index];
-    activeThumbnail.classList.add('active');
-
-    // Update main image with fade effect
-    mainImage.classList.add('changing');
-    
     setTimeout(() => {
-      mainImage.src = activeThumbnail.querySelector('img').src;
-      mainImage.alt = activeThumbnail.querySelector('img').alt;
-      
-      // Update info
-      mainImageTitle.textContent = activeThumbnail.dataset.title;
-      mainImageDescription.textContent = activeThumbnail.dataset.desc;
-      
-      mainImage.classList.remove('changing');
-    }, 250);
+      // 2) Rasm manbayini almashtir (ko'rinmas holda)
+      mainImage.src = newSrc;
+      mainImage.alt = newThumb.querySelector('img').alt;
 
-    // Update counter
-    currentImageNum.textContent = index + 1;
+      // Rasm yuklanganda FadeIn boshlanadi
+      mainImage.onload = () => {
+        mainImage.style.opacity = '1';
+        isAnimating = false;
+      };
 
-    // Update progress bar
-    const progressPercent = ((index + 1) / totalImages) * 100;
-    carouselProgress.style.width = progressPercent + '%';
+      // Rasm allaqachon cache da bo'lsa onload ishlamasligi mumkin
+      if (mainImage.complete) {
+        mainImage.style.opacity = '1';
+        isAnimating = false;
+      }
 
-    // Scroll to make thumbnail visible
+      // Ma'lumotni yangilaш
+      if (mainImageTitle) mainImageTitle.textContent = newThumb.dataset.title  || '';
+      if (mainImageDesc)  mainImageDesc.textContent  = newThumb.dataset.desc   || '';
+
+    }, 350); // fadeOut davomiyligi bilan mos
+
+    // Thumbnail active
+    thumbnails.forEach(t => t.classList.remove('active'));
+    newThumb.classList.add('active');
+
+    currentIndex = index;
+    updateCounter(index);
+    updateProgress(index);
     scrollToThumbnail(index);
-
-    // Update navigation buttons
-    updateNavigationButtons();
+    updateNavButtons();
   }
 
-  // Scroll to thumbnail
+  // ─── Counter ────────────────────────────────────────────
+  function updateCounter(index) {
+    if (currentImageNum) currentImageNum.textContent = index + 1;
+  }
+
+  // ─── Progress bar ───────────────────────────────────────
+  function updateProgress(index) {
+    if (!carouselProgress) return;
+    carouselProgress.style.width = ((index + 1) / totalImages * 100) + '%';
+  }
+
+  // ─── Thumbnail ni ko'rinadigan joyga scroll ─────────────
   function scrollToThumbnail(index) {
-    const thumbnailWidth = getThumbnailWidth();
-    const visibleCount = getVisibleThumbnailsCount();
-    const containerWidth = thumbnailTrack.parentElement.offsetWidth - 120;
+    const thumb = thumbnails[index];
+    if (!thumb) return;
 
-    // Calculate which "page" the thumbnail is on
-    const page = Math.floor(index / visibleCount);
-    const scrollPosition = page * containerWidth;
+    const trackLeft    = thumbnailTrack.scrollLeft;
+    const trackWidth   = thumbnailTrack.clientWidth;
+    const thumbLeft    = thumb.offsetLeft;
+    const thumbWidth   = thumb.offsetWidth;
 
-    thumbnailTrack.scrollTo({
-      left: scrollPosition,
-      behavior: 'smooth'
-    });
-
-    currentScrollPosition = page;
-  }
-
-  // Scroll prev (carousel navigation)
-  function scrollPrev() {
-    const visibleCount = getVisibleThumbnailsCount();
-    const newIndex = Math.max(0, currentImageIndex - visibleCount);
-    
-    currentScrollPosition = Math.max(0, currentScrollPosition - 1);
-    
-    const containerWidth = thumbnailTrack.parentElement.offsetWidth - 120;
-    const scrollPosition = currentScrollPosition * containerWidth;
-
-    thumbnailTrack.scrollTo({
-      left: scrollPosition,
-      behavior: 'smooth'
-    });
-
-    updateNavigationButtons();
-  }
-
-  // Scroll next (carousel navigation)
-  function scrollNext() {
-    const visibleCount = getVisibleThumbnailsCount();
-    const thumbnailWidth = getThumbnailWidth();
-    const maxScroll = thumbnailTrack.scrollWidth - thumbnailTrack.parentElement.offsetWidth + 120;
-    
-    currentScrollPosition += 1;
-    
-    const containerWidth = thumbnailTrack.parentElement.offsetWidth - 120;
-    const scrollPosition = Math.min(maxScroll, currentScrollPosition * containerWidth);
-
-    thumbnailTrack.scrollTo({
-      left: scrollPosition,
-      behavior: 'smooth'
-    });
-
-    updateNavigationButtons();
-  }
-
-  // Update navigation buttons state
-  function updateNavigationButtons() {
-    const maxScroll = thumbnailTrack.scrollWidth - thumbnailTrack.clientWidth;
-    const currentScroll = thumbnailTrack.scrollLeft;
-
-    // Disable prev button if at start
-    if (currentScroll <= 10) {
-      carouselPrev.disabled = true;
-    } else {
-      carouselPrev.disabled = false;
-    }
-
-    // Disable next button if at end
-    if (currentScroll >= maxScroll - 10) {
-      carouselNext.disabled = true;
-    } else {
-      carouselNext.disabled = false;
-    }
-
-    // If all thumbnails fit, disable both buttons
-    if (thumbnailTrack.scrollWidth <= thumbnailTrack.clientWidth) {
-      carouselPrev.disabled = true;
-      carouselNext.disabled = true;
+    if (thumbLeft < trackLeft) {
+      thumbnailTrack.scrollTo({ left: thumbLeft - 10, behavior: 'smooth' });
+    } else if (thumbLeft + thumbWidth > trackLeft + trackWidth) {
+      thumbnailTrack.scrollTo({
+        left: thumbLeft + thumbWidth - trackWidth + 10,
+        behavior: 'smooth'
+      });
     }
   }
 
-  // Keyboard navigation
-  function handleKeyboard(e) {
-    if (e.key === 'ArrowLeft') {
-      if (currentImageIndex > 0) {
-        setActiveImage(currentImageIndex - 1);
-      }
-    } else if (e.key === 'ArrowRight') {
-      if (currentImageIndex < totalImages - 1) {
-        setActiveImage(currentImageIndex + 1);
-      }
-    }
+  // ─── Carousel prev/next ─────────────────────────────────
+  function carouselScrollBy(direction) {
+    const step = thumbnailTrack.clientWidth * 0.7;
+    thumbnailTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
+    setTimeout(updateNavButtons, 400);
   }
 
-  // Update carousel (on resize, etc.)
-  function updateCarousel() {
-    updateNavigationButtons();
+  // ─── Nav tugmalar disable/enable ────────────────────────
+  function updateNavButtons() {
+    if (!carouselPrev || !carouselNext) return;
+    const max = thumbnailTrack.scrollWidth - thumbnailTrack.clientWidth;
+    carouselPrev.disabled = thumbnailTrack.scrollLeft <= 5;
+    carouselNext.disabled = thumbnailTrack.scrollLeft >= max - 5 || max <= 0;
   }
 
-  // Auto-play (optional - uncomment if needed)
- 
-  let autoplayTimer;
-  const autoplayInterval = 5000; // 5 seconds
+  // ─── Event listeners ────────────────────────────────────
+  function addEventListeners() {
 
-  function startAutoplay() {
-    autoplayTimer = setInterval(() => {
-      const nextIndex = (currentImageIndex + 1) % totalImages;
-      setActiveImage(nextIndex);
-    }, autoplayInterval);
-  }
-
-  function stopAutoplay() {
-    clearInterval(autoplayTimer);
-  }
-
-  // Start autoplay on load
-  startAutoplay();
-
-  // Stop autoplay on user interaction
-  thumbnails.forEach(thumb => {
-    thumb.addEventListener('click', () => {
-      stopAutoplay();
-      // Restart after 10 seconds
-      setTimeout(startAutoplay, 10000);
+    // Thumbnail click
+    thumbnails.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => setActiveImage(i));
     });
-  });
 
-  carouselPrev.addEventListener('click', () => {
-    stopAutoplay();
-    setTimeout(startAutoplay, 10000);
-  });
+    // Carousel tugmalari
+    if (carouselPrev) carouselPrev.addEventListener('click', () => carouselScrollBy(-1));
+    if (carouselNext) carouselNext.addEventListener('click', () => carouselScrollBy(1));
 
-  carouselNext.addEventListener('click', () => {
-    stopAutoplay();
-    setTimeout(startAutoplay, 10000);
-  });
- 
+    // Track scroll — nav tugmalarni yangilash
+    thumbnailTrack.addEventListener('scroll', updateNavButtons);
 
-  // Initialize on DOM ready
+    // Klaviatura
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft'  && currentIndex > 0)              setActiveImage(currentIndex - 1);
+      if (e.key === 'ArrowRight' && currentIndex < totalImages - 1) setActiveImage(currentIndex + 1);
+    });
+
+    // Touch swipe (katta rasm ustida)
+    let tx = 0;
+    mainImage.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
+    mainImage.addEventListener('touchend',   e => {
+      const dx = e.changedTouches[0].screenX - tx;
+      if (dx < -50 && currentIndex < totalImages - 1) setActiveImage(currentIndex + 1);
+      if (dx >  50 && currentIndex > 0)               setActiveImage(currentIndex - 1);
+    });
+
+    // Resize
+    let rt;
+    window.addEventListener('resize', () => {
+      clearTimeout(rt);
+      rt = setTimeout(updateNavButtons, 250);
+    });
+  }
+
+  // ─── Start ──────────────────────────────────────────────
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
