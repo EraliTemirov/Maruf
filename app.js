@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hero: {
                 title: "JAMO TEXTILE",
                 subtitle: "Paxtadan brendgacha – biz trikotajni san’at darajasiga olib chiqamiz.",
-                cta: "Bog'lanish"
+                cta: "O'tish"
             },
             about: {
                 title: "Kompaniya haqida",
@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 copyright: "© 2025 JAMO Textile. Barcha huquqlar himoyalangan."
             }
+            
         },
         ru: {
             meta: {
@@ -140,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hero: {
                 title: "JAMO TEXTILE",
                 subtitle: "От хлопка до бренда - мы выводим трикотаж на уровень искусства.",
-                cta: "Связаться"
+                cta: "Перейти"
             },
             about: {
                 title: "О компании",
@@ -260,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hero: {
                 title: "JAMO TEXTILE",
                 subtitle: "From cotton to brands - we bring knitting to the level of art.",
-                cta: "Contact Us"
+                cta: "Learn More"
             },
             about: {
                 title: "About Company",

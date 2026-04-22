@@ -1237,3 +1237,381 @@ textarea:focus-visible {
   outline-offset: 4px;
   border-radius: 50%;
 }
+/* ═══════════════════════════════════════════════════════
+   HAMKORLAR (PARTNERS) SECTION
+═══════════════════════════════════════════════════════ */
+ 
+.partners-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+ 
+/* Background dekor */
+.partners-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+ 
+.partners-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+ 
+/* ─── Section Header ─────────────────────────────────── */
+ 
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+ 
+.section-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+ 
+/* Title underline */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), #F59E0B);
+  border-radius: 2px;
+}
+ 
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-top: 24px;
+  font-weight: 400;
+}
+ 
+/* ─── Partners Grid ─────────────────────────────────── */
+ 
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+ 
+/* ─── Partner Card ──────────────────────────────────── */
+ 
+.partner-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 160px;
+}
+ 
+/* Hover gradient background */
+.partner-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.03), rgba(245, 158, 11, 0.03));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+ 
+.partner-card:hover::before {
+  opacity: 1;
+}
+ 
+/* Hover effects */
+.partner-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+ 
+/* ─── Partner Logo ──────────────────────────────────── */
+ 
+.partner-logo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+ 
+.partner-logo img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  filter: grayscale(30%) opacity(0.85);
+  transition: all 0.4s ease;
+}
+ 
+.partner-card:hover .partner-logo img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.08);
+}
+ 
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+ 
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+  .partners-grid {
+    max-width: 1400px;
+    gap: 35px;
+  }
+ 
+  .partner-card {
+    height: 180px;
+    padding: 50px 35px;
+  }
+}
+ 
+/* Desktop (1024px - 1399px) */
+@media (max-width: 1399px) {
+  .partners-grid {
+    max-width: 1100px;
+  }
+}
+ 
+/* Tablet Large (900px - 1023px) */
+@media (max-width: 1023px) {
+  .partners-section {
+    padding: 80px 0;
+  }
+ 
+  .section-title {
+    font-size: 2.5rem;
+  }
+ 
+  .section-subtitle {
+    font-size: 1rem;
+  }
+ 
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+ 
+  .partner-card {
+    height: 140px;
+    padding: 35px 25px;
+  }
+}
+ 
+/* Tablet (768px - 899px) */
+@media (max-width: 899px) {
+  .partners-grid {
+    gap: 20px;
+  }
+ 
+  .partner-card {
+    height: 130px;
+    padding: 30px 20px;
+  }
+}
+ 
+/* Mobile Large (600px - 767px) */
+@media (max-width: 767px) {
+  .partners-section {
+    padding: 60px 0;
+  }
+ 
+  .section-header {
+    margin-bottom: 40px;
+  }
+ 
+  .section-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+ 
+  .section-subtitle {
+    font-size: 0.95rem;
+    padding: 0 20px;
+  }
+ 
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+ 
+  .partner-card {
+    height: 120px;
+    padding: 25px 18px;
+    border-radius: 12px;
+  }
+ 
+  .partner-card:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+ 
+/* Mobile (480px - 599px) */
+@media (max-width: 599px) {
+  .partners-grid {
+    gap: 16px;
+  }
+ 
+  .partner-card {
+    height: 110px;
+    padding: 20px 15px;
+  }
+}
+ 
+/* Mobile Small (< 480px) */
+@media (max-width: 479px) {
+  .partners-section {
+    padding: 50px 0;
+  }
+ 
+  .section-title {
+    font-size: 1.75rem;
+  }
+ 
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+ 
+  .partners-grid {
+    gap: 14px;
+  }
+ 
+  .partner-card {
+    height: 100px;
+    padding: 18px 12px;
+    border-radius: 10px;
+  }
+ 
+  .partner-logo img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
+ 
+/* ─── Touch devices ─────────────────────────────────── */
+ 
+@media (hover: none) {
+  .partner-card:active {
+    transform: scale(0.98);
+  }
+ 
+  .partner-card:hover {
+    transform: none;
+  }
+}
+ 
+/* ─── Animatsiya - scroll da paydo bo'lishi ──────────── */
+ 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+.partner-card {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+ 
+/* Har bir card biroz kechikib chiqadi */
+.partner-card:nth-child(1) { animation-delay: 0.1s; }
+.partner-card:nth-child(2) { animation-delay: 0.2s; }
+.partner-card:nth-child(3) { animation-delay: 0.3s; }
+.partner-card:nth-child(4) { animation-delay: 0.4s; }
+.partner-card:nth-child(5) { animation-delay: 0.5s; }
+.partner-card:nth-child(6) { animation-delay: 0.6s; }
+.partner-card:nth-child(7) { animation-delay: 0.7s; }
+.partner-card:nth-child(8) { animation-delay: 0.8s; }
+ 
+/* ─── Dark mode support (agar kerak bo'lsa) ──────────── */
+ 
+@media (prefers-color-scheme: dark) {
+  .partners-section {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  }
+ 
+  .section-title {
+    color: white;
+  }
+ 
+  .section-subtitle {
+    color: #94a3b8;
+  }
+ 
+  .partner-card {
+    background: #334155;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+ 
+  .partner-card:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+}
+ 
+/* ─── Print styles ───────────────────────────────────── */
+ 
+@media print {
+  .partners-section {
+    background: white;
+    padding: 40px 0;
+  }
+ 
+  .partner-card {
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+    break-inside: avoid;
+  }
+ 
+  .partner-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+ 
