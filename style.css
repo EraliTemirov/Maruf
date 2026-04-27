@@ -642,73 +642,6 @@ body {
     font-size: 1rem;
 }
 
-/* Gallery Section */
-.gallery {
-    padding: var(--space-24) 0;
-    background: var(--bg-secondary);
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-    margin-top: var(--space-16);
-}
-
-@media (min-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .gallery-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-.gallery-item {
-    height: 250px;
-    border-radius: var(--radius-xl);
-    cursor: pointer;
-    transition: var(--transition-normal);
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-slow);
-}
-
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    color: var(--text-white);
-    padding: var(--space-4);
-    transform: translateY(100%);
-    transition: var(--transition-normal);
-    font-weight: 600;
-}
-
-.gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
-}
-
-.gallery-item:hover {
-    transform: scale(1.03);
-    box-shadow: var(--shadow-xl);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
 
 /* News Section */
 .news {
@@ -1614,5 +1547,457 @@ textarea:focus-visible {
  
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
 
+/* ===== CAROUSEL GALLERY - SILLIQ ANIMATSIYA ===== */
 
+.carousel-gallery-container {
+  margin-top: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Katta rasm ─────────────────────────────────────── */
+.main-display-image {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 20px;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  background: #0F172A;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+/* Rasm ma'lumoti */
+.main-image-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  color: white;
+  padding: 28px;
+}
+
+.main-image-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.main-image-info p {
+  font-size: 0.95rem;
+  opacity: 0.88;
+}
+
+/* ── Progress bar ───────────────────────────────────── */
+.carousel-progress-bar {
+  width: 100%;
+  max-width: 900px;
+  height: 4px;
+  background: rgba(15,23,42,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 auto 28px;
+}
+
+.carousel-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3B82F6, #F59E0B);
+  width: 12.5%;
+  transition: width 0.35s ease;
+  border-radius: 3px;
+}
+
+/* ── Thumbnail wrapper ──────────────────────────────── */
+.thumbnail-carousel-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 58px;
+}
+
+/* ── Thumbnail lenta ────────────────────────────────── */
+.thumbnail-carousel-track {
+  display: flex;
+  gap: 14px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 8px 0 12px;
+}
+
+/* ── Har bir thumbnail ──────────────────────────────── */
+.thumbnail-item {
+  flex: 0 0 auto;
+  width: 148px;
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid transparent;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+  opacity: 0.58;
+  transition: opacity 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.25s ease;
+}
+
+.thumbnail-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbnail-item:hover {
+  opacity: 0.85;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+}
+
+.thumbnail-item.active {
+  border-color: #F59E0B;
+  opacity: 1;
+  transform: scale(1.07);
+  box-shadow: 0 6px 18px rgba(245,158,11,0.38);
+}
+
+/* ── Navigatsiya tugmalari ──────────────────────────── */
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  color: #0F172A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  z-index: 5;
+}
+
+.carousel-nav-btn:hover {
+  background: #F59E0B;
+  color: white;
+  box-shadow: 0 6px 22px rgba(245,158,11,0.38);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-nav-btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.carousel-nav-btn:disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.carousel-nav-btn.prev { left: 0; }
+.carousel-nav-btn.next { right: 0; }
+
+/* ── Counter ────────────────────────────────────────── */
+.carousel-counter {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 17px;
+  color: #0F172A;
+  font-weight: 600;
+}
+
+.carousel-counter #currentImageNum {
+  color: #F59E0B;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1023px) {
+  .main-display-image,
+  .carousel-progress-bar {
+    max-width: 97%;
+  }
+  .thumbnail-carousel-wrapper {
+    max-width: 97%;
+    padding: 0 52px;
+  }
+  .thumbnail-item {
+    width: 125px;
+    height: 86px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-gallery-container { margin-top: 36px; }
+  .main-display-image {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+  .main-image-info { padding: 18px; }
+  .main-image-info h3 { font-size: 1.1rem; }
+  .main-image-info p  { font-size: 0.85rem; }
+  .carousel-progress-bar { max-width: 100%; margin-bottom: 16px; }
+  .thumbnail-carousel-wrapper {
+    max-width: 100%;
+    padding: 0 46px;
+  }
+  .thumbnail-item {
+    width: 96px;
+    height: 66px;
+  }
+  .thumbnail-carousel-track { gap: 10px; }
+  .carousel-nav-btn { width: 40px; height: 40px; }
+  .carousel-nav-btn svg { width: 18px; height: 18px; }
+}
+
+@media (max-width: 479px) {
+  .thumbnail-carousel-wrapper { padding: 0 40px; }
+  .thumbnail-item { width: 78px; height: 56px; border-radius: 8px; }
+  .thumbnail-carousel-track { gap: 8px; }
+  .carousel-nav-btn { width: 36px; height: 36px; }
+}/* ===== CAROUSEL GALLERY - SILLIQ ANIMATSIYA ===== */
+
+.carousel-gallery-container {
+  margin-top: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Katta rasm ─────────────────────────────────────── */
+.main-display-image {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 20px;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  background: #0F172A;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+/* Rasm ma'lumoti */
+.main-image-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  color: white;
+  padding: 28px;
+}
+
+.main-image-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.main-image-info p {
+  font-size: 0.95rem;
+  opacity: 0.88;
+}
+
+/* ── Progress bar ───────────────────────────────────── */
+.carousel-progress-bar {
+  width: 100%;
+  max-width: 900px;
+  height: 4px;
+  background: rgba(15,23,42,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 auto 28px;
+}
+
+.carousel-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3B82F6, #F59E0B);
+  width: 12.5%;
+  transition: width 0.35s ease;
+  border-radius: 3px;
+}
+
+/* ── Thumbnail wrapper ──────────────────────────────── */
+.thumbnail-carousel-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 58px;
+}
+
+/* ── Thumbnail lenta ────────────────────────────────── */
+.thumbnail-carousel-track {
+  display: flex;
+  gap: 14px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 8px 0 12px;
+}
+
+/* ── Har bir thumbnail ──────────────────────────────── */
+.thumbnail-item {
+  flex: 0 0 auto;
+  width: 148px;
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid transparent;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+  opacity: 0.58;
+  transition: opacity 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.25s ease;
+}
+
+.thumbnail-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbnail-item:hover {
+  opacity: 0.85;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+}
+
+.thumbnail-item.active {
+  border-color: #F59E0B;
+  opacity: 1;
+  transform: scale(1.07);
+  box-shadow: 0 6px 18px rgba(245,158,11,0.38);
+}
+
+/* ── Navigatsiya tugmalari ──────────────────────────── */
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  color: #0F172A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  z-index: 5;
+}
+
+.carousel-nav-btn:hover {
+  background: #F59E0B;
+  color: white;
+  box-shadow: 0 6px 22px rgba(245,158,11,0.38);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-nav-btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.carousel-nav-btn:disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.carousel-nav-btn.prev { left: 0; }
+.carousel-nav-btn.next { right: 0; }
+
+/* ── Counter ────────────────────────────────────────── */
+.carousel-counter {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 17px;
+  color: #0F172A;
+  font-weight: 600;
+}
+
+.carousel-counter #currentImageNum {
+  color: #F59E0B;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1023px) {
+  .main-display-image,
+  .carousel-progress-bar {
+    max-width: 97%;
+  }
+  .thumbnail-carousel-wrapper {
+    max-width: 97%;
+    padding: 0 52px;
+  }
+  .thumbnail-item {
+    width: 125px;
+    height: 86px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-gallery-container { margin-top: 36px; }
+  .main-display-image {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+  .main-image-info { padding: 18px; }
+  .main-image-info h3 { font-size: 1.1rem; }
+  .main-image-info p  { font-size: 0.85rem; }
+  .carousel-progress-bar { max-width: 100%; margin-bottom: 16px; }
+  .thumbnail-carousel-wrapper {
+    max-width: 100%;
+    padding: 0 46px;
+  }
+  .thumbnail-item {
+    width: 96px;
+    height: 66px;
+  }
+  .thumbnail-carousel-track { gap: 10px; }
+  .carousel-nav-btn { width: 40px; height: 40px; }
+  .carousel-nav-btn svg { width: 18px; height: 18px; }
+}
+
+@media (max-width: 479px) {
+  .thumbnail-carousel-wrapper { padding: 0 40px; }
+  .thumbnail-item { width: 78px; height: 56px; border-radius: 8px; }
+  .thumbnail-carousel-track { gap: 8px; }
+  .carousel-nav-btn { width: 36px; height: 36px; }
+}
  
