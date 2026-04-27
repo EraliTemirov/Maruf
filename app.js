@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 home: "Bosh sahifa",
                 about: "Biz haqimizda",
                 products: "Mahsulotlar",
-                gallery: "Galareya",
+                gallery: "Galereya",
                 news: "Yangiliklar",
                 contact: "Bog'lanish"
             },
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             gallery: {
-                title: "Galareya",
+                title: "Galereya",
                 factory1: "Mahsulot",
                 factory2: "Mahsulot",
                 product1: "Mahsulot",
