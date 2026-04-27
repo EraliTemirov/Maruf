@@ -1365,10 +1365,7 @@ textarea:focus-visible {
   z-index: 1;
 }
  
-.partner-card:hover img {
- /* filter: brightness(0) invert(1) opacity(1);*/
-}
- 
+
 /* ═══════════════════════════════════════════════════════
    ANIMATIONS - Infinite Marquee
 ═══════════════════════════════════════════════════════ */

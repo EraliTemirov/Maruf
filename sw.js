@@ -1,27 +1,27 @@
 // Service Worker for JAMO Textile website
 // Version 1.0.0
 
-const CACHE_NAME = 'jamo-textile-v1';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/app.js',
-  '/image/company-background.jpg',
-  '/image/womens-clothing.jpg',
-  '/image/mens-clothing.jpg',
-  '/image/children-clothing.jpg',
-  '/image/company-team.jpg',
-  '/image/textile-patterns.jpg',
-  '/image/company-building.jpg',
-  '/image/quality-control.jpg',
-  '/image/manufacturing-process.jpg',
-  '/image/factory-exterior.jpg',
-  '/image/warehouse.jpg',
-  '/image/company-workers.jpg',
-  '/image/news-factory-opening.jpg',
-  '/image/news-exhibition.jpg'
-];
+//const CACHE_NAME = 'jamo-textile-v1';
+//const urlsToCache = [
+//  '/',
+//  '/index.html',
+//  '/style.css',
+//  '/app.js',
+//  '/image/company-background.jpg',
+ // '/image/womens-clothing.jpg',
+//  '/image/mens-clothing.jpg',
+//  '/image/children-clothing.jpg',
+//  '/image/company-team.jpg',
+//  '/image/textile-patterns.jpg',
+//  '/image/company-building.jpg',
+ // '/image/quality-control.jpg',
+ // '/image/manufacturing-process.jpg',
+  //'/image/factory-exterior.jpg',
+///  '/image/warehouse.jpg',
+//  '/image/company-workers.jpg',
+//  '/image/news-factory-opening.jpg',
+//  '/image/news-exhibition.jpg'
+//];
 
 // Install event - cache resources
 self.addEventListener('install', function(event) {
