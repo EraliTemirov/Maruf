@@ -1998,3 +1998,11 @@ textarea:focus-visible {
   .carousel-nav-btn { width: 36px; height: 36px; }
 }
  
+/* Contact Form Wrapper */
+.contact-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--space-16); /* Kartalarning yuqori qismidagi masofasi bilan bir xil qilingan */
+    width: 100%;
+}
