@@ -17,7 +17,7 @@ img {
     --secondary-color: #3B82F6;
     --secondary-light: #60A5FA;
     --secondary-dark: #1D4ED8;
-    --accent-color: #F59E0B;
+    --accent-color: #7e1331;
     --accent-light: #FCD34D;
     --accent-dark: #D97706;
     
@@ -35,7 +35,7 @@ img {
     --bg-dark: #0F172A;
     --bg-gradient-primary: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
     --bg-gradient-secondary: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
-    --bg-gradient-accent: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    --bg-gradient-accent: linear-gradient(135deg, #7e1331 0%, #D97706 100%);
     
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -383,7 +383,7 @@ body {
 }
 
 .cta-button {
-    background: var(--bg-gradient-accent);
+    background: #7e1331;
     color: var(--text-white);
     padding: var(--space-4) var(--space-8);
     border: none;
@@ -1235,7 +1235,7 @@ textarea:focus-visible {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-color), #F59E0B);
+  background: linear-gradient(90deg, var(--accent-color), #7e1331);
   border-radius: 2px;
 }
  
@@ -1610,7 +1610,7 @@ textarea:focus-visible {
 
 .carousel-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #3B82F6, #F59E0B);
+  background: linear-gradient(90deg, #3B82F6, #7e1331);
   width: 12.5%;
   transition: width 0.35s ease;
   border-radius: 3px;
@@ -1664,7 +1664,7 @@ textarea:focus-visible {
 }
 
 .thumbnail-item.active {
-  border-color: #F59E0B;
+  border-color: #7e1331;
   opacity: 1;
   transform: scale(1.07);
   box-shadow: 0 6px 18px rgba(245,158,11,0.38);
@@ -1691,7 +1691,7 @@ textarea:focus-visible {
 }
 
 .carousel-nav-btn:hover {
-  background: #F59E0B;
+  background: #7e1331;
   color: white;
   box-shadow: 0 6px 22px rgba(245,158,11,0.38);
   transform: translateY(-50%) scale(1.08);
@@ -1720,7 +1720,7 @@ textarea:focus-visible {
 }
 
 .carousel-counter #currentImageNum {
-  color: #F59E0B;
+  color: #7e1331;
   font-size: 22px;
   font-weight: 700;
 }
@@ -1836,7 +1836,7 @@ textarea:focus-visible {
 
 .carousel-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #3B82F6, #F59E0B);
+  background: linear-gradient(90deg, #3B82F6, #7e1331);
   width: 12.5%;
   transition: width 0.35s ease;
   border-radius: 3px;
@@ -1890,7 +1890,7 @@ textarea:focus-visible {
 }
 
 .thumbnail-item.active {
-  border-color: #F59E0B;
+  border-color: #7e1331;
   opacity: 1;
   transform: scale(1.07);
   box-shadow: 0 6px 18px rgba(245,158,11,0.38);
@@ -1917,7 +1917,7 @@ textarea:focus-visible {
 }
 
 .carousel-nav-btn:hover {
-  background: #F59E0B;
+  background: #7e1331;
   color: white;
   box-shadow: 0 6px 22px rgba(245,158,11,0.38);
   transform: translateY(-50%) scale(1.08);
@@ -1946,7 +1946,7 @@ textarea:focus-visible {
 }
 
 .carousel-counter #currentImageNum {
-  color: #F59E0B;
+  color: #7e1331;
   font-size: 22px;
   font-weight: 700;
 }
