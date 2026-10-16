@@ -1,0 +1,79 @@
+{
+  "name": "JAMO Textile Produce MChJ",
+  "shortName": "JAMO Textile",
+  "tagline": "Sifatli va zamonaviy korporativ kiyimlar ishlab chiqarish",
+  "experience": "10+ yillik to'qimachilik tajribasi",
+  "stats": {
+    "minOrder": "100 dona",
+    "monthlyCapacity": "15,000+",
+    "monthlyCapacityUnit": "dona tayyor kiyim",
+    "teamSize": "40+",
+    "teamDescription": "Professional tikuvchi, konstruktor va nazoratchi mutaxassislar",
+    "cottonPurity": "100%",
+    "cottonDescription": "Sof o'zbek paxtasi va ekologik xavfsiz to'qima",
+    "clientsCount": "50+",
+    "turnaroundDays": "5 - 12 ish kuni"
+  },
+  "machinery": [
+    {"brand": "Juki", "country": "Yaponiya", "purpose": "Avtomatlashtirilgan tezyurar tikuv liniyalari"},
+    {"brand": "Brother", "country": "Yaponiya", "purpose": "Tugma qadash va maxsus petlya dastgohlari"},
+    {"brand": "Tajima", "country": "Yaponiya", "purpose": "12-boshli mikro-aniqlikdagi 3D kashta komplekslari"}
+  ],
+  "certifications": [
+    "OEKO-TEX STANDARD 100",
+    "ISO 9001:2015",
+    "O'zDSt ISO Standartlari"
+  ],
+  "contacts": {
+    "primaryPhone": "+998 92 045 90 50",
+    "secondaryPhone": "+998 90 500 90 50",
+    "email": "jamotextile@gmail.com",
+    "businessEmail": "info@jamotextile.uz",
+    "telegramAdmin": "jamo_textile_admin",
+    "telegramChannel": "jamo_textile",
+    "instagram": "jamo_textile",
+    "address": "O'zbekiston Respublikasi, Toshkent shahri, Mustaqillik shoh ko'chasi, 107",
+    "landmark": "Mirzo Ulug'bek / Buyuk Ipak Yo'li transport chorrahasi",
+    "coordinates": "41.3259° N, 69.3233° E",
+    "workingHours": "Dushanba - Shanba: 09:00 - 18:00 (Yakshanba: Dam olish kuni)",
+    "yandexMapWidget": "https://yandex.uz/map-widget/v1/?ll=69.323188%2C41.325901&z=16&pt=69.323333,41.325935,pm2rdm",
+    "yandexMapDirect": "https://yandex.uz/maps/-/CXaSJW4v"
+  },
+  "workflowSteps": [
+    {
+      "step": 1,
+      "title": "Dizayn va namuna",
+      "desc": "Texnik chizma tasdiqlanib, 48 soat ichida birinchi master-namuna tikiladi."
+    },
+    {
+      "step": 2,
+      "title": "Lazerli bichuv",
+      "desc": "Mato dam oldirilgach, avtomat stollarda millimetr aniqlikda bichiladi."
+    },
+    {
+      "step": 3,
+      "title": "Konveyer tikuv",
+      "desc": "Juki va Brother liniyalarida ixtisoslashgan ustalar tomonidan biriktiriladi."
+    },
+    {
+      "step": 4,
+      "title": "Brendlash",
+      "desc": "Tajima dastgohlarida logotip, birka va maxsus printlar qadab chiqiladi."
+    },
+    {
+      "step": 5,
+      "title": "Qadoqlash va yetkazish",
+      "desc": "3 bosqichli tekshiruv, bug'lash, maxsus qutilarga qadoqlash va yetkazish."
+    }
+  ],
+  "partners": [
+    {"name": "KNAUF", "category": "Qurilish materiallari"},
+    {"name": "BUKA BOXING", "category": "Sport brendi & kiyim"},
+    {"name": "DINAY", "category": "Ichimliklar ishlab chiqarish"},
+    {"name": "BENNISON", "category": "HoReCa & Restoranlar"},
+    {"name": "SFAD GROUP", "category": "Logistika & Distribyutsiya"},
+    {"name": "TASHKENT CITY", "category": "Rieltorlik & Boshqaruv"},
+    {"name": "ARTEL GROUP", "category": "Maishiy texnika xoldingi"},
+    {"name": "UZBEKTELECOM", "category": "Telekommunikatsiya"}
+  ]
+}

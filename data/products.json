@@ -1,0 +1,317 @@
+[
+  {
+    "id": "polo-shirt",
+    "name": "Polo",
+    "category": "futbolkalar",
+    "categoryLabel": "Futbolkalar",
+    "fabric": "100% cotton",
+    "density": "220 g/m²",
+    "minOrder": "100 dona",
+    "leadTime": "5-10 ish kuni",
+    "season": "Bahor - Yoz",
+    "colors": [
+      {"name": "Burgundy", "hex": "#811433"},
+      {"name": "Navy Blue", "hex": "#072f43"},
+      {"name": "Black", "hex": "#1b1c1c"},
+      {"name": "White", "hex": "#ffffff"},
+      {"name": "Forest Green", "hex": "#2d4a3e"}
+    ],
+    "i18n": {
+      "ru": {
+        "name": "Поло", "fabric": "100% хлопок", "categoryLabel": "Футболки",
+        "minOrder": "100 шт.", "leadTime": "5-10 рабочих дней", "season": "Весна - Лето",
+        "description": "Премиальное корпоративное поло с классическим воротником для сотрудников компаний и офисных команд. Отводит пот и прекрасно сохраняет форму даже после стирки.",
+        "specs": {"yarn": "Высококачественная кардная/гребенная пряжа 30/1", "branding": "3D-вышивка или DTF-перенос на груди"}
+      },
+      "en": {
+        "name": "Polo", "fabric": "100% cotton", "categoryLabel": "T-shirts",
+        "minOrder": "100 pcs", "leadTime": "5-10 business days", "season": "Spring - Summer",
+        "description": "A premium corporate polo with a classic collar for company staff and office teams. It wicks away sweat and keeps its shape perfectly, even after washing.",
+        "specs": {"yarn": "High-quality carded/combed 30/1 yarn", "branding": "3D embroidery or DTF transfer on the chest"}
+      }
+    },
+    "image": "./assets/images/jaom-polo.jpg",
+    "description": "Kompaniya xodimlari va ofis jamoalari uchun klassik yoqali, premium korporativ polo. Ter ajratmas, shaklini yuvishdan keyin ham mukammal saqlaydi.",
+    "specs": {
+      "yarn": "Kard/Penye 30/1 yuqori sifatli taroqlangan ip",
+      "shrinkage": "Termo-sanforizatsiyalangan, kirishish koeffitsienti ≤ 1.5%",
+      "colorFastness": "ISO 105-C06 standarti bo'yicha 4-5 ball (60°C yuvishga chidamli)",
+      "branding": "Ko'krak qismiga 3D kashtasi yoki DTF transfer"
+    }
+  },
+  {
+    "id": "basic-tshirt",
+    "name": "T-Shirt",
+    "category": "futbolkalar",
+    "categoryLabel": "Futbolkalar",
+    "fabric": "100% cotton",
+    "density": "180 - 200 g/m²",
+    "minOrder": "100 dona",
+    "leadTime": "5-8 ish kuni",
+    "season": "Barcha fasllar",
+    "colors": [
+      {"name": "Black", "hex": "#1b1c1c"},
+      {"name": "White", "hex": "#ffffff"},
+      {"name": "Grey Melange", "hex": "#9e9e9e"},
+      {"name": "Burgundy", "hex": "#811433"},
+      {"name": "Royal Blue", "hex": "#1d4ed8"}
+    ],
+    "i18n": {
+      "ru": {
+        "name": "Футболка", "fabric": "100% хлопок", "categoryLabel": "Футболки",
+        "minOrder": "100 шт.", "leadTime": "5-8 рабочих дней", "season": "Все сезоны",
+        "description": "Унисекс-футболка из мягкой удобной ткани для повседневной работы в офисе, промо-мероприятий и корпоративных подарков. Изготовлена с усиленным швом воротника и боковыми швами.",
+        "specs": {"yarn": "100% гребенной хлопок (Single Jersey)", "branding": "Шелкография, DTF, принты на груди и спине"}
+      },
+      "en": {
+        "name": "T-Shirt", "fabric": "100% cotton", "categoryLabel": "T-shirts",
+        "minOrder": "100 pcs", "leadTime": "5-8 business days", "season": "All seasons",
+        "description": "A unisex T-shirt in soft, comfortable fabric for everyday office wear, promo events and corporate gifts. Made with a reinforced collar seam and side seams.",
+        "specs": {"yarn": "100% combed cotton (Single Jersey)", "branding": "Screen printing, DTF, chest and back prints"}
+      }
+    },
+    "image": "./assets/images/tshirtjamo.jpg",
+    "description": "Har kungi ofis, promo tadbirlar va korporativ sovg'alar uchun qulay yumshoq matoli uniseks futbolka. Mustahkamlangan yoqa choki va yon tikuvlar bilan tayyorlangan.",
+    "specs": {
+      "yarn": "100% Paxta Penye (Single Jersey)",
+      "shrinkage": "≤ 1.8% o'lcham barqarorligi",
+      "colorFastness": "ISO 105-C06 4-5 ball",
+      "branding": "Shelkografiya, DTF, ko'krak va orqa printlar"
+    }
+  },
+  {
+    "id": "hoodie",
+    "name": "Hoodie",
+    "category": "hudi",
+    "categoryLabel": "Xudi & Svitshot",
+    "fabric": "80% cotton, 20% poliester",
+    "density": "320 - 350 g/m²",
+    "minOrder": "100 dona",
+    "leadTime": "7-12 ish kuni",
+    "season": "Kuz - Qish - Bahor",
+    "colors": [
+      {"name": "Deep Grey", "hex": "#303031"},
+      {"name": "Burgundy", "hex": "#811433"},
+      {"name": "Black", "hex": "#1b1c1c"},
+      {"name": "Beige Linen", "hex": "#dcd0c0"},
+      {"name": "Emerald", "hex": "#1e3a2f"}
+    ],
+    "i18n": {
+      "ru": {
+        "name": "Худи", "fabric": "80% хлопок, 20% полиэстер", "categoryLabel": "Худи и свитшоты",
+        "minOrder": "100 шт.", "leadTime": "7-12 рабочих дней", "season": "Осень - Зима - Весна",
+        "description": "Современные корпоративные худи из плотного трикотажа с тёплым начёсом, удобным капюшоном и передним карманом. Самая популярная модель среди IT-компаний и молодых команд.",
+        "specs": {"yarn": "Трёхнитка диагонального плетения, мягкий начёс внутри", "branding": "Крупная вышивка на груди или плече, объёмная 3D-печать"}
+      },
+      "en": {
+        "name": "Hoodie", "fabric": "80% cotton, 20% polyester", "categoryLabel": "Hoodies & Sweatshirts",
+        "minOrder": "100 pcs", "leadTime": "7-12 business days", "season": "Autumn - Winter - Spring",
+        "description": "Modern corporate hoodies in thick fleece-backed fabric, with a comfortable hood and front pocket. The most popular model among IT companies and young teams.",
+        "specs": {"yarn": "3-thread diagonal knit with a soft brushed interior", "branding": "Large chest or shoulder embroidery, raised 3D print"}
+      }
+    },
+    "image": "./assets/images/hudijamo.jpg",
+    "description": "Issiq nachesli, qalin ipli matodan tikilgan, qulay kapyushonli va old cho'ntakli zamonaviy korporativ hudilar. IT kompaniyalar va yosh jamoalar orasida eng xaridorgir model.",
+    "specs": {
+      "yarn": "3-ipli diagonal to'qilish, ichi mayin naches",
+      "shrinkage": "Sanforizatsiyalangan mato, ≤ 1.2% qisqarish",
+      "colorFastness": "Aktiv bo'yash, yuvishda o'chmaydi",
+      "branding": "Katta o'lchamli ko'krak yoki yelka kashtasi, bo'rtma 3D bosma"
+    }
+  },
+  {
+    "id": "sweatshirt",
+    "name": "Sweatshirt",
+    "category": "hudi",
+    "categoryLabel": "Xudi & Svitshot",
+    "fabric": "95% cotton, 5% lyocell",
+    "density": "280 - 300 g/m²",
+    "minOrder": "100 dona",
+    "leadTime": "6-10 ish kuni",
+    "season": "Demisezon",
+    "colors": [
+      {"name": "Charcoal Grey", "hex": "#424242"},
+      {"name": "Navy", "hex": "#072f43"},
+      {"name": "Burgundy", "hex": "#811433"},
+      {"name": "White Cream", "hex": "#f5f3f3"}
+    ],
+    "i18n": {
+      "ru": {
+        "name": "Свитшот", "fabric": "95% хлопок, 5% лиоцелл", "categoryLabel": "Худи и свитшоты",
+        "minOrder": "100 шт.", "leadTime": "6-10 рабочих дней", "season": "Демисезон",
+        "description": "Классический свитшот с круглым вырезом, эластичными манжетами и низом в рубчик. Легко сочетается с любым корпоративным дресс-кодом и служит долгие годы.",
+        "specs": {"yarn": "Двухнитка с гладкой лицевой стороной, дышащая", "branding": "Минималистичная вышивка или металлическая гравированная бирка"}
+      },
+      "en": {
+        "name": "Sweatshirt", "fabric": "95% cotton, 5% lyocell", "categoryLabel": "Hoodies & Sweatshirts",
+        "minOrder": "100 pcs", "leadTime": "6-10 business days", "season": "Mid-season",
+        "description": "A classic crew-neck sweatshirt with elastic ribbed cuffs and hem. It goes with any corporate dress code and lasts for years.",
+        "specs": {"yarn": "2-thread knit with a smooth outer face, breathable", "branding": "Minimalist embroidery or an engraved metal tag"}
+      }
+    },
+    "image": "./assets/images/jamo-svitshott.jpg",
+    "description": "Yumaloq yoqali, elastik qovurg'ali manshet va etakli klassik svitshot. Har qanday korporativ kiyim kodi bilan oson uyg'unlashadi va uzoq yillar xizmat qiladi.",
+    "specs": {
+      "yarn": "2-ipli silliq tashqi sirt, mikropenetrativ nafas oluvchi",
+      "shrinkage": "≤ 1.5%",
+      "colorFastness": "ISO 105-C06 4-5 ball",
+      "branding": "Minimalistik kashida yoki metall gravirovkali yorliq"
+    }
+  },
+  {
+    "id": "cap",
+    "name": "Cap",
+    "category": "kepkalar",
+    "categoryLabel": "Kepkalar",
+    "fabric": "100% paxta",
+    "density": "260 g/m²",
+    "minOrder": "100 dona",
+    "leadTime": "5-8 ish kuni",
+    "season": "Barcha fasllar",
+    "colors": [
+      {"name": "Burgundy", "hex": "#811433"},
+      {"name": "Black", "hex": "#1b1c1c"},
+      {"name": "Navy Blue", "hex": "#072f43"},
+      {"name": "Khaki Sand", "hex": "#c2b280"},
+      {"name": "Pure White", "hex": "#ffffff"}
+    ],
+    "i18n": {
+      "ru": {
+        "name": "Кепка", "fabric": "100% хлопок", "categoryLabel": "Кепки",
+        "minOrder": "100 шт.", "leadTime": "5-8 рабочих дней", "season": "Все сезоны",
+        "description": "Шестипанельная бейсболка с жёстким каркасом спереди и регулятором с металлической застёжкой. Специально сконструирована для 3D-вышивки логотипа спереди.",
+        "specs": {"branding": "DTF, объёмная 3D-вышивка, надписи сбоку и сзади"}
+      },
+      "en": {
+        "name": "Cap", "fabric": "100% cotton", "categoryLabel": "Caps",
+        "minOrder": "100 pcs", "leadTime": "5-8 business days", "season": "All seasons",
+        "description": "A 6-panel baseball cap with a stiff structured front and a metal-buckle adjuster. Specially designed for a 3D embroidered logo on the front.",
+        "specs": {"branding": "DTF, raised 3D embroidery, side and back lettering"}
+      }
+    },
+    "image": "./assets/images/cap-img.jpg",
+    "description": "Old qismi qattiq karkas bilan mustahkamlangan, metall qisqichli regulyatorga ega 6 panelli beysbolka. Peshonadagi 3D vishivka logotip uchun maxsus konstruksiyalangan.",
+    "specs": {
+      "construction": "Strukturaviy 6 panel, mustahkam soyabon",
+      "closure": "Metall klyammerli paxta kamar",
+      "ventilation": "6 ta kashtali shamollatish teshiklari",
+      "branding": "DTF, 3D bo'rtma kashta, yon va orqa yozuvlar"
+    }
+  },
+  {
+    "id": "vest",
+    "name": "Jacket",
+    "category": "jiletkalar",
+    "categoryLabel": "Jiletkalar",
+    "fabric": "Sintepon",
+    "density": "Sintepon 180-200 g/m²",
+    "minOrder": "100 dona",
+    "leadTime": "7-12 ish kuni",
+    "season": "Kuz - Qish - Bahor",
+    "colors": [
+      {"name": "Black", "hex": "#1b1c1c"},
+      {"name": "Deep Navy", "hex": "#072f43"},
+      {"name": "Dark Burgundy", "hex": "#5e001f"},
+      {"name": "Steel Grey", "hex": "#5f5e5e"}
+    ],
+    "i18n": {
+      "ru": {
+        "name": "Жилет", "fabric": "Синтепон", "density": "Синтепон 180-200 g/m²", "categoryLabel": "Жилеты",
+        "minOrder": "100 шт.", "leadTime": "7-12 рабочих дней", "season": "Осень - Зима - Весна",
+        "description": "Лёгкий и тёплый жилет с водо- и ветронепроницаемым защитным слоем. Оснащён карманами на молнии, высоким воротником-стойкой и прочной подкладкой.",
+        "specs": {"branding": "Светоотражающий логотип или тонкий термотрансфер"}
+      },
+      "en": {
+        "name": "Vest", "fabric": "Synthetic padding", "density": "Padding 180-200 g/m²", "categoryLabel": "Vests",
+        "minOrder": "100 pcs", "leadTime": "7-12 business days", "season": "Autumn - Winter - Spring",
+        "description": "A light, warm vest with a water- and windproof protective layer. It has zip pockets, a high stand-up collar and a durable lining.",
+        "specs": {"branding": "Reflective logo or thin heat transfer"}
+      }
+    },
+    "image": "./assets/images/jiletka-img.jpg",
+    "description": "Suv va shamol o'tkazmaydigan himoya qatlamiga ega, yengil va issiq saqlovchi jiletka. Fermuarli cho'ntaklar, yuqori stoyka yoqa va mustahkam astar bilan jihozlangan.",
+    "specs": {
+      "shell": "Gidrofob singdirilgan Taslan matosi",
+      "insulation": "Premium silikonlashtirilgan sintepon 200 g/m²",
+      "hardware": "YKK / SBS metall va traktor fermuarlar",
+      "branding": "Reflektiv aks ettiruvchi logotip yoki yupqa termotransfer"
+    }
+  },
+  {
+    "id": "apron",
+    "name": "Apron",
+    "category": "workwear",
+    "categoryLabel": "Fartuk & Ish kiyimlari",
+    "fabric": "Jinsi diagonal",
+    "density": "240 - 280 g/m²",
+    "minOrder": "100 dona",
+    "leadTime": "5-8 ish kuni",
+    "season": "Barcha fasllar",
+    "colors": [
+      {"name": "Dark Tobacco", "hex": "#3b2800"},
+      {"name": "Black", "hex": "#1b1c1c"},
+      {"name": "Burgundy", "hex": "#811433"},
+      {"name": "Olive Green", "hex": "#354f3c"}
+    ],
+    "i18n": {
+      "ru": {
+        "name": "Фартук", "fabric": "Джинсовая саржа", "categoryLabel": "Фартуки и спецодежда",
+        "minOrder": "100 шт.", "leadTime": "5-8 рабочих дней", "season": "Все сезоны",
+        "description": "Прочный фартук для ресторанов, кофеен, отелей и поваров с элементами из натуральной кожи, медной фурнитурой и вместительными карманами для инструментов.",
+        "specs": {"branding": "Стойкая вышивка или DTF"}
+      },
+      "en": {
+        "name": "Apron", "fabric": "Denim twill", "categoryLabel": "Aprons & Workwear",
+        "minOrder": "100 pcs", "leadTime": "5-8 business days", "season": "All seasons",
+        "description": "A durable apron for restaurants, cafés, hotels and chefs, with genuine leather details, copper fittings and roomy tool pockets.",
+        "specs": {"branding": "Durable embroidery or DTF"}
+      }
+    },
+    "image": "./assets/images/fartuk-img.jpg",
+    "description": "Restoranlar, qahvaxonalar, mehmonxonalar va oshpazlar uchun tabiiy charm elementlar, mis fitinglar va keng asbob cho'ntaklari bilan jihozlangan chidamli fartuk.",
+    "specs": {
+      "fabric": "65% Paxta, 35% Polyester zich sarja (dog' yuqtirmas singdirma)",
+      "straps": "Yechiluvchi va sozlanuvchi mustahkam tasmalar",
+      "reinforcement": "Cho'ntak burchaklarida mis zaklyopkalar",
+      "branding": "Chidamli kashta yoki DTF"
+    }
+  },
+  {
+    "id": "eco-shopper",
+    "name": "Eco-shopper",
+    "category": "shopper",
+    "categoryLabel": "Eko-shopperlar",
+    "fabric": "Jinsi diagonal",
+    "density": "220 - 240 g/m²",
+    "minOrder": "100 dona",
+    "leadTime": "4-7 ish kuni",
+    "season": "Barcha fasllar",
+    "colors": [
+      {"name": "Natural Ecru", "hex": "#faf7f2"},
+      {"name": "Deep Black", "hex": "#1b1c1c"},
+      {"name": "Burgundy", "hex": "#811433"}
+    ],
+    "i18n": {
+      "ru": {
+        "name": "Эко-шоппер", "fabric": "Джинсовая саржа", "categoryLabel": "Эко-шопперы",
+        "minOrder": "100 шт.", "leadTime": "4-7 рабочих дней", "season": "Все сезоны",
+        "description": "Экологичные хлопковые сумки-шопперы с усиленными ручками для выставок, конференций и корпоративных мероприятий.",
+        "specs": {"branding": "Полноцветная шелкография или DTF-печать"}
+      },
+      "en": {
+        "name": "Eco-shopper", "fabric": "Denim twill", "categoryLabel": "Eco-shoppers",
+        "minOrder": "100 pcs", "leadTime": "4-7 business days", "season": "All seasons",
+        "description": "Eco-friendly cotton shopper bags with reinforced handles for exhibitions, conferences and corporate events.",
+        "specs": {"branding": "Full-colour screen printing or DTF print"}
+      }
+    },
+    "image": "./assets/images/shoppereko.jpg",
+    "description": "Ko'rgazmalar, konferensiyalar va korporativ tadbirlar uchun ekologik toza, mustahkamlangan tutqichli paxta matoli shopper sumkalar.",
+    "specs": {
+      "dimensions": "38 x 42 sm (tutqich uzunligi 65 sm)",
+      "loadCapacity": "15 kg gacha xavfsiz yuk ko'tarish",
+      "fabric": "100% o'zbek paxtasi, xlorlanmagan",
+      "branding": "To'liq rangli shelkografiya yoki DTF bosma"
+    }
+  }
+]

@@ -1,848 +1,958 @@
 <!DOCTYPE html>
-<html lang="uz">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="meta.title">JAMO Textile - Uzbekistonning eng yirik to'qimachilik kompaniyasi</title>
-    <meta name="description" data-i18n="meta.description" content="JAMO Textile - Uzbekistonning eng yirik to'qimachilik kompaniyasi. Yuqori sifatli mahsulotlar va zamonaviy texnologiyalar." />
-    <meta name="keywords" content="JAMO, Textile, to'qimachilik, kiyim, fabrika, O'zbekiston, Andijon" />
-    <meta name="author" content="JAMO Textile" />
-    <meta name="robots" content="index, follow" />
-    <link rel="icon" href="./image/favicon jamo.jpeg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7VMGYE7QHJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAMO Textile — sifatli va zamonaviy korporativ kiyimlar ishlab chiqaruvchi</title>
+  <meta name="description" content="JAMO Textile - O'zbekistondagi korporativ futbolka, hudi, kepka, jiletka va maxsus ish kiyimlari ishlab chiqarish korxonasi">
+  <meta name="theme-color" content="#811433">
 
-  gtag('config', 'G-7VMGYE7QHJ');
-</script>
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://jamo.uz/" />
-    <meta property="og:title" data-i18n="meta.title" content="JAMO Textile - Uzbekistonning eng yirik to'qimachilik kompaniyasi" />
-    <meta property="og:description" data-i18n="meta.description" content="JAMO Textile - Uzbekistonning eng yirik to'qimachilik kompaniyasi. Yuqori sifatli mahsulotlar va zamonaviy texnologiyalar." />
-    <meta property="og:image" content="https://jamo.uz/og-image.jpg" />
-    <meta property="og:locale" content="uz_UZ" />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://jamo.uz/" />
-    <meta property="twitter:title" data-i18n="meta.title" content="JAMO Textile - Uzbekistonning eng yirik to'qimachilik kompaniyasi" />
-    <meta property="twitter:description" data-i18n="meta.description" content="JAMO Textile - Uzbekistonning eng yirik to'qimachilik kompaniyasi. Yuqori sifatli mahsulotlar va zamonaviy texnologiyalar." />
-    <meta property="twitter:image" content="https://jamo.uz/twitter-image.jpg" />
-    
-    <!-- Additional SEO meta tags -->
-    <meta name="theme-color" content="#7e1331" />
-    <meta name="msapplication-TileColor" content="#7e1331" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="JAMO Textile" />
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://jamo.uz/" />
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="./manifest.json" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="./assets/logo/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/logo/favicon.png">
 
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Preload Inter font family -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" />    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="./style.css" as="style" />
-    <link rel="preload" href="./app.js" as="script" />
-    
-    <!-- Critical CSS - Inline to prevent FOUC -->
-    <style>
-      /* Critical CSS for initial load */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      html {
-        scroll-behavior: smooth;
-      }
-      a{
-        color: #7e1331;
-      }
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        line-height: 1.6;
-        color: #7e1331;
-        background-color: #FFFFFF;
-        overflow-x: hidden;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-      
-      body.fonts-loaded {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      }
-      
-      body.page-loaded {
-        opacity: 1;
-      }
-      
-      /* Critical header styles */
-      .header {
-        background: linear-gradient(135deg, #7e1331 0%, #1E293B 100%);
-        color:#7e1331;
-        padding: 1rem 0;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-      }
-      
-      .nav-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      .logo {
-        font-size: 1.875rem;
-        font-weight: 800;
-        text-decoration: none;
-        color: #FFFFFF;
-        letter-spacing: -0.025em;
-      }
-      
-      /* Critical hero styles */
-      .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #7e1331;
-        background: linear-gradient(135deg, #7e1331 0%, #7e1331 100%);
-        padding: 1rem;
-      }
-      
-      .hero-content {
-        max-width: 56rem;
-        margin: 0 auto;
-      }
-      
-      .hero-content h1 {
-        font-size: clamp(2.5rem, 8vw, 4.5rem);
-        font-weight: 800;
-        margin-bottom: 1.5rem;
-        line-height: 1.1;
-      }
-      
-      /* Loading spinner */
-      .loading-spinner {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-      
-      .spinner {
-        width: 40px;
-        height: 40px;
-        border: 4px solid #F1F5F9;
-        border-top: 4px solid #3B82F6;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-      
-    /* @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }*/
-      
-      .loading-text {
-        color: #64748B;
-        font-size: 0.875rem;
-        font-weight: 500;
-      }
-      
-      .page-loaded .loading-spinner {
-        display: none;
-      }
-      
-      /* Hide content until loaded */
-      body:not(.page-loaded) main {
-        visibility: hidden;
-      }
-      
-      body:not(.page-loaded) .header {
-        visibility: hidden;
-      }    .logo {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    width: fit-content; /* kenglik faqat JAMO kengligiga teng bo'ladi */
-    text-decoration: none;
-}
+  <!-- Google Fonts: Inter & Material Symbols Outlined -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
 
-.logo-main {
-    font-size: 32px;
-    font-weight: 700;
-   /* font-family: "Montserrat", sans-serif;*/
-    line-height: 1;
-    color: #7e1331;
-}
-
-.logo-sub {
-    font-size: 24px;
-    font-weight: 100; transform: scaleY(0.9);
-   /* font-family: "Montserrat", sans-serif;*/
-    margin-top: 0px;
-    width: 100%;            /* JAMO kengligi bilan teng bo'ladi */
-    text-align: center;
-    line-height: 1;
-}
-    </style>
-    
-    <!-- Load Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="./style.css" />
-    
-    <!-- Font loading script -->
-    <script>
-      // Font loading detection
-      if ('fonts' in document) {
-        document.fonts.ready.then(function() {
-          document.body.classList.add('fonts-loaded');
-        });
-      } else {
-        // Fallback for older browsers
-        setTimeout(function() {
-          document.body.classList.add('fonts-loaded');
-        }, 100);
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#5e001f",
+            "primary-container": "#811433",
+            "primary-fixed": "#ffd9dd",
+            "primary-fixed-dim": "#ffb2bc",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#ff8c9f",
+            "on-primary-fixed": "#400013",
+            "secondary": "#5f5e5e",
+            "secondary-container": "#e4e2e1",
+            "secondary-fixed": "#e4e2e1",
+            "tertiary": "#072f43",
+            "tertiary-container": "#23455b",
+            "tertiary-fixed": "#c8e6ff",
+            "on-tertiary": "#ffffff",
+            "background": "#fbf9f9",
+            "surface": "#fbf9f9",
+            "surface-bright": "#fbf9f9",
+            "surface-dim": "#dbdad9",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f5f3f3",
+            "surface-container": "#efeded",
+            "surface-container-high": "#e9e8e7",
+            "surface-container-highest": "#e3e2e2",
+            "on-surface": "#1b1c1c",
+            "on-surface-variant": "#574144",
+            "inverse-surface": "#303031",
+            "outline": "#8a7173",
+            "outline-variant": "#ddbfc2",
+            "accent-green": "#00A859",
+            "accent-gold": "#C5A059"
+          },
+          fontFamily: {
+            sans: ["Oswald", "sans-serif"],
+            "headline-lg": ["Oswald", "sans-serif"],
+            "display-hero": ["Oswald", "sans-serif"],
+            "numeric-data": ["Oswald", "sans-serif"]
+          },
+          spacing: {
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-xxl": "4rem"
+          }
+        }
       }
-      
-      // Page loading detection
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-          setTimeout(function() {
-            document.body.classList.add('page-loaded');
-          }, 50);
-        });
-      } else {
-        setTimeout(function() {
-          document.body.classList.add('page-loaded');
-        }, 50);
-      }
-      
-      // Resource loading detection
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          document.body.classList.add('page-loaded');
-        }, 100);
-      });
-    </script>
-  </head>
-  <body>
-    <!-- Loading spinner -->
-    <div class="loading-spinner">
-      <div class="spinner"></div>
-      <div class="loading-text">Yuklanmoqda...</div>
-    </div>
-    
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Asosiy kontentga o'tish</a>
-    
-    <!-- Header -->
-    <header class="header" role="banner">
-      <nav class="nav-container" role="navigation" aria-label="Asosiy navigatsiya">
-    <a href="#" class="logo">
-    <span class="logo-main">JAMO</span>
-    <span class="logo-sub">TEXTILE</span>
-</a>
+    };
+  </script>
 
-        <ul class="nav-menu" role="menubar">
-          <li role="none"><a href="#home" role="menuitem" data-i18n="nav.home">Bosh sahifa</a></li>
-          <li role="none"><a href="#about" role="menuitem" data-i18n="nav.about">Biz haqimizda</a></li>
-          <li role="none"><a href="#products" role="menuitem" data-i18n="nav.products">Mahsulotlar</a></li>
-          <li role="none"><a href="#gallery" role="menuitem" data-i18n="nav.gallery">Galereya</a></li>
-          <li role="none"><a href="#news" role="menuitem" data-i18n="nav.news">Yangiliklar</a></li>
-          <li role="none"><a href="#contact" role="menuitem" data-i18n="nav.contact">Bog'lanish</a></li>
-        </ul>
-        <div class="language-selector" role="group" aria-label="Til tanlash">
-          <a href="#" class="lang-btn active" data-lang="uz" aria-label="O'zbek tili tanlangan" aria-pressed="true">UZ</a>
-          <a href="#" class="lang-btn" data-lang="ru" aria-label="Rus tili" aria-pressed="false">RU</a>
-          <a href="#" class="lang-btn" data-lang="en" aria-label="Ingliz tili" aria-pressed="false">EN</a>
-        </div>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Mobil menyuni ochish" aria-expanded="false" aria-controls="nav-menu">☰</button>
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-background font-sans text-on-surface antialiased min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container/60 transition-all">
+    <div class="h-20 max-w-[1280px] mx-auto px-gutter flex items-center justify-between gap-space-md">
+      <!-- Logo -->
+      <a href="#bosh-sahifa" class="flex items-center gap-2 shrink-0 group">
+        <img src="./assets/logo/jamo_logo.svg" alt="JAMO Textile" class="h-10 w-auto object-contain transition-transform group-hover:scale-[1.02]">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-space-lg h-full">
+        <a href="#bosh-sahifa" class="nav-link h-full flex items-center text-label-md text-on-surface-variant hover:text-primary transition-colors py-2 active" data-i18n="nav_home">Bosh sahifa</a>
+        <a href="#katalog" class="nav-link h-full flex items-center text-label-md text-on-surface-variant hover:text-primary transition-colors py-2" data-i18n="nav_catalog">Katalog</a>
+        <a href="#biz-haqimizda" class="nav-link h-full flex items-center text-label-md text-on-surface-variant hover:text-primary transition-colors py-2" data-i18n="nav_about">Biz haqimizda</a>
+        <a href="#yangiliklar" class="nav-link h-full flex items-center text-label-md text-on-surface-variant hover:text-primary transition-colors py-2" data-i18n="nav_news">Yangiliklar</a>
+        <a href="#boglanish" class="nav-link h-full flex items-center text-label-md text-on-surface-variant hover:text-primary transition-colors py-2" data-i18n="nav_contact">Bog'lanish</a>
       </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <main id="main-content">
-      <section id="home" class="hero">
-  <div class="hero-content">
-    <h1 data-i18n="hero.title">JAMO TEXTILE</h1>
-    <p data-i18n="hero.subtitle">
-      Paxtadan brendgacha – biz trikotajni san'at darajasiga olib chiqamiz.
-    </p>
-    
-    <!-- YANGI - Social Links -->
-    <div class="hero-social-links">
-      <a href="https://www.instagram.com/jamo_textile/" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="social-link instagram"
-         aria-label="Instagram">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
+      <!-- Right Controls: Language Switcher & Quick Call -->
+      <div class="flex items-center gap-3 shrink-0">
+        <!-- Multi-language Toggle -->
+        <div class="flex items-center bg-surface-container-low p-1 rounded-lg border border-surface-container">
+          <button data-lang-btn="uz" type="button" class="px-2 py-0.5 rounded text-xs font-semibold uppercase transition-all bg-surface-container-lowest text-primary font-bold shadow-[0_1px_4px_rgba(0,0,0,0.06)]">UZ</button>
+          <button data-lang-btn="ru" type="button" class="px-2 py-0.5 rounded text-xs font-semibold uppercase text-on-surface-variant hover:text-on-surface transition-all">RU</button>
+          <button data-lang-btn="en" type="button" class="px-2 py-0.5 rounded text-xs font-semibold uppercase text-on-surface-variant hover:text-on-surface transition-all">EN</button>
+        </div>
+
+        <!-- Call CTA -->
+        <a href="tel:+998920459050" class="hidden sm:inline-flex items-center gap-1.5 bg-primary-container hover:bg-primary text-on-primary text-sm font-semibold px-4 py-2 rounded-lg transition-all shadow-sm active:scale-95">
+          <span class="material-symbols-outlined text-[18px]">call</span>
+          <span class="font-numeric-data hidden md:inline">+998 92 045 90 50</span>
+        </a>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" type="button" class="lg:hidden p-2 rounded-lg text-inverse-surface hover:bg-surface-container" aria-label="Menyu">
+          <span class="material-symbols-outlined text-[26px]">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mobile-backdrop" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <aside id="mobile-drawer" class="fixed top-0 right-0 h-full w-[280px] sm:w-[320px] bg-surface-container-lowest z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
+    <div class="flex items-center justify-between pb-6 border-b border-surface-container">
+      <img src="./assets/logo/jamo_logo.svg" alt="JAMO Textile" class="h-8 w-auto">
+      <button id="mobile-drawer-close" type="button" class="p-1 rounded-lg text-secondary hover:text-inverse-surface">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+
+    <nav class="flex flex-col gap-3 py-6">
+      <a href="#bosh-sahifa" class="mobile-nav-link text-base font-semibold text-inverse-surface hover:text-primary py-2 flex items-center gap-3" data-i18n="nav_home">
+        <span class="material-symbols-outlined text-primary text-[20px]">home</span> Bosh sahifa
       </a>
-
-      <a href="https://t.me/+998905009050" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="social-link telegram"
-         aria-label="Telegram">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-        </svg>
+      <a href="#katalog" class="mobile-nav-link text-base font-semibold text-inverse-surface hover:text-primary py-2 flex items-center gap-3" data-i18n="nav_catalog">
+        <span class="material-symbols-outlined text-primary text-[20px]">apparel</span> Katalog
       </a>
+      <a href="#biz-haqimizda" class="mobile-nav-link text-base font-semibold text-inverse-surface hover:text-primary py-2 flex items-center gap-3" data-i18n="nav_about">
+        <span class="material-symbols-outlined text-primary text-[20px]">info</span> Biz haqimizda
+      </a>
+      <!-- <a href="#fabrika" class="mobile-nav-link text-base font-semibold text-inverse-surface hover:text-primary py-2 flex items-center gap-3"> -->
+        <!-- <span class="material-symbols-outlined text-primary text-[20px]">precision_manufacturing</span> Fabrika
+      </a> -->
+      <a href="#yangiliklar" class="mobile-nav-link text-base font-semibold text-inverse-surface hover:text-primary py-2 flex items-center gap-3" data-i18n="nav_news">
+        <span class="material-symbols-outlined text-primary text-[20px]">newspaper</span> Yangiliklar
+      </a>
+      <a href="#boglanish" class="mobile-nav-link text-base font-semibold text-inverse-surface hover:text-primary py-2 flex items-center gap-3" data-i18n="nav_contact">
+        <span class="material-symbols-outlined text-primary text-[20px]">contact_support</span> Bog'lanish
+      </a>
+    </nav>
 
-      <a href="https://www.facebook.com/share/18G6ZE867Q/?mibextid=wwXIfr" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="social-link facebook"
-         aria-label="Facebook">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
+    <div class="mt-auto pt-6 border-t border-surface-container flex flex-col gap-3">
+      <a href="tel:+998920459050" class="inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary font-semibold py-2.5 rounded-lg text-center shadow-sm">
+        <span class="material-symbols-outlined text-[18px]">call</span>
+        <span>+998 92 045 90 50</span>
+      </a>
+      <a href="https://t.me/jamo_textile_admin" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-surface-container hover:bg-surface-container-high text-primary font-semibold py-2 rounded-lg text-center transition-colors">
+        <span class="material-symbols-outlined text-[18px]">send</span>
+        <span>Telegram orqali yozish</span>
       </a>
     </div>
-    <!-- Social Links tugadi -->
+  </aside>
+
+  <!-- MAIN PAGE WRAPPER -->
+  <main class="w-full pt-20 flex-1">
     
-  </div>
-</section>
+    <!-- WRAPPER FOR MAIN SECTIONS -->
+    <div id="main-sections">
+      
+      <!-- 1. HERO SECTION -->
+      <section id="bosh-sahifa" class="w-full bg-surface-container-low py-space-xl lg:py-space-xxl">
+        <div class="max-w-[1280px] mx-auto px-gutter">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+            <!-- Left Hero Content -->
+            <div class="lg:col-span-6 flex flex-col items-start">
+              <!-- <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest text-primary text-xs font-bold uppercase tracking-wider mb-4 border border-surface-container shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span>O'zbekistondagi Ishonchli Fabrika</span>
+              </div> -->
+
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-inverse-surface tracking-tight leading-[1.15] mb-space-md" data-i18n="hero_title">
+                Sifatli va zamonaviy korporativ kiyimlar ishlab chiqaruvchi
+              </h1>
+
+              <p class="text-base font-light sm:text-lg text-secondary mb-space-xl max-w-xl leading-relaxed" data-i18n="hero_subtitle">
+                Korxonalarga korporativ futbolka, hudi, kepka, jiletka va boshqa promo kiyimlarni yuqori sifatli matolardan tikib beramiz.
+              </p>
+
+              <!-- Hero Actions -->
+              <div class="flex flex-wrap items-center gap-3 mb-space-xl w-full sm:w-auto">
+                <a href="#katalog" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary font-semibold text-sm px-6 py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg active:scale-95 text-center">
+                  <span data-i18n="hero_btn_catalog">Katalog</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+                </a>
+                <a href="https://t.me/jamo_textile_admin" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-surface-container-lowest hover:bg-surface-container text-primary font-semibold text-sm px-6 py-3.5 rounded-lg border border-surface-container transition-all shadow-sm text-center">
+                  <span data-i18n="hero_btn_price">Narx olish</span>
+                </a>
+              </div>
+
+              <!-- Stat Strip -->
+              <!-- <div class="grid grid-cols-3 gap-space-md w-full pt-space-lg bg-surface-container-lowest/80 p-space-md rounded-xl shadow-sm border border-surface-container/60">
+                <div class="flex flex-col">
+                  <span class="text-xl sm:text-2xl font-bold text-primary">100 dona</span>
+                  <span class="text-xs sm:text-sm text-secondary" data-i18n="hero_stat_min">Minimal buyurtma</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-xl sm:text-2xl font-bold text-inverse-surface">15,000+</span>
+                  <span class="text-xs sm:text-sm text-secondary" data-i18n="hero_stat_capacity">Oylik quvvat</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-xl sm:text-2xl font-bold text-inverse-surface">100%</span>
+                  <span class="text-xs sm:text-sm text-secondary" data-i18n="hero_stat_cotton">Sof paxta</span>
+                </div>
+              </div> -->
+            </div>
+
+            <!-- Right Hero Visual Showcase -->
+            <div class="lg:col-span-6 relative">
+              <div class="relative bg-surface-container-lowest p-2 rounded-2xl shadow-xl overflow-hidden group border border-surface-container">
+                <img 
+                  src="./assets/images/jamotex.png" 
+                  alt="JAMO Textile fabrikasi ishlab chiqarish sexi" 
+                  class="w-full h-[380px] sm:h-[440px] lg:h-[400px] object-cover rounded-xl group-hover:scale-105 transition-transform duration-700"
+                >
+                <!-- <div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md p-4 rounded-xl border border-surface-container/80 shadow-lg flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+                      <span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+                    </span>
+                    <div>
+                      <p class="text-xs text-secondary uppercase font-bold tracking-wider">Texnologik Park</p>
+                      <p class="text-sm font-bold text-inverse-surface">Yapon uskunalari: Juki, Brother, Tajima</p>
+                    </div>
+                  </div>
+                  <span class="hidden sm:inline-block px-2.5 py-1 rounded bg-[#00A859]/10 text-[#00A859] font-bold text-xs uppercase">Faol</span>
+                </div> -->
+              </div>
+              <div class="absolute -top-6 -right-6 w-32 h-32 bg-primary-fixed-dim/40 rounded-full blur-3xl -z-10"></div>
+            </div>
+          </div>
         </div>
       </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title" data-i18n="about.title">Kompaniya haqida</h2>
-        <div class="about-grid">
-          <div>
-            <div class="about-text">
-              <p data-i18n="about.text1">
-                Jamo Textile – Sifat, Ishonch va Innovatsiya
-              </p>
-
-              <p data-i18n="about.text2">
-                Jamo Textile — bu O‘zbekistonning yetakchi trikotaj mahsulotlarini ishlab chiqaruvchi kompaniyalaridan biri bo‘lib, o‘z faoliyatini xalqaro sifat standartlariga asoslangan holda olib boradi. Kompaniyaning asosiy yo‘nalishi — turli sohalar uchun professional trikotaj mahsulotlarini ishlab chiqish, ayniqsa mehmonxonalar, supermarketlar, sanoat korxonalari va boshqa xizmat ko‘rsatish tashkilotlari uchun korporativ forma va maxsus buyurtmalar.
-              </p>
-            </div>
-            <!-- <div class="about-stats">
-              <div class="stat-item">
-                <div class="stat-number">15</div>
-                <div class="stat-label" data-i18n="about.stats.factories">Fabrikalar</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">25</div>
-                <div class="stat-label" data-i18n="about.stats.experience">Yillik tajriba</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">1000</div>
-                <div class="stat-label" data-i18n="about.stats.workers">Ishchilar</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">50</div>
-                <div class="stat-label" data-i18n="about.stats.countries">Mamlakatlar</div>
-              </div>
-            </div> -->
-          </div>
-          <div class="about-image">
-            <div class="image-container">
-              <img src="./image/o kompani.png" alt="Kompaniya rasmi" loading="lazy" />
-            </div>
-            </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products">
-      <div class="container">
-        <h2 class="section-title" data-i18n="products.title">Mahsulotlar</h2>
-        <div class="products-grid">
-          
-          <div class="product-card">
-            <div class="product-image">
-              <img src="./ayollar/JAMO_polo_black_women.png" alt="Ayollar kiyimi" loading="lazy" />
-            </div>
-            <div class="product-content">
-              <h3 class="product-title" data-i18n="products.womens.title">Ayollar kiyimi</h3>
-              <p class="product-description" data-i18n="products.womens.description">
-                Zamonaviy va moda ayollar uchun kiyimlar
-              </p>
-              <ul class="product-features">
-                <li data-i18n="products.womens.feature1">Yuqori sifatli mato</li>
-                <li data-i18n="products.womens.feature2">Zamonaviy dizayn</li>
-                <li data-i18n="products.womens.feature4">Moda tendensiyalari</li>                
-                <a href="./ayol.html" class="cta-button" data-i18n="hero.cta">Batafsil</a>
-              </ul>
-            </div>
-          </div>
-          
-          
-          <div class="product-card">
-            <div class="product-image">
-              <img src="./image/futbolkaJamo3.jpg" alt="Erkaklar kiyimi" loading="lazy" />
-            </div>
-            <div class="product-content">
-              <h3 class="product-title" data-i18n="products.mens.title">Erkaklar kiyimi</h3>
-              <p class="product-description" data-i18n="products.mens.description">
-                Klassik va sport erkaklar kiyimi
-              </p>
-              <ul class="product-features">
-                <li data-i18n="products.mens.feature1">Chidamli materiallar</li>
-                <li data-i18n="products.mens.feature2">Klassik uslub</li>
-                <li data-i18n="products.mens.feature3">Yuqori sifat</li>
-                 <a href="./erkak.html" class="cta-button" data-i18n="hero.cta">Batafsil</a>
-              </ul>
-            </div>
-          </div>
-          
-         
-          <div class="product-card">
-            <div class="product-image">
-              <img src="./image/bolalar-kiyimlari.png" alt="Bolalar kiyimi" loading="lazy" />
-            </div>
-            <div class="product-content">
-              <h3 class="product-title" data-i18n="products.children.title">Korporativ kiyimlar</h3>
-              <p class="product-description" data-i18n="products.children.description">
-                Uniformalar
-              </p>
-              <ul class="product-features">
-                <li data-i18n="products.children.feature1">Ekologik toza</li>
-                <li data-i18n="products.children.feature2">Chidamli materiallar</li>
-                <li data-i18n="products.children.feature3">Rang-barang dizayn</li>
-                <a href="./korp.html" class="cta-button" data-i18n="hero.cta">Batafsil</a>
-              </ul>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </section>
-<!-- Gallery Section -->
-<!-- Gallery Section - YANGI DIZAYN -->
-<!-- Gallery Section - TO'G'RILANGAN VERSIYA -->
-<section id="gallery" class="gallery">
-  <div class="container">
-    <h2 class="section-title" data-i18n="gallery.title">Galereya</h2>
-    
-    <!-- Yangi Carousel Galeriya -->
-    <div class="carousel-gallery-container">
-      
-      <!-- Katta Rasm - Yuqorida -->
-      <div class="main-display-image">
-        <img id="mainImage" src="./galereya/jamo-brat4-banner.jpg" alt="Galereya rasm 1" class="main-image">
-        <div class="main-image-info">
-          <h3 id="mainImageTitle">Mahsulot</h3>
-          <p id="mainImageDescription">JAMO Textile yuqori sifatli mahsulotlari</p>
-        </div>
-      </div>
-
-      <!-- Progress bar -->
-      <div class="carousel-progress-bar">
-        <div class="carousel-progress-fill" id="carouselProgress"></div>
-      </div>
-
-      <!-- Thumbnail Carousel - Pastda -->
-      <div class="thumbnail-carousel-wrapper">
-        <!-- Chap navigatsiya tugmasi -->
-        <button class="carousel-nav-btn prev" id="carouselPrev" aria-label="Oldingi rasmlar">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-
-        <!-- Rasmlar lentasi -->
-        <div class="thumbnail-carousel-track" id="thumbnailTrack">
-          <div class="thumbnail-item active" data-index="0" data-title="Mahsulot" data-desc="Futbolka">
-            <img src="./galereya/jamo-brat-banner.jpg" alt="Rasm 1">
-          </div>
-          <div class="thumbnail-item" data-index="1" data-title="Mahsulot" data-desc="Polo">
-            <img src="./galereya/jamo-brat2-banner.jpg" alt="Rasm 2">
-          </div>
-          <div class="thumbnail-item" data-index="2" data-title="Mahsulot" data-desc="Futbolka">
-            <img src="./galereya/jamo-brat3-banner.jpg" alt="Rasm 3">
-          </div>
-          <div class="thumbnail-item" data-index="3" data-title="Mahsulot" data-desc="Uniforma">
-            <img src="./uniforma/bizbop-banner.jpg" alt="Rasm 4">
-          </div>
-          <div class="thumbnail-item" data-index="4" data-title="Ishlab chiqarish" data-desc="Xudi">
-            <img src="./galereya/jamo-brat4-banner.jpg" alt="Rasm 5">
-          </div>
-          <div class="thumbnail-item" data-index="5" data-title="Ishlab chiqarish" data-desc="Ayollar">
-            <img src="./galereya/jamo-hudi-banner.jpg" alt="Rasm 6">
-          </div>
-          <div class="thumbnail-item" data-index="6" data-title="Ishlab chiqarish" data-desc="Yuqori sifat">
-            <img src="./erkak/26 дек. 2025 г., 19_30_18.png" alt="Rasm 7">
-          </div>
-          <div class="thumbnail-item" data-index="7" data-title="Ishlab chiqarish" data-desc="Modern">
-            <img src="./erkak/ChatGPT Image 27 дек. 2025 г., 19_44_07.png" alt="Rasm 8">
-          </div>
-        </div>
-
-        <!-- O'ng navigatsiya tugmasi -->
-        <button class="carousel-nav-btn next" id="carouselNext" aria-label="Keyingi rasmlar">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Rasm hisoblash -->
-      <div class="carousel-counter">
-        <span id="currentImageNum">1</span> / <span id="totalImagesNum">8</span>
-      </div>
-
-    </div>
-    <!-- Carousel Galeriya Tugadi -->
-    
-  </div>
-</section>
-    <!-- Gallery Section -->
-   <!-- <section id="gallery" class="gallery">
-      <div class="container">
-        <h2 class="section-title" data-i18n="gallery.title">Galereya</h2>
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="./image/galereye.png" alt="Fabrika 1" loading="lazy" />
-            <div class="gallery-overlay">
-              <span data-i18n="gallery.factory1">Mahsulot</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="./image/tavarlar_horizontal_1.jpg" alt="Fabrika 2" loading="lazy" />
-            <div class="gallery-overlay">
-              <span data-i18n="gallery.factory2">Mahsulot</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="./image/tavarlar_horizontal_2.jpg" alt="Mahsulot 1" loading="lazy" />
-            <div class="gallery-overlay">
-              <span data-i18n="gallery.product1">Mahsulot</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="./image/tavarlar_horizontal_3.jpg" alt="Mahsulot 2" loading="lazy" />
-            <div class="gallery-overlay">
-              <span data-i18n="gallery.product2">Mahsulot</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="./image/pechat2.jpg" alt="Ishlab chiqarish" loading="lazy" />
-            <div class="gallery-overlay">
-              <span data-i18n="gallery.manufacturing">Ishlab chiqarish</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="./image/boyoqxonaqozonlar2.jpg" alt="Sifat nazorati" loading="lazy" />
-            <div class="gallery-overlay">
-              <span data-i18n="gallery.quality">Sifat nazorati</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="./image/pechat3.jpg" alt="Omborxona" loading="lazy" />
-            <div class="gallery-overlay">
-              <span data-i18n="gallery.warehouse">Omborxona</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="./image/boyoqxona6.jpg" alt="Jamoa" loading="lazy" />
-            <div class="gallery-overlay">
-              <span data-i18n="gallery.team">Jamoa</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- News Section -->
-    <section id="news" class="news">
-      <div class="container">
-        <h2 class="section-title" data-i18n="news.title">Yangiliklar</h2>
-        <div class="news-grid">
-          <div class="news-item">
-            <div class="news-image">
-              <img src="./image/hamkorlar3.jpg" alt="Yangi fabrika ochildi" loading="lazy" />
-            </div>
-            <div class="news-content">
-              <div class="news-date">15 Iyul, 2025</div>
-              <h3 class="news-title" data-i18n="news.item1.title">Chet el bilan hamkorlik</h3>
-              <p class="news-excerpt" data-i18n="news.item1.text">
-                Mahsulotlarimiz eng yuqori sifatli, xalqaro darajadagi paxtadan tayyorlanadi. Bu esa matolarimizga nafaqat tabiiylik, balki mustahkamlik va qulaylik bag‘ishlaydi. Shuning uchun ham mahsulotlarimiz bozorida talab doim yuqori.
-              </p>
-            </div>
-          </div>
-          <div class="news-item">
-            <div class="news-image">
-              <img src="./image/ko'rgazma.jpg" alt="Xalqaro ko'rgazmada ishtirok" loading="lazy" />
-            </div>
-            <div class="news-content">
-              <div class="news-date">10 Iyul, 2025</div>
-              <h3 class="news-title" data-i18n="news.item2.title">Xalqaro ko'rgazmada ishtirok</h3>
-              <p class="news-excerpt" data-i18n="news.item2.text">
-                Moskva shahrida bo'lib o'tgan TextileExpo ko'rgazmasida Samo
-                kompaniyasi o'z mahsulotlarini namoyish etdi...
-              </p>
-            </div>
-          </div>
-          <div class="news-item">
-            <div class="news-image">
-              <img src="./image/kolleksiya.jpg" alt="Xalqaro ko'rgazmada ishtirok" loading="lazy" />
-            </div>
-            <div class="news-content">
-              <div class="news-date">5 Iyul, 2025</div>
-              <h3 class="news-title" data-i18n="news.item3.title">Yangi koleksiya taqdim etildi</h3>
-              <p class="news-excerpt" data-i18n="news.item3.text">
-                2025 yoz koleksiyasi rasmiy ravishda taqdim etildi. Koleksiya
-                zamonaviy uslub va an'anaviy motiflarni birlashtiradi...
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-<!-- ══════ YANGI - HAMKORLAR SECTION ══════ -->
- <!-- Partners Section -->
-  <section class="partners-marquee">
-    
-    <!-- Section Header -->
-    <div class="partners-header">
-      <h2>HAMKORLAR</h2>
-      <p></p>
-    </div>
- 
-    <!-- Row 1: Scroll Left to Right -->
-    <div class="marquee-row">
-      <div class="marquee-content marquee-left">
-        <!-- Original Set -->
-        <div class="partner-card">
-          <img src="./Hamokorlar/alfa-invest-600.png" alt="Terranova">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/amal-books-600.png" alt="LC Waikiki">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/benison-600.png" alt="Tiffosi">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/bizbop-600.png" alt="Crosshatch">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/buka-600.png" alt="Kandor">
-        </div>
- 
-        <!-- Duplicate Set for Seamless Loop -->
-        <div class="partner-card">
-          <img src="./Hamokorlar/chinnigul-600.png" alt="Terranova">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/chorvoq-600.png" alt="LC Waikiki">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/dazmall-600.png" alt="Tiffosi">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/eddo-600.png" alt="Crosshatch">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/kebab-house-600.png" alt="Kandor">
-        </div>
-      </div>
-    </div>
- 
-    <!-- Row 2: Scroll Right to Left -->
-    <div class="marquee-row">
-      <div class="marquee-content marquee-right">
-        <!-- Original Set -->
-        <div class="partner-card">
-          <img src="./Hamokorlar/chorvoq-600.png" alt="bir">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/buka-600.png" alt="ikki">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/amal-books-600.png" alt="uch">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/eddo-600.png" alt="tort">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/chinnigul-600.png" alt="besh">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/sohil-600.png" alt="olti">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/savage-600.png" alt="yetti">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/knauf-600.png" alt="sakkiz">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/kebab-house-600.png" alt="to'qqiz">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/eddo-600.png" alt="on">
-        </div>
-
-        <!-- Duplicate Set for Seamless Loop — must be identical to Original Set above -->
-        <div class="partner-card">
-          <img src="./Hamokorlar/chorvoq-600.png" alt="bir">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/buka-600.png" alt="ikki">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/amal-books-600.png" alt="uch">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/eddo-600.png" alt="tort">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/chinnigul-600.png" alt="besh">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/sohil-600.png" alt="olti">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/savage-600.png" alt="yetti">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/knauf-600.png" alt="sakkiz">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/kebab-house-600.png" alt="to'qqiz">
-        </div>
-        <div class="partner-card">
-          <img src="./Hamokorlar/eddo-600.png" alt="on">
-        </div>
-      </div>
-    </div>
- 
-  </section>
-<!-- ══════ HAMKORLAR TUGADI ══════ -->
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title" data-i18n="contact.title">Bog'lanish</h2>
-        <div class="contact-info-grid">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div>
-              <h4 data-i18n="contact.phone.title">Telefon</h4>
-              <a href="t.me/+998905009050">+998 (90) 500-90-50</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div>
-              <h4 data-i18n="contact.email.title">Email</h4>
-              <a href="mailto:jamotextile@gmail.com">jamotextile@gmail.com</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <div>
-              <h4 data-i18n="contact.address.title">Manzil</h4>
-              <p data-i18n="contact.address.text">Toshkent shahri Yashnabod tumani</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fa-solid fa-clock"></i>
-            </div>
-            <div>
-              <h4 data-i18n="contact.hours.title">Ish vaqti</h4>
-              <p data-i18n="contact.hours.text">Dushanba-Juma: 09:00-18:00</p>
-            </div>
-          </div>
-        </div>
-        <div class="contact-form-wrapper">
-          <script>!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1722162",hash:"e7b9dd02c06754d1c0c9ef4116a19e30",locale:"ru"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");</script>
-          <script id="amoforms_script_1722162" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1781588562"></script>
-        </div>
-      </div>
-    </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>JAMO Textile</h3>
-            <p data-i18n="footer.description">
-              Paxtadan brendgacha – biz trikotajni san’at darajasiga olib chiqamiz
+      <!-- 2. BIZ HAQIMIZDA (ABOUT US) SECTION -->
+      <section id="biz-haqimizda" class="w-full bg-surface-container-lowest py-space-xxl border-b border-surface-container/50">
+        <div class="max-w-[1280px] mx-auto px-gutter">
+          <div class="flex flex-col mb-space-xl max-w-2xl">
+            <!-- <span class="text-primary font-bold text-xs uppercase tracking-wider mb-2">Korxona Nufuzi</span> -->
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-inverse-surface tracking-tight" data-i18n="about_title">Biz haqimizda</h2>
+            <p class="text-base font-light text-secondary mt-2 leading-relaxed" data-i18n="about_subtitle">
+              Tekstil sohasida ko'p yillik tajriba va ilg'or yapon texnologiyasi asosidagi zamonaviy ishlab chiqarish korxonasi.
             </p>
           </div>
-          <div class="footer-section">
-            <h3 data-i18n="footer.quickLinks.title">Tez havolalar</h3>
-            <ul>
-              <li><a href="#home" data-i18n="nav.home">Bosh sahifa</a></li>
-              <li><a href="#about" data-i18n="nav.about">Biz haqimizda</a></li>
-              <li><a href="#products" data-i18n="nav.products">Mahsulotlar</a></li>
-              <li><a href="#gallery" data-i18n="nav.gallery">Galereya</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3 data-i18n="footer.services.title">Xizmatlar</h3>
-            <ul>
-              <li><a href="#" data-i18n="footer.services.manufacturing">Ishlab chiqarish</a></li>
-              <li><a href="#" data-i18n="footer.services.design">Dizayn</a></li>
-              <li><a href="#" data-i18n="footer.services.delivery">Yetkazib berish</a></li>
-             
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3 data-i18n="footer.contact.title">Biz bilan bog'laning</h3>
-            <ul>
-              <li><a href="tel:+998905009050">+998 (90) 500-90-50</a></li>
-              <li><a href="mailto:jamotextile@gmail.com">jamotextile@gmail.com</a></li>
-              <li><a href="https://t.me/+998905009050">Telegram</a></li>
-              <li><a href="https://www.instagram.com/jamo_textile/">Instagram</a></li>
-            </ul>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+            <!-- Left Photo -->
+            <div class="lg:col-span-5 relative">
+              <div class="relative rounded-2xl overflow-hidden shadow-lg bg-surface-container border border-surface-container">
+                <img 
+                  src="./assets/images/about.png" 
+                  alt="JAMO Textile fabrikasida 3 bosqichli sifat nazorati" 
+                  class="w-full h-[440px] object-cover"
+                >
+                <!-- <div class="absolute top-4 left-4 bg-primary-container text-on-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                  3 Bosqichli Sifat Nazorati
+                </div> -->
+              </div>
+            </div>
+
+            <!-- Right 4 Pillars Grid -->
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+              <div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm hover:shadow-md transition-shadow border border-surface-container/40">
+                <div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center mb-space-sm">
+                  <span class="material-symbols-outlined text-[22px]">factory</span>
+                </div>
+                <h3 class="text-lg font-bold text-inverse-surface mb-1" data-i18n="about_card1_title">O'zbekistondagi yirik fabrika</h3>
+                <p class="text-sm font-light text-secondary leading-relaxed" data-i18n="about_card1_desc">
+                  Oylik 10K+ tayyor korporativ buyum tikish quvvatiga ega.
+                </p>
+              </div>
+
+              <div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm hover:shadow-md transition-shadow border border-surface-container/40">
+                <div class="w-10 h-10 rounded-lg bg-tertiary-container text-on-tertiary flex items-center justify-center mb-space-sm">
+                  <span class="material-symbols-outlined text-[22px]">eco</span>
+                </div>
+                <h3 class="text-lg font-bold text-inverse-surface mb-1" data-i18n="about_card2_title">Yuqori sifatli xomashyo</h3>
+                <p class="text-sm font-light text-secondary leading-relaxed" data-i18n="about_card2_desc">
+                  Faqat 100% tabiiy taroqli o'zbek paxtasi, xalqaro standart, xavfsizlik.
+                </p>
+              </div>
+
+              <div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm hover:shadow-md transition-shadow border border-surface-container/40">
+                <div class="w-10 h-10 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center mb-space-sm">
+                  <span class="material-symbols-outlined text-[22px]">event_available</span>
+                </div>
+                <h3 class="text-lg font-bold text-inverse-surface mb-1" data-i18n="about_card3_title">Aniq muddat va kafolat</h3>
+                <p class="text-sm font-light text-secondary leading-relaxed" data-i18n="about_card3_desc">
+                  Tajribali texnologlar va belgilangan yetkazish muddatlariga qat'iy rioya etish.
+                </p>
+              </div>
+
+              <div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm hover:shadow-md transition-shadow border border-surface-container/40">
+                <div class="w-10 h-10 rounded-lg bg-surface-container-highest text-tertiary flex items-center justify-center mb-space-sm">
+                  <span class="material-symbols-outlined text-[22px]">brush</span>
+                </div>
+                <h3 class="text-lg font-bold text-inverse-surface mb-1" data-i18n="about_card4_title">Brendlash xizmatlari</h3>
+                <p class="text-sm font-light text-secondary leading-relaxed" data-i18n="about_card4_desc">
+                  3D bo'rtma kashta, chidamli shelkografiya va to'liq rangli DTF printerlari.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p data-i18n="footer.copyright">&copy; 2025 JAMO Textile. Barcha huquqlar himoyalangan.</p>
+      </section>
+
+      <!-- 3. FABRIKA VA ISHLAB CHIQARISH BOSQICHLARI -->
+      <section id="fabrika" class="w-full bg-surface-container-low py-space-xxl border-b border-surface-container">
+        <div class="max-w-[1280px] mx-auto px-gutter">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-space-xl">
+            <div>
+              <!-- <span class="text-primary font-bold text-xs uppercase tracking-wider mb-2 block">Standartlar va Bosqichlar</span> -->
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-inverse-surface tracking-tight" data-i18n="step_title">Buyurtma tayyorlash qadamlari</h2>
+            </div>
+            <!-- <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container-lowest text-secondary font-medium text-xs border border-surface-container">
+              <span class="material-symbols-outlined text-[16px] text-primary">timelapse</span>
+              <span>O'rtacha bajarilish: 5 - 12 ish kuni</span>
+            </span> -->
+          </div>
+
+          <!-- 5 Steps Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+            <div class="bg-surface-container-lowest p-space-md rounded-xl flex flex-col gap-2 shadow-sm border border-surface-container/60 hover-lift">
+              <div class="flex items-center justify-between">
+                <span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm">1</span>
+                <!-- <span class="material-symbols-outlined text-secondary text-[20px]">draw</span> -->
+              </div>
+              <h4 class="text-base font-bold text-on-surface mt-1" data-i18n="step1_title">Dizayn va namuna</h4>
+              <p class="text-xs text-secondary leading-relaxed" data-i18n="step1_description">Texnik chizma tasdiqlanib, 48 soat ichida birinchi master-namuna tikiladi.</p>
+            </div>
+
+            <div class="bg-surface-container-lowest p-space-md rounded-xl flex flex-col gap-2 shadow-sm border border-surface-container/60 hover-lift">
+              <div class="flex items-center justify-between">
+                <span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm">2</span>
+                <!-- <span class="material-symbols-outlined text-secondary text-[20px]">content_cut</span> -->
+              </div>
+              <h4 class="text-base font-bold text-on-surface mt-1" data-i18n="step2_title">Lazerli bichuv</h4>
+              <p class="text-xs text-secondary leading-relaxed" data-i18n="step2_description">Mato dam oldirilgach, avtomat stollarda millimetr aniqlikda bichiladi.</p>
+            </div>
+
+            <div class="bg-surface-container-lowest p-space-md rounded-xl flex flex-col gap-2 shadow-sm border border-surface-container/60 hover-lift">
+              <div class="flex items-center justify-between">
+                <span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm">3</span>
+                <!-- <span class="material-symbols-outlined text-secondary text-[20px]">line_style</span> -->
+              </div>
+              <h4 class="text-base font-bold text-on-surface mt-1" data-i18n="step3_title">Konveyer tikuv</h4>
+              <p class="text-xs text-secondary leading-relaxed" data-i18n="step3_description">Juki va Brother liniyalarida ixtisoslashgan ustalar tomonidan biriktiriladi.</p>
+            </div>
+
+            <div class="bg-surface-container-lowest p-space-md rounded-xl flex flex-col gap-2 shadow-sm border border-surface-container/60 hover-lift">
+              <div class="flex items-center justify-between">
+                <span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm">4</span>
+                <!-- <span class="material-symbols-outlined text-secondary text-[20px]">local_activity</span> -->
+              </div>
+              <h4 class="text-base font-bold text-on-surface mt-1" data-i18n="step4_title">Brendlash</h4>
+              <p class="text-xs text-secondary leading-relaxed" data-i18n="step4_description">Tajima dastgohlarida logotip, birka va maxsus printlar qadab chiqiladi.</p>
+            </div>
+
+            <div class="bg-surface-container-lowest p-space-md rounded-xl flex flex-col gap-2 shadow-sm border border-surface-container/60 hover-lift">
+              <div class="flex items-center justify-between">
+                <span class="w-8 h-8 rounded-lg bg-primary-container text-on-tertiary flex items-center justify-center font-bold text-sm">5</span>
+                <!-- <span class="material-symbols-outlined text-secondary text-[20px]">inventory</span> -->
+              </div>
+              <h4 class="text-base font-bold text-on-surface mt-1" data-i18n="step5_title">Qadoqlash va yetkazish</h4>
+              <p class="text-xs text-secondary leading-relaxed" data-i18n="step5_description">3 bosqichli tekshiruv, bug'lash, maxsus qutilarga qadoqlash va yetkazish.</p>
+            </div>
+          </div>
+
+          <!-- Quality Certifications Ribbon -->
+          <!-- <div class="mt-space-lg p-space-md bg-surface-container-lowest rounded-xl border border-surface-container flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-[28px]">verified</span>
+              <div>
+                <p class="text-sm font-bold text-inverse-surface">Xalqaro sifat va xavfsizlik sertifikatlari</p>
+                <p class="text-xs text-secondary">Ishlab chiqarilayotgan barcha mahsulotlar to'liq tekshiruvdan o'tkaziladi</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-bold text-secondary uppercase">
+              <span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container">OEKO-TEX STANDARD 100</span>
+              <span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container">ISO 9001:2015</span>
+              <span class="px-2.5 py-1 rounded bg-surface-container-low border border-surface-container">O'zDSt ISO</span>
+            </div>
+          </div> -->
+        </div>
+      </section>
+
+      <!-- 4. MAHSULOTLAR KATALOGI (CATALOG) SECTION -->
+      <section id="katalog" class="w-full bg-background py-space-xxl">
+        <div class="max-w-[1280px] mx-auto px-gutter">
+          
+          <!-- Section Title & Search -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+            <div>
+              <!-- <span class="text-primary font-bold text-xs uppercase tracking-wider mb-1 block">Korporativ To'plam</span> -->
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-inverse-surface tracking-tight" data-i18n="catalog_title">
+                Mahsulotlar katalogi
+              </h2>
+              <p class="text-sm text-secondary mt-1" data-i18n="catalog_subtitle">
+                Korporativ buyurtma asosida tikiladigan ommabop modellar
+              </p>
+            </div>
+
+            <!-- Search Input -->
+            <!-- <div class="relative w-full md:w-72">
+              <span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[20px] pointer-events-none">search</span>
+              <input 
+                id="catalog-search-input" 
+                type="text" 
+                placeholder="Model yoki mato bo'yicha qidiruv..." 
+                class="w-full pl-10 pr-3 py-2 bg-surface-container-lowest border border-surface-container rounded-lg text-sm focus:outline-none focus:border-primary transition-all shadow-sm"
+              >
+            </div> -->
+          </div>
+
+          <!-- Category Badges / Filter Tabs -->
+          <div class="sticky top-20 z-30 bg-background/95 backdrop-blur-md py-3 -mx-gutter px-gutter mb-6 border-y border-surface-container flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
+            <div class="flex items-center gap-2">
+              <button type="button" class="catalog-tab px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm bg-primary-container text-on-primary shadow-sm transition-all whitespace-nowrap active" data-filter="all" data-i18n="filter_all_btn">Barchasi</button>
+              <button type="button" class="catalog-tab px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm bg-surface-container-lowest text-secondary hover:text-inverse-surface shadow-sm transition-all whitespace-nowrap" data-filter="futbolkalar">T-Shirt</button>
+              <button type="button" class="catalog-tab px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm bg-surface-container-lowest text-secondary hover:text-inverse-surface shadow-sm transition-all whitespace-nowrap" data-filter="hudi">Hoodie</button>
+              <button type="button" class="catalog-tab px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm bg-surface-container-lowest text-secondary hover:text-inverse-surface shadow-sm transition-all whitespace-nowrap" data-filter="kepkalar">Cap</button>
+              <button type="button" class="catalog-tab px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm bg-surface-container-lowest text-secondary hover:text-inverse-surface shadow-sm transition-all whitespace-nowrap" data-filter="jiletkalar">Jacket</button>
+              <button type="button" class="catalog-tab px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm bg-surface-container-lowest text-secondary hover:text-inverse-surface shadow-sm transition-all whitespace-nowrap" data-filter="workwear">Workwear</button>
+              <button type="button" class="catalog-tab px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm bg-surface-container-lowest text-secondary hover:text-inverse-surface shadow-sm transition-all whitespace-nowrap" data-filter="shopper">Shopper</button>
+            </div>
+            <div class="shrink-0 text-xs text-secondary font-semibold hidden sm:block">
+              <span id="visible-products-count" class="text-primary font-bold">8</span> / 8 model
+            </div>
+          </div>
+
+          <!-- Dynamic Products Grid -->
+          <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-space-lg">
+            <!-- Populated dynamically via App.renderProducts() -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. YANGILIKLAR (NEWS) SECTION -->
+      <section id="yangiliklar" class="w-full bg-surface-container-lowest py-space-xxl border-t border-surface-container">
+        <div class="max-w-[1280px] mx-auto px-gutter">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-space-xl">
+            <div>
+              <!-- <span class="text-primary font-bold text-xs uppercase tracking-wider mb-1 block">To'qimachilik Olamida</span> -->
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-inverse-surface tracking-tight" data-i18n="news_title">Yangiliklar</h2>
+              <p class="text-sm text-secondary mt-1" data-i18n="news_subtitle">
+                Fabrika yangiliklari, innovatsiyalar va korporativ kiyim bo'yicha maslahatlar
+              </p>
+            </div>
+          </div>
+
+          <!-- News Cards Grid -->
+          <div id="news-grid-container" class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+            <!-- Populated dynamically via App.renderNewsGrid() -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. BIZGA ISHONGAN MIJOZLAR (PARTNERS WALL) -->
+      <section id="mijozlarimiz" class="w-full bg-surface-container-low py-space-xxl border-t border-surface-container">
+        <div class="max-w-[1280px] mx-auto px-gutter">
+          <div class="text-center max-w-2xl mx-auto mb-space-xl">
+            <!-- <span class="text-primary font-bold text-xs uppercase tracking-wider mb-2 block">Korporativ Hamkorlar</span> -->
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-inverse-surface tracking-tight" data-i18n="partners_title">Bizga ishongan mijozlar</h2>
+            <p class="text-sm text-secondary mt-2" data-i18n="partners_subtitle">
+              O'zbekistonning eng yirik brendlari o'z jamoasi imidjini JAMO Textile korxonasiga ishonib topshirgan.
+            </p>
+          </div>
+
+          <!-- 8 Partner Tiles Matching Stitch -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+            <!-- KNAUF -->
+            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group border border-surface-container/60 hover-lift">
+              <img src="./assets/logo/knauf.png" alt="knauf_logo">
+            </div>
+
+            <!-- BUKA BOXING -->
+            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group border border-surface-container/60 hover-lift">
+              <div class="h-10 w-full flex items-center justify-center mb-2">
+                <img src="./assets/logo/buka.png" alt="buka_logo">
+              </div>
+            </div>
+
+            <!-- ACM -->
+            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group border border-surface-container/60 hover-lift">
+              <div class="h-10 w-full flex items-center justify-center mb-2">
+                <img src="./assets/logo/acm.png" alt="acm_logo">
+              </div>
+            </div>
+
+            <!-- BENNISON -->
+            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group border border-surface-container/60 hover-lift">
+              <div class="h-10 w-full flex items-center justify-center mb-2">
+                <img src="./assets/logo/benison.png" alt="benison_logo">
+              </div>
+              
+            </div>
+
+            <!-- RICOMEL -->
+            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group border border-surface-container/60 hover-lift">
+              <div class="h-10 w-full flex items-center justify-center mb-2">
+                <img src="./assets/logo/ricomelbev.png" alt="ricomel_logo">
+              </div>
+            </div>
+
+            <!-- BEYPAZARI -->
+            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group border border-surface-container/60 hover-lift">
+              <div class="h-10 w-full flex items-center justify-center mb-2">
+                <img src="./assets/logo/beypazari.png" alt="beypazari_logo">
+              </div>
+            </div>
+
+            <!-- SFAD GROUP -->
+            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group border border-surface-container/60 hover-lift">
+              <div class="h-10 w-full flex items-center justify-center mb-2">
+                <img src="./assets/logo/sfad.png" alt="sfad_logo">
+              </div>
+            </div>
+
+            <!-- UZBEKTELECOM -->
+            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group border border-surface-container/60 hover-lift">
+              <div class="h-10 w-full flex items-center justify-center mb-2">
+                <img src="./assets/logo/anjan.png" alt="anjan_logo">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. ALOQA VA JOYLASHUV (CONTACT & MAP) SECTION -->
+      <section id="boglanish" class="w-full bg-surface-container-lowest py-space-xxl">
+        <div class="max-w-[1280px] mx-auto px-gutter">
+          <div class="flex flex-col mb-space-xl max-w-2xl">
+            <!-- <span class="text-primary font-bold text-xs uppercase tracking-wider mb-1 block">To'g'ridan-to'g'ri Muloqot</span> -->
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-inverse-surface tracking-tight" data-i18n="contact_title">Biz bilan bog'laning</h2>
+            <p class="text-sm text-secondary mt-1" data-i18n="contact_subtitle">
+              Buyurtmangiz bo'yicha bepul narx hisob-kitobi va mutaxassis maslahatini oling.
+            </p>
+          </div>
+
+          <!-- 4 Contact Bento Tiles -->
+          
+
+          <!-- Split: Contact/Quote Form (Left) & Yandex Maps (Right) -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+            <!-- Left: Interactive Form -->
+            <div class="lg:col-span-6 bg-surface-container-low p-space-lg rounded-2xl border border-surface-container shadow-sm">
+              <h3 class="text-lg font-bold text-inverse-surface mb-1" data-i18n="contact_form_title">Tezkor buyurtma va narx hisobi</h3>
+              <p class="text-xs text-secondary mb-space-md" data-i18n="contact_form_subtitle">
+                Ma'lumotlaringizni qoldiring, mutaxassisimiz 15 daqiqada siz bilan bog'lanadi.
+              </p>
+
+              <form id="contact-form" class="space-y-4">
+                <div>
+                  <label class="block text-xs font-bold text-on-surface mb-1" data-i18n="contact_name">Ismingiz yoki kompaniya nomi *</label>
+                  <input type="text" name="name" required placeholder="Jamshid / Artel Group" class="w-full px-3.5 py-2.5 bg-surface-container-lowest border border-surface-container rounded-lg text-sm focus:outline-none focus:border-primary transition-all">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-on-surface mb-1" data-i18n="contact_phone">Telefon raqamingiz *</label>
+                    <input type="tel" name="phone" required placeholder="+998 90 123 45 67" class="w-full px-3.5 py-2.5 bg-surface-container-lowest border border-surface-container rounded-lg text-sm focus:outline-none focus:border-primary transition-all font-numeric-data">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-on-surface mb-1" data-i18n="contact_quantity">Taxminiy miqdor (dona)</label>
+                    <input type="number" name="quantity" min="50" placeholder="100" class="w-full px-3.5 py-2.5 bg-surface-container-lowest border border-surface-container rounded-lg text-sm focus:outline-none focus:border-primary transition-all font-numeric-data">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-on-surface mb-1" data-i18n="contact_product">Qiziqtirgan mahsulot</label>
+                  <select name="product" class="w-full px-3.5 py-2.5 bg-surface-container-lowest border border-surface-container rounded-lg text-sm focus:outline-none focus:border-primary transition-all text-on-surface">
+                    <option value="Futbolka" data-i18n="opt_tshirt">Klassik futbolka</option>
+                    <option value="Polo" data-i18n="opt_polo">Polo</option>
+                    <option value="Hudi" data-i18n="opt_hoodie">Hudi</option>
+                    <option value="Svitshot" data-i18n="opt_sweatshirt">Svitshot</option>
+                    <option value="Kepka" data-i18n="opt_cap">Kepka</option>
+                    <option value="Jiletka" data-i18n="opt_jacket">Jiletka</option>
+                    <option value="Fartuk" data-i18n="opt_apron">Fartuk</option>
+                    <option value="Eko-shopper" data-i18n="opt_shopper">Eko-shopper</option>
+                    <option value="Boshqa maxsus kiyim" data-i18n="opt_other">Boshqa maxsus buyurtma</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-on-surface mb-1" data-i18n="contact_message">Izoh</label>
+                  <textarea name="message" rows="3" data-i18n-placeholder="placehold_text" placeholder="Logotip tushirish uslubi, ranglar yoki muddat bo'yicha talablaringiz..." class="w-full px-3.5 py-2 bg-surface-container-lowest border border-surface-container rounded-lg text-sm focus:outline-none focus:border-primary transition-all"></textarea>
+                </div>
+
+                <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary font-bold text-sm py-3 rounded-lg transition-all shadow-md active:scale-95">
+                  <span data-i18n="contact_submit">So'rov yuborish</span>
+                
+                </button>
+              </form>
+            </div>
+
+            <!-- Right: Interactive Yandex Map & Location Card -->
+            <div class="lg:col-span-6 flex flex-col">
+              <div class="bg-surface-container-low rounded-2xl p-space-md shadow-sm border border-surface-container flex-1 flex flex-col">
+                <div class="flex items-center justify-between mb-space-md">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[24px]">map</span>
+                    <div>
+                      <div class="text-sm font-bold text-inverse-surface" data-i18n="location_title">Toshkentdagi bosh ofis</div>
+                      <div class="text-xs text-secondary">Mustaqillik shoh ko'chasi, 107</div>
+                    </div>
+                  </div>
+                  <a href="https://yandex.uz/maps/-/CXaSJW4v" target="_blank" rel="noopener" class="inline-flex items-center gap-1 bg-surface-container-lowest text-primary hover:text-inverse-surface px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm transition-colors border border-surface-container">
+                    <span data-i18n="open_map">Xaritada ochish</span>
+                    <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                  </a>
+                </div>
+
+                <div class="w-full flex-1 min-h-[360px] rounded-xl overflow-hidden relative shadow-inner bg-surface-container-highest">
+                  <iframe 
+                    class="w-full h-full min-h-[380px] border-0" 
+                    src="https://yandex.uz/map-widget/v1/?ll=69.323188%2C41.325901&z=16&pt=69.323333,41.325935,pm2rdm" 
+                    allowfullscreen="true" 
+                    title="JAMO Textile Yandex Xarita"
+                  ></iframe>
+
+                  <!-- <div class="absolute bottom-3 left-3 right-3 bg-surface-container-lowest/95 backdrop-blur-md p-3 rounded-xl shadow-lg border border-surface-container/70 flex flex-col sm:flex-row sm:items-center justify-between gap-2 pointer-events-none">
+                    <div class="flex items-start gap-2">
+                      <span class="material-symbols-outlined text-primary text-[22px] mt-0.5 shrink-0">pin_drop</span>
+                      <div>
+                        <div class="text-xs font-bold text-inverse-surface">JAMO Textile Bosh ofisi</div>
+                        <div class="text-[11px] text-secondary">Toshkent sh., Mirzo Ulug'bek tumani, Mustaqillik shoh ko'chasi 107</div>
+                      </div>
+                    </div>
+                    <span class="px-2 py-0.5 rounded bg-surface-container font-numeric-data text-xs text-primary font-bold self-start sm:self-auto">
+                      41.3259° N, 69.3233° E
+                    </span>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /#main-sections -->
+
+    <!-- SINGLE NEWS ARTICLE DETAIL VIEW (Dynamic SPA View) -->
+    <div id="article-detail-view" class="hidden w-full bg-background pb-space-xxl">
+      <!-- Top Breadcrumbs -->
+      <section class="w-full bg-surface-container-low border-b border-surface-container">
+        <div class="max-w-[1280px] mx-auto px-gutter py-3 flex items-center justify-between text-xs font-medium text-secondary">
+          <nav class="flex items-center gap-2">
+            <a href="#bosh-sahifa" class="hover:text-primary transition-colors flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">home</span> <span data-i18n="nav_home">Bosh sahifa</span>
+            </a>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <a href="#yangiliklar" class="hover:text-primary transition-colors" data-i18n="nav_news">Yangiliklar</a>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <!-- <span id="article-category-badge" class="text-primary font-bold uppercase tracking-wider">Maqola</span> -->
+          </nav>
+          <a href="#yangiliklar" class="inline-flex items-center gap-1 text-primary hover:underline font-semibold">
+            <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+            <span data-i18n="news_back">Yangiliklarga qaytish</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Article Header -->
+      <section class="w-full bg-surface-container-lowest py-space-lg border-b border-surface-container">
+        <div class="max-w-[1000px] mx-auto px-gutter">
+          <div class="flex items-center gap-3 text-xs text-secondary font-medium mb-3">
+            <span id="article-category" class="px-2.5 py-0.5 rounded bg-primary-container text-on-primary font-bold text-[11px] uppercase tracking-wider">Kategoriya</span>
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+              <span id="article-date">02 Oktabr, 2026</span>
+            </span>
+            <span>•</span>
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-[14px]">schedule</span>
+              <span id="article-read-time">5 daqiqa</span>
+            </span>
+          </div>
+
+          <h1 id="article-title" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-inverse-surface tracking-tight leading-tight">
+            Maqola sarlavhasi
+          </h1>
+        </div>
+      </section>
+
+      <!-- Article Body & Media -->
+      <section class="max-w-[1000px] mx-auto px-gutter pt-space-lg">
+        <div class="rounded-2xl overflow-hidden shadow-md bg-surface-container mb-space-lg border border-surface-container">
+          <img id="article-img" src="" alt="Maqola fotosurati" class="w-full max-h-[460px] object-cover">
+        </div>
+
+        <div id="article-summary" class="text-base sm:text-lg text-on-surface font-semibold leading-relaxed bg-surface-container-low p-space-lg rounded-xl mb-space-lg border border-surface-container">
+          Maqola qisqacha mazmuni...
+        </div>
+
+        <div id="article-paragraphs" class="prose max-w-none text-base text-on-surface leading-relaxed">
+          <!-- Populated dynamically -->
+        </div>
+
+        <div id="article-table-container" class="hidden">
+          <!-- Table populated dynamically -->
+        </div>
+
+        <!-- Back & Order Action -->
+        <div class="mt-space-xl p-space-lg bg-surface-container-low rounded-xl border border-surface-container flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <h4 class="text-base font-bold text-inverse-surface" data-i18n="article_cta_title">Kompaniyangiz uchun namuna buyurtma qiling</h4>
+            <p class="text-xs text-secondary" data-i18n="article_cta_text">Texnologlarimiz mato turlari va zichligini tanlashda yordam berishadi.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="#yangiliklar" class="px-4 py-2 bg-surface-container text-inverse-surface rounded-lg text-sm font-semibold hover:bg-surface-container-high transition-colors" data-i18n="article_all_news">
+              Barcha yangiliklar
+            </a>
+            <a href="https://t.me/jamo_textile_admin" target="_blank" rel="noopener" class="px-4 py-2 bg-primary-container text-on-primary rounded-lg text-sm font-semibold hover:bg-primary transition-colors flex items-center gap-1 shadow-sm">
+              <span data-i18n="article_consult">Konsultatsiya olish</span>
+              <span class="material-symbols-outlined text-[16px]">send</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- TECHNICAL SPECIFICATION MODAL (Texnik Xususiyatlar) -->
+  <div id="spec-modal" class="modal-backdrop fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="modal-box bg-surface-container-lowest rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-surface-container flex flex-col">
+      <!-- Modal Header -->
+      <div class="sticky top-0 bg-surface-container-lowest/95 backdrop-blur-md px-6 py-4 border-b border-surface-container flex items-center justify-between z-10">
+        <div class="flex items-center gap-2">
+          <!-- <span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[18px]">verified</span>
+          </span> -->
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 id="modal-prod-title" class="text-lg font-bold text-inverse-surface">Polo Futbolka</h3>
+              <span id="modal-prod-category" class="px-2 py-0.5 rounded bg-surface-container text-primary font-bold text-[10px] uppercase">Futbolkalar</span>
+            </div>
+            <!-- <p class="text-xs text-secondary">Akkreditatsiyalangan sinov bayonnomalari va laboratoriya mezonlari</p> -->
+          </div>
+        </div>
+        <button id="spec-modal-close" type="button" class="p-1 rounded-lg text-secondary hover:text-inverse-surface">
+          <span class="material-symbols-outlined text-[24px]">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-6">
+        <!-- Hero Spec Overview -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center bg-surface-container-low p-4 rounded-xl border border-surface-container">
+          <div class="md:col-span-4 rounded-lg overflow-hidden bg-surface-container aspect-square max-h-48 flex items-center justify-center">
+            <img id="modal-prod-img" src="" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="md:col-span-8 flex flex-col justify-center space-y-2">
+            <p id="modal-prod-desc" class="text-sm text-secondary leading-relaxed"></p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-2">
+              <div class="bg-surface-container-lowest p-2 rounded-lg border border-surface-container text-center">
+                <span class="text-[10px] text-secondary uppercase font-bold block" data-i18n="modal_standard">Standart</span>
+                <span class="text-xs font-bold text-primary">O'zDSt ISO</span>
+              </div>
+              <div class="bg-surface-container-lowest p-2 rounded-lg border border-surface-container text-center">
+                <span class="text-[10px] text-secondary uppercase font-bold block" data-i18n="modal_safety">Xavfsizlik</span>
+                <span class="text-xs font-bold text-[#00A859]">OEKO-TEX 100</span>
+              </div>
+              <div class="bg-surface-container-lowest p-2 rounded-lg border border-surface-container text-center">
+                <span class="text-[10px] text-secondary uppercase font-bold block" data-i18n="modal_min_batch">Min. Partiya</span>
+                <span id="modal-spec-min-order" class="text-xs font-bold text-inverse-surface">100 dona</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spec Tabs Switcher -->
+        <div class="flex items-center gap-2 border-b border-surface-container pb-2 overflow-x-auto no-scrollbar">
+          <button type="button" data-spec-tab="all" class="spec-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary-container text-on-primary active" data-i18n="modal_tab_all">Barcha parametrlar</button>
+          <button type="button" data-spec-tab="physical" class="spec-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-secondary hover:text-inverse-surface" data-i18n="modal_tab_physical">Fizik-mexanik xususiyatlar</button>
+          <button type="button" data-spec-tab="branding" class="spec-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-secondary hover:text-inverse-surface" data-i18n="modal_tab_branding">Brendlash</button>
+        </div>
+
+        <!-- Tab 1: Physical Parameters -->
+        <div id="spec-block-physical" class="space-y-3">
+          <h4 class="text-xs font-bold text-primary uppercase tracking-wider" data-i18n="modal_physical_title">Asosiy To'qimachilik Parametrlari</h4>
+          <div class="overflow-x-auto rounded-xl border border-surface-container">
+            <table class="w-full text-left text-xs">
+              <tbody class="divide-y divide-surface-container">
+                <tr class="bg-surface-container-lowest">
+                  <td class="px-4 py-2.5 font-bold text-secondary w-1/3" data-i18n="modal_fabric">Mato tarkibi:</td>
+                  <td id="modal-spec-fabric" class="px-4 py-2.5 font-semibold text-inverse-surface">100% paxta</td>
+                </tr>
+                <tr class="bg-surface-container-low/40">
+                  <td class="px-4 py-2.5 font-bold text-secondary" data-i18n="modal_density">Zichlik (GSM):</td>
+                  <td id="modal-spec-density" class="px-4 py-2.5 font-semibold text-inverse-surface">220 g/m²</td>
+                </tr>
+                <tr class="bg-surface-container-lowest">
+                  <td class="px-4 py-2.5 font-bold text-secondary" data-i18n="modal_yarn">Ip turi (Yarn):</td>
+                  <td id="modal-spec-yarn" class="px-4 py-2.5 font-semibold text-inverse-surface">Kard/Penye 30/1</td>
+                </tr>
+                <tr class="bg-surface-container-low/40">
+                  <td class="px-4 py-2.5 font-bold text-secondary" data-i18n="modal_season">Fasliylik:</td>
+                  <td id="modal-spec-season" class="px-4 py-2.5 font-semibold text-inverse-surface">Bahor - Yoz</td>
+                </tr>
+                <tr class="bg-surface-container-lowest">
+                  <td class="px-4 py-2.5 font-bold text-secondary" data-i18n="modal_lead_time">Ishlab chiqarish muddati:</td>
+                  <td id="modal-spec-lead-time" class="px-4 py-2.5 font-semibold text-inverse-surface">5-10 ish kuni</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 2: Branding & Stitching -->
+        <div id="spec-block-branding" class="space-y-3">
+          <h4 class="text-xs font-bold text-primary uppercase tracking-wider" data-i18n="modal_branding_title">Tikuv va Brendlash Mezonlari</h4>
+          <div class="bg-surface-container-low p-3 rounded-lg border border-surface-container space-y-2 text-xs">
+            <div class="flex justify-between">
+              <span class="text-secondary font-bold" data-i18n="modal_machines">Tikuv mashinalari:</span>
+              <span class="font-semibold text-inverse-surface" data-i18n="juki">Juki & Brother (Yaponiya)</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-secondary font-bold" data-i18n="modal_branding_rec">Tavsiya etiladigan brendlash:</span>
+              <span id="modal-spec-branding" class="font-semibold text-primary">Kashta / Shelkografiya</span>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
-    <script src="app.js"></script>
-    <script src="gallery.js"></script>
-  </body>
+
+      <!-- Modal Footer -->
+      <div class="sticky bottom-0 bg-surface-container-lowest px-6 py-4 border-t border-surface-container flex flex-wrap items-center justify-between gap-3">
+        <button type="button" class="px-4 py-2 rounded-lg bg-surface-container text-inverse-surface hover:bg-surface-container-high text-xs font-semibold inline-flex items-center gap-1.5" onclick="window.print()">
+          <span class="material-symbols-outlined text-[16px]">print</span>
+          <span data-i18n="modal_print">Print</span>
+        </button>
+
+        <div class="flex items-center gap-2">
+          <button type="button" class="px-4 py-2 rounded-lg text-secondary hover:text-inverse-surface text-xs font-semibold" data-i18n="close_button" onclick="App.closeSpecModal()">
+            Yopish
+          </button>
+          <a id="modal-telegram-btn" href="https://t.me/jamo_textile_admin" target="_blank" rel="noopener" class="px-5 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary text-xs font-bold inline-flex items-center gap-1.5 shadow-sm">
+            <span data-i18n="get_price_button">Narx hisobini olish</span>
+            <span class="material-symbols-outlined text-[16px]">send</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container"></div>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-primary-container text-on-primary pt-space-xxl pb-space-lg mt-auto">
+    <div class="max-w-[1280px] mx-auto px-gutter">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl pb-space-xl border-b border-on-primary/15">
+        <!-- Brand Info -->
+        <div class="lg:col-span-5 space-y-space-md">
+          <div class="flex items-center gap-2">
+            <img src="./assets/logo/jamo_logo_white.svg" alt="jamo_textile_logo" class="h-20 w-auto object-contain">
+          </div>
+          <p class="text-sm text-primary-fixed leading-relaxed max-w-sm" data-i18n="company_desc">
+            O'zbekistonning yetakchi to'qimachilik va tikuvchilik fabrikasi. Yuqori sifatli korporativ kiyim-kechak, trikotaj mahsulotlari ishlab chiqarish va eksport xizmatlari.
+          </p>
+          <!-- <div class="flex items-center gap-2 text-xs font-semibold text-primary-fixed-dim">
+            <span class="px-2 py-0.5 rounded bg-surface-container-lowest/15">15,000+ oylik quvvat</span>
+            <span class="px-2 py-0.5 rounded bg-surface-container-lowest/15">100% paxta</span>
+          </div> -->
+        </div>
+
+        <!-- Products Links -->
+        <div class="lg:col-span-2 space-y-2">
+          <h4 class="text-s font-bold uppercase tracking-wider text-on-primary" data-i18n="products_headline">Mahsulotlar</h4>
+          <ul class="space-y-1.5 text-s text-primary-fixed">
+            <li><a href="#katalog" class="hover:text-on-primary transition-colors" data-i18n="tshirt_link">Futbolka va Polo</a></li>
+            <li><a href="#katalog" class="hover:text-on-primary transition-colors" data-i18n="hoodie_link">Xudi va svitshotlar</a></li>
+            <li><a href="#katalog" class="hover:text-on-primary transition-colors" data-i18n="cap_link">Kepkalar</a></li>
+            <li><a href="#katalog" class="hover:text-on-primary transition-colors" data-i18n="jacket_link">Jiletkalar</a></li>
+            <li><a href="#katalog" class="hover:text-on-primary transition-colors" data-i18n="workwear_link">Maxsus ish kiyimlari</a></li>
+            <li><a href="#katalog" class="hover:text-on-primary transition-colors" data-i18n="shopper_link">Eko-shopperlar</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Links -->
+        <div class="lg:col-span-2 space-y-2">
+          <h4 class="text-s font-bold uppercase tracking-wider text-on-primary" data-i18n="company_title">Kompaniya</h4>
+          <ul class="space-y-1.5 text-s text-primary-fixed">
+            <li><a href="#biz-haqimizda" class="hover:text-on-primary transition-colors" data-i18n="biz_title">Biz haqimizda</a></li>
+            <!-- <li><a href="#fabrika" class="hover:text-on-primary transition-colors">Fabrika texnologiyalari</a></li> -->
+            <li><a href="#mijozlarimiz" class="hover:text-on-primary transition-colors" data-i18n="clients_link">Mijozlarimiz</a></li>
+            <li><a href="#yangiliklar" class="hover:text-on-primary transition-colors" data-i18n="news_link">Yangiliklar</a></li>
+            <li><a href="#boglanish" class="hover:text-on-primary transition-colors" data-i18n="contact_link">Bog'lanish</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacts & Social -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="text-s font-bold uppercase tracking-wider text-on-primary" data-i18n="aloqa_title">Aloqa</h4>
+          <div class="space-y-2 text-s text-primary-fixed">
+            <div class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-[20px] text-on-primary mt-0.5" >location_on</span>
+              <span data-i18n="location">Toshkent sh., Mustaqillik shoh ko'chasi, 107</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[20px] text-on-primary">mail</span>
+              <a href="mailto:jamotextile@gmail.com" class="hover:text-on-primary transition-colors">jamotextile@gmail.com</a>
+            </div>
+            <div class="flex items-center gap-2 pt-1">
+              <span class="material-symbols-outlined text-[20px] text-on-primary">call</span>
+              <a href="tel:+998920459050" class="text-m font-bold text-on-primary font-numeric-data">+998 92 045 90 50</a>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <p class="text-[16px] uppercase font-bold text-primary-fixed-dim mb-2" data-i18n="social">Ijtimoiy tarmoqlar</p>
+            <div class="flex items-center gap-2">
+              <a href="https://instagram.com/jamo_textile" target="_blank" rel="noopener" class="w-8 h-8 rounded-lg bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 flex items-center justify-center transition-colors" title="Instagram">
+                <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+              </a>
+              <a href="https://t.me/jamo_textile" target="_blank" rel="noopener" class="w-8 h-8 rounded-lg bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 flex items-center justify-center transition-colors" title="Telegram Kanal">
+                <span class="material-symbols-outlined text-[18px]">send</span>
+              </a>
+              <a href="https://t.me/jamo_textile_admin" target="_blank" rel="noopener" class="w-8 h-8 rounded-lg bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 flex items-center justify-center transition-colors" title="Telegram Menejer">
+                <span class="material-symbols-outlined text-[18px]">support_agent</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Credits -->
+      <div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-primary-fixed">
+        <p data-i18n="copy">© 2026 "JAMO Textile Produce" MChJ. Barcha huquqlar himoyalangan.</p>
+        <div class="flex items-center gap-4 font-numeric-data">
+          <a href="https://instagram.com/asildesign.uz"><span>Made by asildesignuz</span></a>
+          <!-- <span>•</span>
+          <span>ISO 9001:2015</span> -->
+          <!-- <span>•</span>
+          <span>Toshkent, O'zbekiston</span> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Scripts -->
+  <script src="./js/i18n.js?v=3.4"></script>
+  <script src="./js/app.js?v=3.4"></script>
+</body>
 </html>

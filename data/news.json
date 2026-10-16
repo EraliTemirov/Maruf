@@ -1,0 +1,248 @@
+[
+  {
+    "id": "mato-tanlash-paxta-polyester",
+    "title": "Korporativ kiyim: paxta, polyester va laykra zichligining farqlari",
+    "slug": "mato-tanlash-paxta-polyester",
+    "date": "3-oktabr, 2026",
+    "isoDate": "2026-10-02",
+    "category": "Texnologiya & Qo'llanma",
+    "readTime": "5 daqiqa",
+    "image": "./assets/images/fabrics.jpg",
+    "summary": "Qaysi kasb egalari uchun toza paxta matolari va qachon poliester aralashmasi kiyimning chidamliligini 3 baravargacha oshiradi? Batafsil muhandislik tahlili.",
+    "content": [
+      "Har bir biznes va ishlab chiqarish sohasi uchun maxsus hamda korporativ kiyimlar tanlashda matoning tarkibi va zichligi (g/m²) hal qiluvchi rol o'ynaydi. Noto'g'ri tanlangan mato xodimlarning ish unumdorligini pasaytirishi, noqulaylik keltirib chiqarishi va kiyimning xizmat muddatini bir necha barobar qisqartirishi mumkin.",
+      "100% Paxta (Cotton) — Nafas olish xususiyati yuqori, gipoallergen va teriga nihoyatda yoqimli. Yopiq ofis sharoitlarida, tibbiyot muassasalarida va issiq yoz fasllarida xizmat qiluvchi xodimlar uchun eng ma'qul tanlovdir. Biroq, og'ir jismoniy mehnat yoki agressiv sanoat sharoitlarida uning mexanik yirtilishga chidamliligi kamroq bo'lishi mumkin.",
+      "Paxta va Poliester (Poly-Cotton) aralashmasi — Odatda 65/35 yoki 80/20 nisbatda ishlab chiqariladi. Poliester tolasi kiyimga mustahkamlik, cho'zilmaslik va yuvish jarayonida tez quritish imkonini beradi. Ranglarning xiralashishi va kirishish koeffitsienti bu yerda deyarli nolga tenglashadi.",
+      "Laykra (Elastan) qo'shimchasi — 3% dan 5% gacha bo'lgan elastan ipi matoga harakat erkinligini beradi. Zamonaviy qulay fasonlar (Slim fit yoki Regular) uchun ideal bo'lib, bo'g'inlar va tirsak sohasidagi shakl yo'qotilishining oldini oladi."
+    ],
+    "table": {
+      "headers": ["Mato turi", "Tarkibi", "Optimal zichlik", "Tavsiya etiladigan soha"],
+      "rows": [
+        ["Suprem / Penye", "100% Paxta", "180 - 200 g/m²", "Ofis promo, tadbirlar, ichki kiyimlar"],
+        ["Lakost (Pique)", "100% Paxta yoki 95/5", "220 - 240 g/m²", "Korporativ polo futbolkalar"],
+        ["3-ipli Futer", "80% Paxta, 20% Poly", "320 - 350 g/m²", "Hudi, svitshot, qishki kiyimlar"],
+        ["Sarja (Twill)", "65% Poly, 35% Paxta", "240 - 260 g/m²", "Qurilish, zavod, xizmat ko'rsatish"]
+      ]
+    },
+    "i18n": {
+      "ru": {
+        "title": "Корпоративная одежда: чем отличаются хлопок, полиэстер и лайкра",
+        "date": "3 октября 2026",
+        "category": "Технологии и руководства",
+        "readTime": "5 минут",
+        "summary": "Для каких профессий подходят ткани из чистого хлопка, а когда добавка полиэстера повышает износостойкость одежды до 3 раз? Подробный инженерный анализ.",
+        "content": [
+          "При выборе спецодежды и корпоративной одежды для любого бизнеса и производства решающую роль играют состав ткани и её плотность (г/м²). Неправильно подобранная ткань может снизить производительность сотрудников, вызвать дискомфорт и в несколько раз сократить срок службы одежды.",
+          "100% хлопок (Cotton) — отлично пропускает воздух, гипоаллергенен и очень приятен к телу. Лучший выбор для сотрудников, работающих в офисах, медицинских учреждениях и в жаркий летний сезон. Однако при тяжёлом физическом труде или в агрессивных производственных условиях его устойчивость к механическому разрыву может быть ниже.",
+          "Смесь хлопка и полиэстера (Poly-Cotton) — обычно производится в соотношении 65/35 или 80/20. Полиэфирное волокно придаёт одежде прочность, предотвращает растяжение и ускоряет высыхание после стирки. Выцветание и усадка здесь практически сводятся к нулю.",
+          "Добавка лайкры (эластана) — эластановая нить в количестве от 3% до 5% даёт ткани свободу движений. Идеально подходит для современных удобных фасонов (Slim fit или Regular) и предотвращает потерю формы в области суставов и локтей."
+        ],
+        "table": {
+          "headers": ["Тип ткани", "Состав", "Оптимальная плотность", "Рекомендуемая сфера"],
+          "rows": [
+            ["Супрем / Пенье", "100% хлопок", "180 - 200 г/м²", "Офисное промо, мероприятия, нательная одежда"],
+            ["Лакоста (Пике)", "100% хлопок или 95/5", "220 - 240 г/м²", "Корпоративные футболки-поло"],
+            ["Футер 3-нитка", "80% хлопок, 20% поли", "320 - 350 г/м²", "Худи, свитшоты, зимняя одежда"],
+            ["Саржа (Twill)", "65% поли, 35% хлопок", "240 - 260 г/м²", "Строительство, заводы, сфера услуг"]
+          ]
+        }
+      },
+      "en": {
+        "title": "Corporate apparel: the differences between cotton, polyester and Lycra",
+        "date": "October 3, 2026",
+        "category": "Technology & Guides",
+        "readTime": "5 min read",
+        "summary": "For which professions is pure cotton the right choice, and when does a polyester blend make garments up to 3 times more durable? A detailed engineering breakdown.",
+        "content": [
+          "When choosing workwear and corporate apparel for any business or industry, fabric composition and density (g/m²) play a decisive role. The wrong fabric can lower employee productivity, cause discomfort and shorten a garment's service life several times over.",
+          "100% Cotton — highly breathable, hypoallergenic and very pleasant against the skin. It is the best choice for staff working in offices, medical facilities and during the hot summer season. However, under heavy physical work or harsh industrial conditions, its resistance to mechanical tearing may be lower.",
+          "Cotton and polyester (Poly-Cotton) blend — usually produced in a 65/35 or 80/20 ratio. Polyester fibre gives the garment strength, keeps it from stretching and helps it dry quickly after washing. Colour fading and shrinkage are reduced to almost zero.",
+          "Lycra (elastane) content — 3% to 5% elastane yarn gives the fabric freedom of movement. It is ideal for modern comfortable fits (Slim fit or Regular) and keeps the garment from losing shape around the joints and elbows."
+        ],
+        "table": {
+          "headers": ["Fabric type", "Composition", "Optimal density", "Recommended use"],
+          "rows": [
+            ["Single jersey / Combed", "100% Cotton", "180 - 200 g/m²", "Office promo, events, underwear"],
+            ["Lacoste (Pique)", "100% Cotton or 95/5", "220 - 240 g/m²", "Corporate polo shirts"],
+            ["3-thread Fleece", "80% Cotton, 20% Poly", "320 - 350 g/m²", "Hoodies, sweatshirts, winter wear"],
+            ["Twill", "65% Poly, 35% Cotton", "240 - 260 g/m²", "Construction, factories, service industry"]
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": "tashkent-tajima-embroidery",
+    "title": "JAMO Textile Yaponiyada biznes-amaliyot dasturida ishtirok etdi",
+    "slug": "tashkent-tajima-embroidery",
+    "date": "24-sentabr, 2026",
+    "isoDate": "2026-09-24",
+    "category": "Fabrika Yangiliklari",
+    "readTime": "2 daqiqa",
+    "image": "./assets/images/jap-img.jpg",
+    "summary": "Oʻzbekistonda sifatli va zamonaviy korporativ hamda trikotaj kiyimlar ishlab chiqarishda yetakchilardan biri boʻlgan 'JAMO Textile' xalqaro tajriba va innovatsiyalarni oʻzlashtirishda davom etmoqda.",
+    "content": [
+      "Kompaniyamiz vakillari Yaponiyaning Tokio shahrida tekstil sohasi yetakchilari va biznes vakillari uchun maxsus tashkil etilgan biznes-amaliyot dasturida muvaffaqiyatli ishtirok etib qaytdilar.",
+      "Dastur doirasida qanday ishlar amalga oshirildi? Ushbu xalqaro amaliyot davomida 'JAMO Textile' jamoasi Yaponiya tekstil sanoatining ilgʻor texnologiyalari, ishlab chiqarish standartlari va boshqaruv tizimlari bilan yaqindan tanishdi:",
+      "Sifat va standartlar: Yaponiyaning brend mahsulotlar yaratishdagi nozik yondashuvi, mahsulot sifatini nazorat qilish va ekologik toza matolardan foydalanish tajribasi oʻrganildi.",
+      "Ishlab chiqarish va avtomatlashtirish: Zamonaviy uskunalar, tejamkor ishlab chiqarish (Kaizen / Lean Manufacturing) usullari va jarayonlarni avtomatlashtirish boʻyicha amaliy mashgʻulotlar oʻtkazildi.",
+      "Xalqaro hamkorlik: Yaponiya hamda boshqa xalqaro kompaniyalar vakillari bilan oʻzaro tajriba almashilib, kelgusida B2B va eksport hamkorliklarini yoʻlga qoʻyish boʻyicha muzokaralar olib borildi.",
+      "JAMO Textile har doim rivojlanish, mijozlarimizga eng yaxshisini taklif qilish va Oʻzbekiston tekstil brendini dunyo miqyosida munosib namoyish etishga intiladi.",
+      "Sizning korporativ uslubingiz uchun eng zamonaviy yechimlarni birgalikda yaratamiz!"
+    ],
+    "i18n": {
+      "ru": {
+        "title": "JAMO Textile приняла участие в программе бизнес-стажировки в Японии",
+        "date": "24 сентября 2026",
+        "category": "Новости фабрики",
+        "readTime": "2 минуты",
+        "summary": "«JAMO Textile», один из лидеров Узбекистана в производстве качественной и современной корпоративной и трикотажной одежды, продолжает перенимать международный опыт и внедрять инновации.",
+        "content": [
+          "Представители нашей компании успешно приняли участие в программе бизнес-стажировки, специально организованной в Токио (Япония) для лидеров текстильной отрасли и представителей бизнеса.",
+          "Что было сделано в рамках программы? В ходе этой международной стажировки команда «JAMO Textile» подробно ознакомилась с передовыми технологиями, производственными стандартами и системами управления японской текстильной промышленности:",
+          "Качество и стандарты: изучен тонкий подход Японии к созданию брендовой продукции, контролю качества и использованию экологически чистых тканей.",
+          "Производство и автоматизация: проведены практические занятия по современному оборудованию, методам бережливого производства (Kaizen / Lean Manufacturing) и автоматизации процессов.",
+          "Международное сотрудничество: состоялся обмен опытом с представителями японских и других международных компаний, а также переговоры о налаживании B2B- и экспортного партнёрства в будущем.",
+          "JAMO Textile всегда стремится к развитию, хочет предлагать клиентам самое лучшее и достойно представлять текстильный бренд Узбекистана на мировом уровне.",
+          "Вместе создадим самые современные решения для вашего корпоративного стиля!"
+        ]
+      },
+      "en": {
+        "title": "JAMO Textile took part in a business training programme in Japan",
+        "date": "September 24, 2026",
+        "category": "Factory News",
+        "readTime": "2 min read",
+        "summary": "JAMO Textile, one of Uzbekistan's leading manufacturers of high-quality, modern corporate apparel and knitwear, continues to adopt international experience and innovation.",
+        "content": [
+          "Representatives of our company have returned from a business training programme in Tokyo, Japan, organised specifically for textile industry leaders and business representatives.",
+          "What did the programme involve? During this international programme, the JAMO Textile team got a close look at the advanced technologies, production standards and management systems of the Japanese textile industry:",
+          "Quality and standards: we studied Japan's meticulous approach to building branded products, quality control and the use of eco-friendly fabrics.",
+          "Production and automation: hands-on sessions covered modern equipment, lean manufacturing methods (Kaizen / Lean Manufacturing) and process automation.",
+          "International cooperation: we exchanged experience with representatives of Japanese and other international companies and held talks on establishing B2B and export partnerships in the future.",
+          "JAMO Textile always strives to grow, to offer our clients the very best and to represent Uzbekistan's textile industry worthily on the world stage.",
+          "Let's create the most modern solutions for your corporate style together!"
+        ]
+      }
+    }
+  },
+  {
+    "id": "dtf-va-shelkografiya",
+    "title": "DTF va Shelkografiya: qaysi brendlash uslubi qulayroq?",
+    "slug": "dtf-va-shelkografiya",
+    "date": "5-sentabr, 2026",
+    "isoDate": "2026-09-05",
+    "category": "Texnologiya & Qo'llanma",
+    "readTime": "5 daqiqa",
+    "image": "./assets/images/dtf-shelko.jpg",
+    "summary": "Kichik tirajlar va katta korporativ buyurtmalarda logotip tushirish usullarining tannarxi hamda chidamlilik tahlili.",
+    "content": [
+      "Korporativ kiyimlarni brendlash jarayonida to'g'ri texnologiyani tanlash — buyurtmaning yakuniy narxiga va kiyimning necha yil xizmat qilishiga bevosita ta'sir ko'rsatadi.",
+      "Shelkografiya (Screen Printing) — 200 donadan ortiq bo'lgan yirik partiyalar uchun eng iqtisodiy va chidamli uslub. Bo'yoq to'g'ridan-to'g'ri mato tolalari orasiga singdiriladi va yuzlab yuvishlarga bardosh beradi.",
+      "DTF (Direct-to-Film) bosma — To'liq rangli fotosuratlar, gradientlar va 50-100 donagacha bo'lgan tezkor buyurtmalar uchun eng mukammal variant hisoblanadi. Chizma tiniqligi 1440 DPI gacha yetadi."
+    ],
+    "i18n": {
+      "ru": {
+        "title": "DTF и шелкография: какой способ брендирования удобнее?",
+        "date": "5 сентября 2026",
+        "category": "Технологии и руководства",
+        "readTime": "5 минут",
+        "summary": "Анализ себестоимости и износостойкости способов нанесения логотипа для малых тиражей и крупных корпоративных заказов.",
+        "content": [
+          "При брендировании корпоративной одежды выбор правильной технологии напрямую влияет на итоговую стоимость заказа и на то, сколько лет прослужит одежда.",
+          "Шелкография (Screen Printing) — самый экономичный и долговечный способ для крупных партий от 200 штук. Краска впитывается непосредственно между волокнами ткани и выдерживает сотни стирок.",
+          "Печать DTF (Direct-to-Film) — идеальный вариант для полноцветных фотографий, градиентов и срочных заказов до 50-100 штук. Чёткость изображения достигает 1440 DPI."
+        ]
+      },
+      "en": {
+        "title": "DTF vs. screen printing: which branding method is better?",
+        "date": "September 5, 2026",
+        "category": "Technology & Guides",
+        "readTime": "5 min read",
+        "summary": "A cost and durability comparison of logo application methods for small runs and large corporate orders.",
+        "content": [
+          "When branding corporate apparel, choosing the right technology directly affects the final cost of the order and how many years the garment will last.",
+          "Screen printing — the most economical and durable method for large batches of more than 200 pieces. The ink soaks directly into the fabric fibres and withstands hundreds of washes.",
+          "DTF (Direct-to-Film) printing — the best option for full-colour photos, gradients and quick orders of up to 50-100 pieces. Print sharpness reaches up to 1440 DPI."
+        ]
+      }
+    }
+  },
+  {
+    "id": "uztextile-expo-2025",
+    "title": "JAMO Textile 'UzTextile Expo 2025' xalqaro to'qimachilik ko'rgazmasida ishtirok etadi",
+    "slug": "uztextile-expo-2025",
+    "date": "01 Oktyabr, 2026",
+    "isoDate": "2026-10-01",
+    "category": "Ko'rgazma & Tadbirlar",
+    "readTime": "3 daqiqa",
+    "image": "./assets/images/dtf-shelko.jpg",
+    "summary": "Poytaxtimizdagi 'O'zekspomarkaz' pavilyonida korxonamizning yangi korporativ va maxsus ish kiyimlari kolleksiyasi namoyish qilinadi.",
+    "content": [
+      "Markaziy Osiyodagi eng yirik to'qimachilik forumi 'UzTextile Expo' doirasida JAMO Textile o'zining yangi avlod sanoat va HoReCa liboslari liniyasini taqdim etadi.",
+      "Ko'rgazmaga tashrif buyuruvchi korporativ mijozlar fabrikamiz mutaxassislari bilan bevosita uchrashib, namunalar bilan tanishishlari va maxsus shartnoma shartlariga ega bo'lishlari mumkin."
+    ],
+    "i18n": {
+      "ru": {
+        "title": "JAMO Textile примет участие в международной текстильной выставке «UzTextile Expo 2025»",
+        "date": "1 октября 2026",
+        "category": "Выставки и мероприятия",
+        "readTime": "3 минуты",
+        "summary": "В столичном павильоне «Узэкспоцентр» будет представлена новая коллекция корпоративной и специальной рабочей одежды нашего предприятия.",
+        "content": [
+          "В рамках «UzTextile Expo» — крупнейшего текстильного форума Центральной Азии — JAMO Textile представит свою новую линейку промышленной одежды и одежды для HoReCa.",
+          "Корпоративные клиенты, посетившие выставку, смогут лично встретиться со специалистами нашей фабрики, ознакомиться с образцами и получить специальные условия договора."
+        ]
+      },
+      "en": {
+        "title": "JAMO Textile to take part in the 'UzTextile Expo 2025' international textile exhibition",
+        "date": "October 1, 2026",
+        "category": "Exhibitions & Events",
+        "readTime": "3 min read",
+        "summary": "Our company's new collection of corporate and specialised workwear will be showcased at the Uzexpocentre pavilion in the capital.",
+        "content": [
+          "At UzTextile Expo, the largest textile forum in Central Asia, JAMO Textile will present its new generation of industrial and HoReCa apparel.",
+          "Corporate clients visiting the exhibition can meet our factory's specialists in person, see samples and get special contract terms."
+        ]
+      }
+    }
+  },
+  {
+    "id": "kuz-qish-jiletkalar",
+    "title": "Kuz-qish mavsumi uchun yangi modeldagi izolyatsiyalangan jiletkalar kolleksiyasi",
+    "slug": "kuz-qish-jiletkalar",
+    "date": "18 Noyabr, 2024",
+    "isoDate": "2024-11-18",
+    "category": "Mahsulotlar",
+    "readTime": "4 daqiqa",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCUo7MtbE9swVi4-VLCakjteYrUAyIQ3NwozSMN6VQMRFysHXcfdwUGhnuCq6ntzbVXCyC1tfr4AVq30Jg1y-a__LAOT6BUIprthiIjdIK94CWvcIYc31Ei5eVenieWGhvoFgOSS1nZyFc9dQj5ygRSotZQK2_BW0NQHZTbIKIgYoIVIHwmemgi2h5JEAGrvAqv0N1PyMehiEXJsJtAoQt0IeJg12wWqbq6n3KaWWlh1qEdIOqjXKEnUw",
+    "summary": "Kompaniya xodimlari uchun namlikdan himoyalovchi va tana haroratini bir me'yorda saqlovchi yangi Taslan matoli yengil jiletkalar buyurtmaga topshirildi.",
+    "content": [
+      "Sovuq mavsumda ochiq havoda yoki omborxonalarda faoliyat yurituvchi mutaxassislar uchun maxsus himoya xususiyatiga ega yangi jiletkalar ishlab chiqildi.",
+      "Matoning suv o'tkazmaydigan qatlami qor va yomg'irdan to'liq himoya qiladi, 200 g/m² sintepon esa yengil vaznda optimal issiqlikni ta'minlaydi."
+    ],
+    "i18n": {
+      "ru": {
+        "title": "Новая коллекция утеплённых жилетов для осенне-зимнего сезона",
+        "date": "18 ноября 2024",
+        "category": "Продукция",
+        "readTime": "4 минуты",
+        "summary": "Для сотрудников компаний доступны к заказу новые лёгкие жилеты из ткани таслан, которые защищают от влаги и поддерживают комфортную температуру тела.",
+        "content": [
+          "Для специалистов, работающих в холодное время года на открытом воздухе или на складах, разработаны новые жилеты со специальными защитными свойствами.",
+          "Водонепроницаемый слой ткани полностью защищает от снега и дождя, а синтепон плотностью 200 г/м² обеспечивает оптимальное тепло при небольшом весе."
+        ]
+      },
+      "en": {
+        "title": "New collection of insulated vests for the autumn–winter season",
+        "date": "November 18, 2024",
+        "category": "Products",
+        "readTime": "4 min read",
+        "summary": "New lightweight Taslan vests that protect against moisture and keep body temperature steady are now available to order for company staff.",
+        "content": [
+          "New vests with special protective properties have been developed for specialists working outdoors or in warehouses during the cold season.",
+          "The fabric's waterproof layer fully protects against snow and rain, while 200 g/m² synthetic padding provides optimal warmth at a light weight."
+        ]
+      }
+    }
+  }
+]
